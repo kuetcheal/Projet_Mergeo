@@ -81,7 +81,7 @@ const Canada = () => {
                     <header>
                         <div className="allemand-header">
                             <div className="allemand-DSH">
-                                <h1 style={{ fontSize: '2rem', color: '#333' }}>
+                                <h1 style={{ fontSize: '2rem', color: '#A93D87' }}>
                                     Centre agréé pour le <strong>Examen DSH (TCF)</strong>
                                 </h1>
                                 <h3>Si tu souhaites étudier dans une université allemande, tu dois <strong>obtenir soit le certificat d'allemand DSH, soit le TestDaF</strong>.</h3>
@@ -97,13 +97,14 @@ const Canada = () => {
                                 <img
                                     src="/images/cours-allemand.jpe"
                                     alt="Cours d'Allemand"
-                                    style={{ Width: '530px', borderRadius: '8px', height: '380px', marginTop: '40px' }}
+                                    className='image1-cours'
+                                   
                                 />
                             </div>
                         </div>
                         <div className="allemand-header">
                             <div className="allemand-DSH">
-                                <h1 style={{ fontSize: '2rem', color: '#333' }}>
+                                <h1 style={{ fontSize: '2rem', color: '#A93D87' }}>
                                     Centre agréé pour le <strong>Examen TestDAF (TCF)</strong>
                                 </h1>
                                 <h3>Si tu souhaites étudier dans une université allemande, tu dois <strong>obtenir soit le certificat d'allemand DSH, soit le TestDaF</strong>.</h3>
@@ -119,7 +120,6 @@ const Canada = () => {
                                 <img
                                     src="/images/cours2-allemand.jpg"
                                     alt="Cours d'Allemand"
-                                    
                                     className='image2-cours'
                                 />
                             </div>
