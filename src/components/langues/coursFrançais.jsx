@@ -16,15 +16,15 @@ const Canada = () => {
     navigate('/contact');
   };
   const features = [
-    { icon: <PersonAddIcon fontSize="large" />, title: "AVANTAGES" },
-    { icon: <AssignmentIcon fontSize="large" />, title: "ADMISSION" },
-    { icon: <MapIcon fontSize="large" />, title: "IELTS" },
-    { icon: <ApartmentIcon fontSize="large" />, title: "TOEFL" },
+    { icon: <PersonAddIcon fontSize="large" />, title: "TCF" },
+    { icon: <AssignmentIcon fontSize="large" />, title: "TEF" },
+    { icon: <MapIcon fontSize="large" />, title: "TEF Canada" },
+    { icon: <ApartmentIcon fontSize="large" />, title: " DELF-DALF" },
   ];
   return (
     <div className="temoignages-page">
       <div className="anglais-section">
-        <img src="/images/canada-ville.avif" alt="Background" 
+        <img src="/images/quebec.jpg" alt="Background" 
         style={{ height: '450px' }}
         className="anglais-image" />
         <div className="breadcrumb">

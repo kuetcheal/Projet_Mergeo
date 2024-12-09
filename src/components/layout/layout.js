@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import FixeFooter from './fixeFooter';
-import Chatbot from './Chatbot';
+import Chat from './Chat';
 import CallButton from './Buttons/callButton';
 import BrochureButton from './Buttons/brochureButton';
 import ScrollToTop from './ScrollToTop';
 import { useLocation } from 'react-router-dom';
-import CloseIcon from '@mui/icons-material/Close';
 import './layout.css';
 
 const Layout = ({ children }) => {
@@ -19,7 +18,7 @@ const Layout = ({ children }) => {
   const hideElements = ['/inscription', '/connexion', '/forgetPassword', '/admin'].includes(location.pathname);
 
   const toggleChatbot = () => {
-    setIsChatbotOpen(!isChatbotOpen);
+    setIsChatbotOpen((prev) => !prev); // Garantit une bascule d'état propre
   };
 
   const closeChatbot = () => {
@@ -47,24 +46,19 @@ const Layout = ({ children }) => {
           {/* Chatbot Toggle */}
           {!isAdminPage && !hideElements && (
             <div className="chatbot-container">
-              {/* Icone pour ouvrir le Chatbot */}
-              <img
-                src="/images/chatjpt-removebg.png"
-                alt="Chatbot"
-                className="chat-icon"
-                onClick={toggleChatbot}
-              />
-              {/* Affiche le chatbot avec l'icône de fermeture */}
-              {isChatbotOpen && (
-                <div className="chatbot-popup">
-                  <div className="chatbot-header">
-                    <h4>Mobiliis</h4>
-                    <CloseIcon className="close-icon" onClick={closeChatbot} />
-                  </div>
-                  <Chatbot closeChat={closeChatbot} />
-                </div>
-              )}
+            {/* Icône pour ouvrir le Chatbot */}
+            <img
+              src="/images/chatjpt-removebg.png"
+              alt="Chatbot"
+              className="chat-icon"
+              onClick={toggleChatbot}
+            />
+      
+            {/* Rendu conditionnel du Chatbot (mémorisé avec React.memo) */}
+            <div className={`chatbot-popup ${isChatbotOpen ? 'open' : 'closed'}`}>
+              {isChatbotOpen && <Chat closeChat={closeChatbot} />}
             </div>
+          </div>
           )}
         </main>
         {!isAdminPage && <FixeFooter />}

@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import Temoignages from '../temoignages/temoignage';
 import Choix from '../mesChoix/choix';
 import Sponsor from './sponsor';
+import Brochure1 from './brochure1';
 import Langue from '../langues/langue';
 import './medecin.css';
 
@@ -21,7 +22,7 @@ const Medecin = () => {
   };
 
   // Gestion des images pour l'animation
-  const images = ["/images/bureau.jpeg", "/images/avion.jpg", "/images/catable.jpg"];
+  const images = ["/images/bureau.jpeg", "/images/passport.jpg", "/images/catable.jpg"];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   useEffect(() => {
@@ -96,6 +97,9 @@ const Medecin = () => {
       </div>
       <div className="sponsor">
         <Sponsor/>
+      </div> <br />
+      <div className="sponsor">
+        <Brochure1/>
       </div>
     </Box>
   );

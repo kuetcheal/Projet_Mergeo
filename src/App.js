@@ -27,6 +27,8 @@ import Canada from './components/mesChoix/canada';
 import Canada1 from './components/mesChoix/canada1';
 import Canada2 from './components/mesChoix/canada2';
 import CoursAnglais from './components/langues/coursAnglais';
+import CoursFrançais from './components/langues/coursFrançais';
+import CoursAllemand from './components/langues/coursAllemand';
 import Presentation from "./components/mobiliis/presentation";
 import Temoignage from "./components/temoignages/temoignage";
 import ToutTemoignages from "./components/temoignages/toutTemoignages";
@@ -71,6 +73,8 @@ const App = () => {
           <Route path="/admin" element={<Admin />} />
           <Route path="/langue" element={<Langue />} />
           <Route path="/coursAnglais" element={<CoursAnglais />} />
+          <Route path="/coursFrançais" element={<CoursFrançais />} />
+          <Route path="/coursAllemand" element={<CoursAllemand />} />
         </Routes>
       </Layout>
     </Router>

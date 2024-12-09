@@ -23,6 +23,7 @@ const Header = () => {
   const [showMobiliisMenu, setShowMobiliisMenu] = useState(false);
   const [showOffersMenu, setShowOffersMenu] = useState(false);
   const [showDestinationMenu, setShowDestinationMenu] = useState(false);
+  const [showCoursMenu, setShowCoursMenu] = useState(false);
   const { i18n, t } = useTranslation();
 
   const changeLanguage = (lng) => {
@@ -64,6 +65,13 @@ const Header = () => {
   };
   const handleMouseLeave = () => {
     setShowServicesMenu(false);
+  };
+
+  const handleMouseCours= () => {
+    setShowCoursMenu(true);
+  };
+  const handleMouseCoursLeave = () => {
+    setShowCoursMenu(false);
   };
 
   const handleMobiliisMouseEnter = () => {
@@ -143,7 +151,26 @@ const Header = () => {
                   </ul>
                 )}
               </li>
-
+              
+              <li
+                className="navItem"
+                onMouseEnter={handleMouseCours}
+                onMouseLeave={handleMouseCoursLeave}
+                style={{ position: 'relative' }}
+              >
+                <Link to="#" className="navLink">
+                  Cours Langues <KeyboardArrowDownIcon />
+                </Link>
+                {showCoursMenu && (
+                  <ul className="subMenu">
+                    <li><Link to="/coursAnglais">Cours d'anglais: IELTS, TOEFL</Link></li>
+                    <li><Link to="/CoursAllemand">Cours d'Allemand: DSH, TestDaf</Link></li>
+                    <li><Link to="/CoursFrançais">Tests de Langue: TCF, TEF, DALF, DELF, TEF Canada</Link></li>
+                    <li><Link to="/services/formation">Cours d'Espagnol</Link></li>
+                    
+                  </ul>
+                )}
+              </li>
 
               <li
                 className="navItem"

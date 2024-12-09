@@ -34,7 +34,7 @@ const Inscription = () => {
   };
   
   return (
-    <div className="inscription-container">
+    <div className="inscrip-container">
       <h2 className="inscription-title">Inscription</h2>
       <form onSubmit={handleSubmit} className="inscription-form">
         <input
@@ -43,7 +43,7 @@ const Inscription = () => {
           value={formData.nom}
           onChange={handleChange}
           placeholder="Nom"
-          className="inscription-input"
+          className="inscrip-input"
         />
 
         <input
@@ -52,7 +52,7 @@ const Inscription = () => {
           value={formData.prenom}
           onChange={handleChange}
           placeholder="Prénom"
-          className="inscription-input"
+          className="inscrip-input"
         />
 
         <input
@@ -61,7 +61,7 @@ const Inscription = () => {
           value={formData.email}
           onChange={handleChange}
           placeholder="Adresse email"
-          className="inscription-input"
+          className="inscrip-input"
         />
 
         <input
@@ -70,7 +70,7 @@ const Inscription = () => {
           value={formData.mot_de_passe}
           onChange={handleChange}
           placeholder="Mot de passe"
-          className="inscription-input"
+          className="inscrip-input"
         />
 
         <input
@@ -79,7 +79,7 @@ const Inscription = () => {
           value={formData.telephone}
           onChange={handleChange}
           placeholder="Numéro de téléphone"
-          className="inscription-input"
+          className="inscrip-input"
         />
 
         <button type="submit" className="inscription-button">

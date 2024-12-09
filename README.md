@@ -68,3 +68,27 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+
+# durée de retention
+# responsabilisation _ Accountability
+# Sécurité
+# Privacy by Design et by Default
+#
+#
+#
+#
+# gestion des données
+   - durée de retention 
+    - sécurité des données
+    - privacy par default
+
+
+
+
+# conduite de changes
+# lzes Key-users: ce sont des utilisateurs clés dans la conduite de changements
+# klaxoon : outil de quiz en ligne
