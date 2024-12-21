@@ -78,14 +78,55 @@ const Canada = () => {
          <div style={{ fontFamily: 'Arial, sans-serif', lineHeight: '1.6', margin: '2rem' }}>
       {/* Header */}
       <header>
-        <h1 style={{ fontSize: '2rem', color: '#333' }}>
-          Centre agréé pour le <strong>Test de connaissance du français (TCF)</strong>
-        </h1>
-        <p>
-          Le TCF, instrument créé pour évaluer le niveau de français des personnes non francophones, 
-          est une référence pour la langue française.
-        </p>
-      </header>
+                        <div className="allemand-header">
+                            <div className="allemand-DSH">
+                                <h1 style={{ fontSize: '2rem', color: '#A93D87' }}>
+                                    Qu'est ce que le TOELF ?
+                                </h1>
+                                <h3>Si tu souhaites étudier dans une université allemande, tu dois <strong>obtenir soit le certificat d'allemand DSH, soit le TestDaF</strong>.</h3>
+                                <p>
+                                    L'examen DSH se compose d'un examen écrit et d'un examen oral. La partie écrite de
+                                    l'examen couvre les domaines de la compréhension orale, de la compréhension écrite, d'expresion écrite,
+                                    ainsi que de la compréhension et du traitement des structures linguistiques scientifiques. Bien que les épreuves d'examen soient conçues
+                                    par les universités elles-mêmes, elles sont basées sur un modèle similaire dans toute l'Allemagne.
+                                </p>
+                                <p> <strong>L'examen DSH</strong> ne peut être passé que dans une université allemande. Elle a généralement lieu quelques semaines avant le début du semestre. Le DSH est considéré comme réussi si au moins
+                                    deux tiers des exigences ont été remplies dans les deux parties de l'examen (écrit et oral).</p></div>
+                            <div className='image-cours'>
+                                <img
+                                    src="/images/cours-allemand.jpe"
+                                    alt="Cours d'Allemand"
+                                    className='image1-cours'
+
+                                />
+                            </div>
+                        </div>
+                        <div className="allemand-header">
+                            <div className="allemand-DSH">
+                                <h1 style={{ fontSize: '2rem', color: '#A93D87' }}>
+                                    Qu'est ce que le IELTS ?
+                                </h1>
+                                Une alternative au   <strong>DSH</strong> est le  <strong>TestDaF</strong>. Il comprend quatre parties dans lesquelles les capacités de compréhension et d'expression orale et écrite sont testées.
+                                Contrairement au test DSH, le TestDaF peut être passé plusieurs fois et à l'étranger.
+
+                                <p> 1.<strong>La compréhension écrite, évaluée sur une heure,</strong> avec l'étude de trois ensembles documentaires : des plaquettes concernant l'enseignement supérieur et la vie étudiante ; un article de journal de 500 mots environ ; et un extrait de type scientifique, supérieur à 500 mots.</p>
+                                <p> 2.<strong>La compréhension orale, pendant 40 minutes,</strong> se déroule en trois volets : écoute d'une discussion banale ; compréhension d'un colloque de chercheurs ; et audition d'un cours universitaire.</p>
+                                <p>3.<strong>L'expression à l'écrit, d'une heure,</strong> avec l'écriture d'un texte bien construit sur un sujet donné, puis la nécessité de prendre position sur une question, avec force arguments.</p>
+                                <p>4.<strong>L'oral, via un ordinateur, d'une grosse demi-heure (35 minutes le plus souvent)</strong> </p>
+                                <p>
+                                    Les écoles supérieures décident elles-mêmes du niveau qui doit être atteint pour être admis dans un programme.
+                                    Certaines universités/écoles supérieures demandent  <strong>le niveau TDN5</strong> , pour d'autres,  <strong>le niveau TDN4</strong> suffit.
+                                </p>
+                            </div>
+                            <div className='image-cours'>
+                                <img
+                                    src="/images/cours2-allemand.jpg"
+                                    alt="Cours d'Allemand"
+                                    className='image2-cours'
+                                />
+                            </div>
+                        </div>
+                    </header>
 
       {/* Section: Description */}
       <section>

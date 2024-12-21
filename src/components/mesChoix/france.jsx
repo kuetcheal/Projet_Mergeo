@@ -27,21 +27,24 @@ const France = () => {
 
   return (
     <div className="temoignages-page">
-      <div className="france-section">
-        <img src="/images/catable.jpg" alt="Background" className="france-image" />
-        <div className="breadcrumb">
-          Accueil »
-          <p style={{ fontWeight: 'bold', fontSize: '40px', marginLeft: '10px', color: '#004080' }}>
-            étudier en France à titre d'étudiant étranger
+      <div className="fran-section">
+        <img src="/images/catable.jpg" alt="Background" className="fran-image" />
+        {/* Overlay sombre */}
+        <div className="overlayfran"></div>
+        <div className="breadfrance">
+
+          <p className="france-title">
+            Résider et étudier en France
           </p>
+          <div className="underline"></div>
           <button className="green-button" onClick={handleContactClick}>
-            RESERVEZ VOTRE RENDEZ-VOUS
-            <ChevronRightIcon style={{ fontSize: '20px', marginLeft: '35px' }} />
+            NOUS CONTACTER
+            <ChevronRightIcon style={{ fontSize: '20px', marginLeft: '5px' }} />
           </button>
         </div>
       </div>
       <div className="content-section">
-        <div className="overlay">
+        <div className="overlayfrance">
           <h1>Etudiant en France</h1> <br />
           {/* Ajout d'espacement au-dessus de la grille */}
           <Box sx={{ marginTop: "30px", backgroundColor: "#f7f7f7", padding: "20px 10px", borderRadius: "8px" }}>
@@ -71,17 +74,17 @@ const France = () => {
             </Grid>
           </Box>
 
-        </div> 
-     <h3 style={{color: '#004080', fontSize: '20px'}}>Le système d’enseignement français est l’un des plus puissants, diversifié et adapté à tous les besoins ! En raison de ces qualités,
-       détenir un diplôme français facilite l’accès au marché du travail, et ce, partout dans les pays francophones et mêmes dans certains 
-       pays Anglophones juste l'équivalence dans certains cas est suffisant pour faire valoir votre Dipôme.</h3> <br />
+        </div>
+        <h3 style={{ color: '#004080', fontSize: '20px' }}>Le système d’enseignement français est l’un des plus puissants, diversifié et adapté à tous les besoins ! En raison de ces qualités,
+          détenir un diplôme français facilite l’accès au marché du travail, et ce, partout dans les pays francophones et mêmes dans certains
+          pays Anglophones juste l'équivalence dans certains cas est suffisant pour faire valoir votre Dipôme.</h3> <br />
         <France1 />
         <France2 />
         <France3 />
         <France4 />
-        <button className="green-button" style={{marginLeft: '60px'}}>
-            Je postule
-          </button>
+        <button className="green-button" style={{ marginLeft: '60px' }}>
+          Je postule
+        </button>
       </div>
     </div>
   );

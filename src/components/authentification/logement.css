@@ -1,3 +1,28 @@
+.allemand-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.image2-cours{
+    border-radius: 8px;
+    margin-top: 40px;
+    height: 380px;
+    width: 530px;
+}
+
+.image1-cours{
+  border-radius: 8px;
+    margin-top: 40px;
+    height: 380px;
+    width: 530px;
+}
+
+.allemand-DSH {
+  padding: 10px;
+}
+
 /* Styles généraux */
 .temoignages-page {
     font-family: Arial, sans-serif;
@@ -5,15 +30,15 @@
   }
   
   /* Section d'arrière-plan avec l'image */
-  .background-section {
+  .anglais-section {
     position: relative;
-    height: 300px;
+    height: 450px;
     overflow: hidden;
   }
   
-  .background-image {
+  .anglais-image {
     width: 100%;
-    height: 100%;
+    height: 500px;
     object-fit: cover;
     opacity: 0.8;
   }
@@ -33,7 +58,7 @@
   .content-section {
     max-width: 100%;
     width: 90%;
-    margin: -50px auto 20px;
+    margin: -120px auto 20px !important;
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -66,6 +91,29 @@
     font-weight: bold;
   }
   
+  .logement{
+    display: flex;
+    flex-direction: row;
+    
+  }
+
+  .logement img{
+    height: 90px;
+    width: 180px;
+    margin: 0 70px;
+  }
+
+  .logement2 img{
+    height: 90px;
+    width: 180px;
+    margin: 25px 50px;
+  }
+
+  .loca1, .loca2, .loca3{
+    height: 80px !important;
+    width: 210px !important;
+  }
+
   /* Responsive adjustments */
   @media (max-width: 1024px) {
     .content-section {
@@ -77,6 +125,23 @@
     .overlay h1 {
       font-size: 1.6rem;
     }
+
+    .allemand-header {
+      flex-direction: column; /* Passe les éléments en colonne */
+      text-align: center;
+  }
+
+  .image1-cours,
+  .image2-cours {
+      width: 90%; /* Réduit la largeur des images */
+      height: auto;
+      margin-top: 20px; /* Ajoute un espacement */
+  }
+
+  .allemand-DSH {
+      margin-bottom: 20px; /* Ajoute un espacement en bas */
+      text-align: center;
+  }
   }
   
   @media (max-width: 768px) {
@@ -93,6 +158,25 @@
     .overlay h1 {
       font-size: 1.4rem;
     }
+
+    .allemand-header {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .image1-cours,
+  .image2-cours {
+      width: 100%;
+      height: auto;
+  }
+
+  .allemand-DSH h1 {
+      font-size: 1.5rem; /* Réduit la taille du titre */
+  }
+
+  .allemand-DSH p {
+      font-size: 1rem; /* Réduit la taille du texte */
+  }
   }
   
   @media (max-width: 480px) {
@@ -109,5 +193,32 @@
       padding: 10px;
       margin: -20px auto 10px;
     }
+
+    .allemand-header {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .image1-cours,
+  .image2-cours {
+      width: 100%; /* Prend toute la largeur */
+      height: auto;
+  }
+
+  .allemand-DSH h1 {
+      font-size: 1.3rem;
+  }
+
+  .allemand-DSH p {
+      font-size: 0.9rem;
+  }
+  .breadcrumb P{
+    font-size: 26px !important;
+    position: center;
+  }
+  .green-button{
+    position: center;
+    margin-top: 25px;
+  }
   }
   

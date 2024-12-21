@@ -1,9 +1,9 @@
 import React from 'react';
-import './france.css';
+import './belgique.css';
 import Canada1 from './canada1';
 import Canada2 from './canada2';
 import France3 from './france3';
-import France4 from './france4';
+import Belgique1 from './belgique1';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { useNavigate } from 'react-router-dom';
 import { Box, Grid, Typography } from "@mui/material";
@@ -28,23 +28,23 @@ const Canada = () => {
   return (
     <div className="temoignages-page">
       <div className="fran-section">
-        <img src="/images/canada-ville.avif" alt="Background" className="fran-image" />
-        <div className="overlayfran"></div>
+        <img src="/images/belge.jpg" alt="Background" className="fran-image" />
+        <div style={{width: '110px', backgroundColor: '#C90076', height: '3px'}}></div>
         <div className="breadfrance">
-
+          
           <p style={{ fontWeight: 'bold', fontSize: '40px', marginLeft: '10px', color: 'white' }}>
-            Resider et étudier au Canada
+            Resider et étudier en Belgique
           </p>
-
+          
           <button className="green-button" onClick={handleContactClick}>
-            NOUS CONTACTER
+           NOUS CONTACTER
             <ChevronRightIcon style={{ fontSize: '20px', marginLeft: '5px' }} />
           </button>
         </div>
       </div>
       <div className="content-section">
         <div className="overlayfrance">
-          <h1>Etudier au Canada</h1> <br />
+          <h1>Etudier en Belgique</h1> <br />
           {/* Ajout d'espacement au-dessus de la grille */}
           <Box sx={{ marginTop: "30px", backgroundColor: "#f7f7f7", padding: "20px 10px", borderRadius: "8px" }}>
             <Grid container spacing={2} justifyContent="center">
@@ -73,16 +73,16 @@ const Canada = () => {
             </Grid>
           </Box>
 
-        </div>
-        <h3 style={{ color: '#004080', fontSize: '20px' }}>Le Canada se classe régulièrement parmi les meilleures destinations d’études tant pour le niveau de vie pour lequel se classe au premier rang mondial qu’au niveau de
-          la qualité des études reconnues à l’échelle internationale. Il accueille chaque année des milliers d’étudiants internationaux.</h3> <br />
+        </div> 
+     <h3 style={{color: '#004080', fontSize: '20px'}}>Choisir la Belgique pour vos études supérieures à l’étranger, c’est vivre la vie étudiante au centre de
+         l’Europe dans un environnement d’études multilingue, multiculturel et de grande qualité.</h3> <br />
         <Canada1 />
         <Canada2 />
         <France3 />
-        <France4 />
-        <button className="green-button" style={{ marginLeft: '60px' }}>
-          Je postule
-        </button>
+        <Belgique1 />
+        <button className="green-button" style={{marginLeft: '60px'}}>
+            Je postule
+          </button>
       </div>
     </div>
   );

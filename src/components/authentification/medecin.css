@@ -1,51 +1,68 @@
-.medecin-container {
+.mede-container {
   width: 100%;
-  background-color: #f0f8ff;
+  background-color: #cfcfcf;
 }
+
+
+
 
 .flou {
   position: relative;
-  width: 100%;
-  height: 580px;
+  height: 520px; /* Même hauteur que l'autre section */
   overflow: hidden;
 }
 
-.flou img {
+/* Image de fond */
+.slideshow-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Assure que l'image couvre toute la section */
 }
 
-/* Superposition de fond avec effet flou */
-.backdrop-overlay {
+/* Overlay sombre */
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
- 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
+  background-color: rgba(0, 0, 0, 0.5); /* Fond sombre semi-transparent */
+  z-index: 1;
+}
+
+/* Contenu texte */
+.backdrop-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
+  color: white; /* Texte en blanc */
+  z-index: 2; /* Devant l'overlay */
 }
 
-.backdrop-overlay .title {
-  font-size: 3rem;
+.titre {
+  font-size: 2.5rem; /* Taille du titre */
   font-weight: bold;
-  margin: 0;
+  margin-bottom: 10px;
 }
 
-.backdrop-overlay .description {
-  font-size: 1.5rem;
-  font-weight: 400;
-  margin: 10px 0;
+.descrire {
+  font-size: 1rem;
+  margin-bottom: 20px;
 }
 
 
 
+
+
+
+
+.grand-bloc{
+  margin: 0 auto;
+  max-width: 1410px;
+  background-color: #cfcfcf !important;
+}
 
 
 .texter {
@@ -103,27 +120,29 @@
   margin-left: 700px;
 }
 
-.presen-story {
+.entete-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 20px auto;
-  max-width: 1350px;
+  gap: 20px;
 }
 
 .stori-text {
-  color: #333;
-  font-size: 21px;
-  text-align: left;
-  flex: 1;
-  padding: 7px 15px;
+  text-align: justify;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .stori-video {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+  margin-top: 20px;
+  text-align: center;
 }
+
+.stori-video iframe {
+  width: 100%; /* Adapte la vidéo à la largeur de l'écran */
+  height: auto;
+  aspect-ratio: 16 / 9; /* Maintient un ratio de 16:9 */
+}
+
 .entete{
   display: flex;
   justify-content: space-between;
@@ -198,4 +217,27 @@
   margin: 20px auto;
   max-width: 1500px;
   border-radius: 3px; /* Arrondi des coins de la bordure */
+}
+
+@media screen and (max-width: 768px) {
+  .styled-title {
+    font-size: 1.5rem; 
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .stori-text {
+    font-size: 0.9rem;
+  }
+
+  .learn-more-button {
+    width: 90%; /* Le bouton prend toute la largeur */
+    font-size: 1rem;
+  }
+
+  .stori-video iframe {
+    height: 200px; /* Fixe une hauteur minimale pour la vidéo */
+  }
 }

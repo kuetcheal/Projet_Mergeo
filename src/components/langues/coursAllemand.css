@@ -19,6 +19,10 @@
     width: 530px;
 }
 
+.allemand-DSH {
+  padding: 10px;
+}
+
 /* Styles généraux */
 .temoignages-page {
     font-family: Arial, sans-serif;
@@ -184,6 +188,14 @@
 
   .allemand-DSH p {
       font-size: 0.9rem;
+  }
+  .breadcrumb P{
+    font-size: 26px !important;
+    position: center;
+  }
+  .green-button{
+    position: center;
+    margin-top: 25px;
   }
   }
   

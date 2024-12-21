@@ -5,8 +5,10 @@ import FixeFooter from './fixeFooter';
 import Chat from './Chat';
 import CallButton from './Buttons/callButton';
 import BrochureButton from './Buttons/brochureButton';
+import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
 import ScrollToTop from './ScrollToTop';
 import { useLocation } from 'react-router-dom';
+
 import './layout.css';
 
 const Layout = ({ children }) => {
@@ -46,19 +48,23 @@ const Layout = ({ children }) => {
           {/* Chatbot Toggle */}
           {!isAdminPage && !hideElements && (
             <div className="chatbot-container">
-            {/* Icône pour ouvrir le Chatbot */}
-            <img
-              src="/images/chatjpt-removebg.png"
-              alt="Chatbot"
-              className="chat-icon"
-              onClick={toggleChatbot}
-            />
-      
-            {/* Rendu conditionnel du Chatbot (mémorisé avec React.memo) */}
-            <div className={`chatbot-popup ${isChatbotOpen ? 'open' : 'closed'}`}>
-              {isChatbotOpen && <Chat closeChat={closeChatbot} />}
+              <div className="chatbot-tooltip">
+                <span className="tooltip-text" onClick={toggleChatbot}>Une question ? Nous sommes là pour vous aider !</span>
+                <span className="tooltip-close" >✕</span>
+              </div>
+              <img
+                src="/images/chatbot.png"
+                alt="Chatbot"
+                className="chat-icon"
+                onClick={toggleChatbot}
+              />
+
+
+              {/* Rendu conditionnel du Chatbot (mémorisé avec React.memo) */}
+              <div className={`chatbot-popup ${isChatbotOpen ? 'open' : 'closed'}`}>
+                {isChatbotOpen && <Chat closeChat={closeChatbot} />}
+              </div>
             </div>
-          </div>
           )}
         </main>
         {!isAdminPage && <FixeFooter />}

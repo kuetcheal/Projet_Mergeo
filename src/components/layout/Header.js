@@ -142,11 +142,12 @@ const Header = () => {
                 </Link>
                 {showServicesMenu && (
                   <ul className="subMenu">
-                    <li><Link to="/services/immigration">Services d'immigration</Link></li>
-                    <li><Link to="/services/accompagnement">Services d'accompagnement</Link></li>
-                    <li><Link to="/services/formation">Formation linguistique</Link></li>
-                    <li><Link to="/services/informations">Tarifs prestations</Link></li>
-                    <li><Link to="/services/avantages">Avantages Mobiliis</Link></li>
+                    <li><Link to="/services/immigration">Accompagnement & Services d'immigration</Link></li>
+                    <li><Link to="coaching">Coaching & Orientation scolaire</Link></li>
+                    <li><Link to="/admission">Demande d'admission</Link></li>
+                    <li><Link to="/services/formation">Demande de Visa</Link></li>
+                    <li><Link to="/services/informations">Assurances voyage</Link></li>
+                    <li><Link to="/services/avantages">Caution Bancaire</Link></li>
                     <li><Link to="/logement">Recherche logement</Link></li>
                   </ul>
                 )}
@@ -166,7 +167,7 @@ const Header = () => {
                     <li><Link to="/coursAnglais">Cours d'anglais: IELTS, TOEFL</Link></li>
                     <li><Link to="/CoursAllemand">Cours d'Allemand: DSH, TestDaf</Link></li>
                     <li><Link to="/CoursFrançais">Tests de Langue: TCF, TEF, DALF, DELF, TEF Canada</Link></li>
-                    <li><Link to="/services/formation">Cours d'Espagnol</Link></li>
+                    <li><Link to="/coursAnglais">Cours d'Espagnol</Link></li>
                     
                   </ul>
                 )}
@@ -201,7 +202,7 @@ const Header = () => {
                 </Link>
                 {showOffersMenu && (
                   <ul className="subMenu">
-                    <li><Link to="/offers/offer1">Offres d'emploi</Link></li>
+                    <li><Link to="/offreEmploi">Offres d'emploi</Link></li>
                     <li><Link to="/offers/offer2">Processus recrutement</Link></li>
                     <li><Link to="/offers/offer3">témoignages</Link></li>
                   </ul>

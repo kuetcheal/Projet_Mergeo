@@ -92,3 +92,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 # conduite de changes
 # lzes Key-users: ce sont des utilisateurs clés dans la conduite de changements
 # klaxoon : outil de quiz en ligne
+
+# Analyse de risque
+1. perimètre
+2. Biens ( essentiels/metiers; supports )
+3. Evènements redoutés -> Scénarios de menace
+4. Métriques
+
+# les MSPR

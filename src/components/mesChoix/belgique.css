@@ -5,54 +5,27 @@
   }
   
   /* Section d'arrière-plan avec l'image */
-  .fran-section {
+  .france-section {
     position: relative;
-    height: 450px;
+    height: 350px;
     overflow: hidden;
   }
   
-  .fran-image {
+  .france-image {
     width: 100%;
-    height: 100%;
+    height: 400px;
     object-fit: cover;
-    
+    opacity: 0.8;
   }
   
-  /* Overlay sombre */
-.overlayfran {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-/* Barre décorative sous le texte */
-.underline {
-  width: 110px;
-  height: 3px;
-  background-color: #C90076;
-  margin: 0 auto;
-  
-}
-
-.france-title {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-  
-}
-
   /* Style pour le breadcrumb */
-  .breadfrance {
+  .breadcrumb {
     position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    top: 20px;
+    left: 20px;
+    font-size: 1rem;
     color: white;
+    font-weight: bold;
     z-index: 2;
   }
   
@@ -70,13 +43,13 @@
   }
   
   /* Superposition pour le titre */
-  .overlayfrance {
+  .overlay {
     margin-bottom: 20px;
     color: #C90076;
     text-align: center;
   }
   
-  .overlayfrance h1 {
+  .overlay h1 {
     font-size: 1.8rem;
     font-weight: bold;
     margin: 0;
@@ -107,7 +80,7 @@
   }
   
   @media (max-width: 768px) {
-    .breadfrance {
+    .breadcrumb {
       font-size: 0.9rem;
     }
   
@@ -117,17 +90,17 @@
       padding: 15px;
     }
   
-    .overlayfrance h1 {
+    .overlay h1 {
       font-size: 1.4rem;
     }
   }
   
   @media (max-width: 480px) {
-    .breadfrance {
+    .breadcrumb {
       font-size: 0.8rem;
     }
   
-    .overlayfrance h1 {
+    .overlay h1 {
       font-size: 1.2rem;
     }
   

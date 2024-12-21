@@ -1,14 +1,15 @@
 .layout-container {
   position: relative;
-  background-color: #f5f5f5;
+  background-color: #cfcfcf;
 }
 
 .chat-icon {
   position: fixed;
   bottom: 30px;
+  right: 20px !important;
   right: 2px;
-  width: 110px; 
-  height: 100px;
+  width: 60px; 
+  height: 60px;
   cursor: pointer;
   z-index: 1000;
 }
@@ -17,7 +18,7 @@
   position: fixed;
   bottom: 80px;
   right: 20px;
-  width: 350px; /* Largeur du chatbot */
+  width: 350px; 
   background-color: #f5f5f5;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -28,7 +29,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #007dc4; /* Couleur de l'en-tête du chatbot */
+  background-color: #007dc4; 
   padding: 10px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -41,15 +42,64 @@
   color: white;
 }
 
+.chatbot-tooltip {
+  position: absolute;
+  bottom: 12px; 
+  left: 56%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  color: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 6px 9px;
+  width: 180px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.tooltip-text {
+  font-size: 16px;
+  margin-right: 10px;
+  cursor: pointer;
+  text-align: center;
+  position: center;
+}
+
+.tooltip-close {
+  cursor: pointer;
+  font-size: 16px;
+  color: #999;
+  margin-bottom: 57px;
+}
+
+.tooltip-close:hover {
+  color: #333;
+}
+
 /* Styles pour les petits écrans */
 @media (max-width: 768px) {
   .chat-icon {
     position: fixed;
-    bottom: 60px;
-    right: 2px;
-    width: 110px; 
-    height: 100px;
+    bottom: 95px;
+    right: 4px;
+    width: 60px; 
+    height: 60px;
     cursor: pointer;
     z-index: 1000;
+  }
+
+  .chatbot-tooltip{
+    position: absolute;
+    bottom: 20px;
+    right: 15px;
+    width: 110px;
+    height: 50px;
+  }
+
+  .tooltip-text {
+  font-size: 12px;  
   }
 }

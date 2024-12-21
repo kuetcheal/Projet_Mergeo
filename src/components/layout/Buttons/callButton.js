@@ -11,7 +11,7 @@ const CallButton = () => {
     };
     window.addEventListener('resize', handleResize);
 
-    // Nettoyage de l'écouteur pour éviter les fuites de mémoire
+ 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
@@ -30,10 +30,12 @@ const CallButton = () => {
       cursor: 'pointer',  
       position: 'fixed', 
       top: '220px',
-      right: '20px',   
+      right: '20px',  
+      zIndex: 1000, 
     },
     icon: {
       fontSize: '24px',
+      zIndex: 1000,
     },
   };
 
