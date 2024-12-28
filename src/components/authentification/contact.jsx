@@ -3,6 +3,8 @@ import './contact.css';
 import PlaceIcon from '@mui/icons-material/Place';
 import CallIcon from '@mui/icons-material/Call';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 import Map from './map';
 
 const ContactForm = () => {
@@ -15,14 +17,55 @@ const ContactForm = () => {
     pays: '',
     message: '',
   });
+  const [statusMessage, setStatusMessage] = useState('');
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handlePhoneChange = (value) => {
+    setFormData({ ...formData, telephone: value }); // Met à jour uniquement le champ téléphone
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Ajoutez ici le code pour envoyer les données à votre backend
+    try {
+      const response = await fetch('http://localhost:3000/clients', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatusMessage('Message envoyé avec succès, on vous contactera dans les brefs délais !');
+        setTimeout(() => {
+          setStatusMessage(''); // Réinitialise le message après 7 secondes
+        }, 7000);
+
+        setFormData({
+          nom: '',
+          prenom: '',
+          email: '',
+          telephone: '',
+          ville: '',
+          pays: '',
+          message: '',
+        }); // Réinitialiser le formulaire après succès
+      } else {
+        setStatusMessage('Erreur lors de l\'envoi du message.');
+        setTimeout(() => {
+          setStatusMessage('');
+        }, 7000);
+      }
+    } catch (error) {
+      setStatusMessage('Erreur réseau : Impossible d\'envoyer le message.');
+      setTimeout(() => {
+        setStatusMessage('');
+      }, 7000);
+      console.error('Erreur:', error);
+    }
   };
 
   return (
@@ -68,7 +111,31 @@ const ContactForm = () => {
             </div>
             <div>
               <label>Téléphone<span>*</span></label>
-              <input type="tel" name="telephone" value={formData.telephone} onChange={handleChange} required />
+              <PhoneInput
+                country={'cm'} // Définit le Cameroun comme pays par défaut
+                value={formData.telephone}
+                onChange={handlePhoneChange}
+                enableSearch={true} // Active la recherche dans la liste des pays
+                inputStyle={{
+                  width: '100%', // Rend le champ adaptatif
+                  height: '40px', // Uniformise la hauteur des champs
+                  fontSize: '16px', // Rend le texte plus lisible
+                  paddingLeft: '50px', // Ajoute de l'espace pour éviter le chevauchement du drapeau
+                  borderRadius: '4px', // Coins arrondis
+                  border: '1px solid #ccc', // Style de bordure standard
+                }}
+                buttonStyle={{
+                  border: 'none', // Supprime la bordure du bouton drapeau
+                  background: 'none', // Supprime l'arrière-plan du bouton
+                }}
+                dropdownStyle={{
+                  maxHeight: '200px', // Limite la hauteur du menu déroulant
+                  overflowY: 'auto', // Active le défilement si nécessaire
+                  zIndex: 1000, // Place la liste déroulante au-dessus des autres éléments
+                }}
+                placeholder="Entrez votre numéro de téléphone"
+              />
+
             </div>
           </div>
 
@@ -88,8 +155,10 @@ const ContactForm = () => {
             <textarea name="message" value={formData.message} onChange={handleChange} required />
           </div>
 
-          <button type="submit">Envoyer Message</button>
+          <button type="submit">Envoyer</button>
         </form>
+        {statusMessage && <p className="status-message">{statusMessage}</p>}
+
       </div>
     </div>
   );

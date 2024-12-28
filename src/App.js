@@ -26,11 +26,18 @@ import France4 from './components/mesChoix/france4';
 import Canada from './components/mesChoix/canada';
 import Canada1 from './components/mesChoix/canada1';
 import Canada2 from './components/mesChoix/canada2';
+import Belgique from './components/mesChoix/belgique';
+import Allemagne from './components/mesChoix/allemagne';
+import OffreEmploi from './components/offres/offreEmploi';
 import CoursAnglais from './components/langues/coursAnglais';
+import CoursFrançais from './components/langues/coursFrançais';
+import CoursAllemand from './components/langues/coursAllemand';
 import Presentation from "./components/mobiliis/presentation";
 import Temoignage from "./components/temoignages/temoignage";
 import ToutTemoignages from "./components/temoignages/toutTemoignages";
 import PersonneTemoignage from "./components/temoignages/personneTemoignage";
+ import Coaching from './components/services/coaching';
+ import Admission from './components/services/admission';
 import Admin from './components/Admins/admin';
 import Layout from './components/layout/layout';
 
@@ -60,6 +67,7 @@ const App = () => {
           <Route path="/personneTemoignage" element={<PersonneTemoignage />} />
           <Route path="/choix" element={<Choix />} />
           <Route path="/notice" element={<Notice />} />
+          <Route path="/belgique" element={<Belgique />} />
           <Route path="/france" element={<France />} />
           <Route path="/france1" element={<France1 />} />
           <Route path="/france2" element={<France2 />} />
@@ -71,6 +79,12 @@ const App = () => {
           <Route path="/admin" element={<Admin />} />
           <Route path="/langue" element={<Langue />} />
           <Route path="/coursAnglais" element={<CoursAnglais />} />
+          <Route path="/coursFrançais" element={<CoursFrançais />} />
+          <Route path="/coursAllemand" element={<CoursAllemand />} />
+           <Route path="/coaching" element={<Coaching />} /> 
+           <Route path="/admission" element={<Admission/>} /> 
+           <Route path="/allemagne" element={<Allemagne/>} /> 
+           <Route path="/offreEmploi" element={<OffreEmploi/>} /> 
         </Routes>
       </Layout>
     </Router>
@@ -78,4 +92,3 @@ const App = () => {
 };
 
 export default App;
-

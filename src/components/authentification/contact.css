@@ -1,3 +1,11 @@
+.contact-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+
 .contact-form {
  width: 750px;
  height: 550px;
@@ -18,7 +26,7 @@
   max-width: 80%;
   flex-wrap: wrap;
   gap: 20px;
-  margin-left: 190px;
+
 }
 
 .bloc-contact{
@@ -129,6 +137,47 @@
 .contact-form button:active {
   transform: translateY(0);
 }
+
+.status-message{
+  font-size: 25px;
+  height: 100px;
+  width: 400px;
+  background-color: chartreuse;
+  position: fixed;
+  top: 180px;
+  left: 350px;
+  padding: 20px 20px;
+  z-index: 1100px; 
+}
+
+
+.react-tel-input .flag-dropdown {
+  background: none; /* Supprime le fond étrange */
+  border: none; /* Supprime les bordures */
+}
+
+.react-tel-input input[type='tel'] {
+  height: 40px; /* Ajuste la hauteur pour qu'elle corresponde aux autres champs */
+  font-size: 16px; /* Ajuste la taille du texte */
+  padding-left: 50px; /* Ajuste l'espace pour éviter le chevauchement avec le drapeau */
+}
+
+.react-tel-input .form-control {
+  border: 1px solid #ccc; /* Bordure standard */
+  border-radius: 4px; /* Ajoute des coins arrondis */
+}
+
+.react-tel-input .country-list {
+  max-height: 200px; /* Limite la hauteur du menu déroulant */
+  overflow-y: auto; /* Ajoute un défilement pour les longs menus */
+  z-index: 1000; /* Garantit que la liste reste au-dessus des autres éléments */
+}
+
+.react-tel-input .flag {
+  margin-right: 10px; /* Ajoute un espace entre le drapeau et le texte */
+}
+
+
 
 /* Responsive design */
 @media (max-width: 768px) {

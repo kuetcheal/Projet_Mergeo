@@ -1,0 +1,240 @@
+.allemand-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .image2-cours{
+      border-radius: 8px;
+      margin-top: 40px;
+      height: 380px;
+      width: 530px;
+  }
+  
+  .image1-cours{
+    border-radius: 8px;
+      margin-top: 40px;
+      height: 380px;
+      width: 530px;
+  }
+  
+  .allemand-DSH {
+    padding: 10px;
+  }
+  
+  /* Styles généraux */
+  .temoignagese-pagee {
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+    
+    .anglais-section {
+      position: relative;
+      height: 450px;
+      overflow: hidden;
+  }
+  
+  .anglais-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+  
+  /* Overlay sombre */
+  .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+  }
+  
+  /* Contenu texte */
+  .breadcrumb-content {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      z-index: 2;
+  }
+  
+  .breadcrumb-title {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      
+  }
+  
+  /* Barre décorative sous le texte */
+  .underline {
+      width: 80px;
+      height: 2px;
+      background-color: #C90076;
+      margin: 0 auto;
+      margin-bottom: 20px;
+  }
+  
+
+
+  
+  /* Bouton vert */
+  .green-button {
+      background-color: #007dc4;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+  }
+  
+  /* Effet hover pour le bouton */
+  .green-button:hover {
+      background-color: #C90076;
+  }
+  
+  
+    
+    /* Section de contenu avec chevauchement */
+    .content-sectione{
+      max-width: 100%;
+      width: 90%;
+      margin: -120px auto 20px !important;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    
+    
+    
+    /* Responsive adjustments */
+    @media (max-width: 1024px) {
+      .content-sectione {
+        width: 95%;
+        margin: -40px auto 20px;
+        padding: 20px;
+      }
+    
+      .overlay h1 {
+        font-size: 1.6rem;
+      }
+  
+      .allemand-header {
+        flex-direction: column; /* Passe les éléments en colonne */
+        text-align: center;
+    }
+  
+    .image1-cours,
+    .image2-cours {
+        width: 90%; /* Réduit la largeur des images */
+        height: auto;
+        margin-top: 20px; /* Ajoute un espacement */
+    }
+  
+    .allemand-DSH {
+        margin-bottom: 20px; /* Ajoute un espacement en bas */
+        text-align: center;
+    }
+    }
+    
+    @media (max-width: 768px) {
+      .breadcrumbe {
+        font-size: 0.9rem;
+      }
+    
+      .content-sectione {
+        width: 95%;
+        margin: -30px auto 20px;
+        padding: 15px;
+      }
+    
+      .overlay h1 {
+        font-size: 1.4rem;
+      }
+  
+      .allemand-header {
+        flex-direction: column;
+        text-align: center;
+    }
+  
+    .image1-cours,
+    .image2-cours {
+        width: 100%;
+        height: auto;
+    }
+  
+    .allemand-DSH h1 {
+        font-size: 1.5rem; /* Réduit la taille du titre */
+    }
+  
+    .allemand-DSH p {
+        font-size: 1rem; /* Réduit la taille du texte */
+    }
+    }
+    
+    @media (max-width: 480px) {
+      .breadcrumbe {
+        font-size: 0.8rem;
+      }
+    
+      .overlay h1 {
+        font-size: 1.2rem;
+      }
+    
+      .content-section {
+        width: 90%;
+        padding: 10px;
+        margin: -20px auto 10px;
+      }
+  
+      .allemand-header {
+        flex-direction: column;
+        text-align: center;
+    }
+  
+    .image1-cours,
+    .image2-cours {
+        width: 100%; /* Prend toute la largeur */
+        height: auto;
+    }
+  
+    .allemand-DSH h1 {
+        font-size: 1.3rem;
+    }
+  
+    .allemand-DSH p {
+        font-size: 0.9rem;
+    }
+    .breadcrumbe P{
+      font-size: 26px !important;
+      position: center;
+    }
+    .green-button{
+      position: absolute;
+      position: center;
+      bottom: 1px !important;
+     right: 20px;
+    }
+
+    /* .breadcrumb-title {
+      position: absolute;
+      margin-bottom: 20px;
+      font-size: 22px;
+      
+  } */
+    }

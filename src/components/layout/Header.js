@@ -12,8 +12,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
 
-
-
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -174,7 +172,7 @@ const Header = () => {
                 </Link>
                 {showOffersMenu && (
                   <ul className="subMenu">
-                    <li><Link to="/offers/offer1">Offres d'emploi</Link></li>
+                    <li><Link to="/offreEmploi">Offres d'emploi</Link></li>
                     <li><Link to="/offers/offer2">Processus recrutement</Link></li>
                     <li><Link to="/offers/offer3">témoignages</Link></li>
                   </ul>
