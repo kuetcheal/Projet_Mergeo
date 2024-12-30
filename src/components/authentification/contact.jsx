@@ -111,29 +111,13 @@ const ContactForm = () => {
             </div>
             <div>
               <label>Téléphone<span>*</span></label>
-              <PhoneInput
-                country={'cm'} // Définit le Cameroun comme pays par défaut
+              <input
+                type="tel"
+                name="telephone"
+
                 value={formData.telephone}
-                onChange={handlePhoneChange}
-                enableSearch={true} // Active la recherche dans la liste des pays
-                inputStyle={{
-                  width: '100%', // Rend le champ adaptatif
-                  height: '40px', // Uniformise la hauteur des champs
-                  fontSize: '16px', // Rend le texte plus lisible
-                  paddingLeft: '50px', // Ajoute de l'espace pour éviter le chevauchement du drapeau
-                  borderRadius: '4px', // Coins arrondis
-                  border: '1px solid #ccc', // Style de bordure standard
-                }}
-                buttonStyle={{
-                  border: 'none', // Supprime la bordure du bouton drapeau
-                  background: 'none', // Supprime l'arrière-plan du bouton
-                }}
-                dropdownStyle={{
-                  maxHeight: '200px', // Limite la hauteur du menu déroulant
-                  overflowY: 'auto', // Active le défilement si nécessaire
-                  zIndex: 1000, // Place la liste déroulante au-dessus des autres éléments
-                }}
-                placeholder="Entrez votre numéro de téléphone"
+                onChange={handleChange}
+                required
               />
 
             </div>

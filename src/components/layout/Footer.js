@@ -35,16 +35,25 @@ export default function Footer() {
             </Box>
             <Typography>Nous suivre sur :</Typography>
             <Box sx={{ display: 'flex', justifyContent: 'flex-start', gap: 2, mt: 1, ml: '55px' }}>
-  <IconButton>
-    <LinkedInIcon sx={{ color: 'white', fontSize: 32 }} />
-  </IconButton>
-  <IconButton>
-    <YouTubeIcon sx={{ color: 'white', fontSize: 32 }} />
-  </IconButton>
-  <IconButton>
-    <FacebookIcon sx={{ color: 'white', fontSize: 32 }} />
-  </IconButton>
-</Box>
+              <IconButton>
+                <LinkedInIcon sx={{ color: 'white', fontSize: 32 }} />
+              </IconButton>
+              <IconButton
+               component="a"
+               href="https://www.youtube.com/watch?v=T13LU2u14t0"
+               target="_blank"
+               rel="noopener noreferrer">
+                <YouTubeIcon sx={{ color: 'white', fontSize: 32 }} />
+              </IconButton>
+              <IconButton
+                component="a"
+                href="https://www.facebook.com/share/p/14kvHjp79m/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FacebookIcon sx={{ color: 'white', fontSize: 32 }} />
+              </IconButton>
+            </Box>
           </Stack>
         </Grid>
 
