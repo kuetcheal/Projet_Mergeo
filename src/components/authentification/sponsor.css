@@ -51,7 +51,7 @@
   .carousel-logos {
     display: flex;
     overflow: hidden;
-    width: 60%;
+    width: 75%;
     justify-content: space-between;
   }
   
@@ -61,7 +61,7 @@
   }
   
   .sponsor-logo {
-    width: 100%;
+    width: 90%;
     height: auto;
     max-width: 150px;
     transition: transform 0.3s ease;

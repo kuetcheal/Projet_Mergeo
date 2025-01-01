@@ -7,13 +7,16 @@ const Sponsor = () => {
     { id: 2, src: "/images/studappart.png", alt: "Logo 2" },
     { id: 3, src: "/images/excelia.jpeg", alt: "Logo 3" },
     { id: 4, src: "/images/Manitour.png", alt: "Logo 4" },
-    { id: 5, src: "/images/Manitour.png", alt: "Logo 5" },
+    { id: 5, src: "/images/Afriland-First.png", alt: "Logo 5" },
+    { id: 5, src: "/images/Afriland-First.png", alt: "Logo 5" },
+    { id: 5, src: "/images/Afriland-First.png", alt: "Logo 5" },
+  
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {
-    if (currentIndex < logos.length - 3) {
+    if (currentIndex < logos.length - 5) {
       setCurrentIndex(currentIndex + 1);
     }
   };
@@ -32,7 +35,7 @@ const Sponsor = () => {
           ❮
         </button>
         <div className="carousel-logos">
-          {logos.slice(currentIndex, currentIndex + 3).map((logo) => (
+          {logos.slice(currentIndex, currentIndex + 5).map((logo) => (
             <div key={logo.id} className="logo-item">
               <img src={logo.src} alt={logo.alt} className="sponsor-logo" />
             </div>
@@ -43,10 +46,10 @@ const Sponsor = () => {
         </button>
       </div>
       <div className="carousel-dots">
-        {logos.map((_, index) => (
+        {Array.from({ length: Math.ceil(logos.length / 5) }, (_, index) => (
           <span
             key={index}
-            className={`dot ${index === currentIndex ? "active" : ""}`}
+            className={`dot ${index === Math.floor(currentIndex / 5) ? "active" : ""}`}
           ></span>
         ))}
       </div>

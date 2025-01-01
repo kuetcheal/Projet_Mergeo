@@ -5,6 +5,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { useTranslation } from 'react-i18next';
 import Temoignages from '../temoignages/temoignage';
 import Choix from '../mesChoix/choix';
+import Service from '../services/service';
 import Sponsor from './sponsor';
 import Langue from '../langues/langue';
 import './medecin.css';
@@ -79,6 +80,9 @@ const Medecin = () => {
             allowFullScreen
           ></iframe>
         </div>
+      </div>
+      <div className="choisir">
+        <Service />
       </div>
       <div className="temoignage">
         <Temoignages />

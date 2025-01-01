@@ -38,6 +38,7 @@ import ToutTemoignages from "./components/temoignages/toutTemoignages";
 import PersonneTemoignage from "./components/temoignages/personneTemoignage";
  import Coaching from './components/services/coaching';
  import Admission from './components/services/admission';
+ import Service from './components/services/service';
 import Admin from './components/Admins/admin';
 import Layout from './components/layout/layout';
 
@@ -83,6 +84,7 @@ const App = () => {
           <Route path="/coursAllemand" element={<CoursAllemand />} />
            <Route path="/coaching" element={<Coaching />} /> 
            <Route path="/admission" element={<Admission/>} /> 
+           <Route path="/service" element={<Service/>} /> 
            <Route path="/allemagne" element={<Allemagne/>} /> 
            <Route path="/offreEmploi" element={<OffreEmploi/>} /> 
         </Routes>
