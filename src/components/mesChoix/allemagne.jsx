@@ -13,11 +13,6 @@ const Allemagne = () => {
     const handleContactClick = () => {
         navigate('/contact');
     };
-
-
-
-
-
     return (
         <div className="entre">
 

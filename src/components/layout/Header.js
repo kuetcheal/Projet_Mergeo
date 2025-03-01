@@ -127,7 +127,7 @@ const Header = () => {
 
             <ul className="nav-list">
               <li className="navItem">
-                <Link to="/" className="navLink" onClick={toggleMenu}>{t('header.home')}</Link>
+                <Link to="#" className="navLink" >{t('header.home')}</Link>
               </li>
 
 
@@ -142,12 +142,13 @@ const Header = () => {
                 </Link>
                 {showServicesMenu && (
                   <ul className="subMenu">
+                     <li><Link to="financeEtudiant">Préfinancement Etudiant</Link></li>
                     <li><Link to="/services/immigration">Accompagnement & Services d'immigration</Link></li>
                     <li><Link to="coaching">Coaching & Orientation scolaire</Link></li>
                     <li><Link to="/admission">Demande d'admission</Link></li>
                     <li><Link to="/services/formation">Demande de Visa</Link></li>
-                    <li><Link to="/services/informations">Assurances voyage</Link></li>
-                    <li><Link to="/services/avantages">Caution Bancaire</Link></li>
+                    <li><Link to="avi"> AVI + Assurances voyage</Link></li>
+                    <li><Link to="/services/avantages">Prise en charge Etudiant</Link></li>
                     <li><Link to="/logement">Recherche logement</Link></li>
                   </ul>
                 )}

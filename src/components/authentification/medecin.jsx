@@ -8,6 +8,8 @@ import Choix from '../mesChoix/choix';
 import Sponsor from './sponsor';
 import Brochure1 from './brochure1';
 import Langue from '../langues/langue';
+import Service1 from '../services/service1';
+import Presentation1 from '../mobiliis/presentation1';
 import './medecin.css';
 
 const Medecin = () => {
@@ -35,82 +37,53 @@ const Medecin = () => {
   return (
     <Box className="mede-container">
 
-      
+
       <div className="flou">
-  {/* Image de fond */}
-  <img 
-    src={images[currentImageIndex]} 
-    alt="Slideshow" 
-    className="slideshow-image" 
-  />
-  
-  {/* Overlay sombre */}
-  <div className="overlay"></div>
-  
-  {/* Contenu texte centré */}
-  <div className="backdrop-content">
-    <h2 className="titre">{t('accueil.title')}</h2>
-    <p className="descrire">{t('accueil.description')}</p>
-    <button className="green-button" onClick={handleContactClick}>
-      NOUS CONTACTER 
-      <ChevronRightIcon style={{ fontSize: '20px', marginLeft: '5px' }} />
-    </button>
-  </div>
-</div>
+        {/* Image de fond */}
+        <img
+          src={images[currentImageIndex]}
+          alt="Slideshow"
+          className="slideshow-image"
+        />
+
+        {/* Overlay sombre */}
+        <div className="overlay"></div>
+
+        {/* Contenu texte centré */}
+        <div className="backdrop-content">
+          <h2 className="titre">{t('accueil.title')}</h2>
+          <p className="descrire">{t('accueil.description')}</p>
+          <button className="green-button" onClick={handleContactClick}>
+            NOUS CONTACTER
+            <ChevronRightIcon style={{ fontSize: '20px', marginLeft: '5px' }} />
+          </button>
+        </div>
+      </div>
 
       <div className="grand-bloc">
         <div className="choisir">
           <Choix />
         </div>
-        <div className="presen-story">
-          <div class="title-container">
-            <h1 class="styled-title">QUI SOMMES-NOUS ?</h1>
-            <p class="subtitle">Cabinet spécialisé dans l'accompagnement des individus souhaitant immigrer et étudier à l'étranger !</p>
-          </div>
 
-          <div className="entete-container">
-            <div className="entete">
-              <div className="stori-text">
-                <p>Créé en 2009, Bridge To Study est un cabinet spécialisé dans le conseil en stratégie de formation et d’orientation des étudiants dans leur projet d’études à l’étranger. Plaçant l’avenir des étudiants au cœur de sa mission. Notre cabinet s’est, depuis le début, engagé à satisfaire au mieux leurs inquiétudes, boostant de faite leur carrière de sorte à lui donner une dimension internationale. C’est pourquoi nous avons noué des partenariats soudés avec les plus prestigieuses universités et grandes écoles du monde pour garantir un avenir sûr et des chances de succès réelles à nos étudiants.</p>
-              </div>
-              <div className="stori-text">
-                <p>Notre démarche novatrice de l’orientation scolaire permet, suite à un bilan de compétence, de repérer chez les étudiants, marocains ou étrangers,
-                  d’avoir une vision globale et claire des futures perspectives universitaires et les différentes possibilités d’emploi associées à chaque choix académique,
-                  en se basant surtout sur ses traits de personnalité, ses motivations et ses souhaits.
-                  Notre cabinet met à la disposition de chaque élève et étudiant toute son expertise (plus de 15000 étudiants accompagnés) ainsi qu’une panoplie d’outils d’aide...
-                </p>
-                <button className="learn-more-button">En savoir plus</button>
-              </div>
-            </div>
-          </div>
-
-          <div className="stori-video">
-            <iframe
-              width="1230"
-              height="520"
-              src="https://www.youtube.com/embed/LTAhX568Esk"
-              title="Bridge To Study Video"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
+        <div className="service1">
+          <Presentation1 />
         </div>
 
+        <div className="service1">
+          <Service1 />
+        </div>
         <div className="temoignage">
           <Temoignages />
         </div>
-        <div className="tout-temoignage">
-          <button className="green-button" onClick={handleTemoignageClick}>
-            Lire tous les témoignages <ChevronRightIcon style={{ fontSize: '20px', marginLeft: '5px' }} />
+        <div className="toute-temoignage">
+          <button className="greene-button" onClick={handleTemoignageClick}>
+            Lire tous les témoignages
           </button>
         </div>
         <div className="langue">
           <Langue />
         </div><br /><br />
-        {/* <div className="temoignage">
-          <img src="/images/download.jpeg" alt="avion" />
-        </div> */}
+
         <div className="sponsor">
           <Sponsor />
         </div> <br />

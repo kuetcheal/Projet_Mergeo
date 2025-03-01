@@ -23,24 +23,26 @@ const Logement = () => {
   ];
   return (
     <div className="temoignages-page">
-      <div className="anglais-section">
-        <img src="/images/Residence.jpg" alt="Background"
-          style={{ height: '450px' }}
-          className="anglais-image" />
-        <div className="breadcrumb">
-          Accueil »
+      <div className="fran-section">
+        <img src="/images/Residence.jpg" alt="Background" className="fran-image" />
+        <div className="overlayfran"></div>
+        <div className="breadfrance">
+         
           <p style={{ fontWeight: 'bold', fontSize: '40px', marginLeft: '10px', color: 'white' }}>
             Trouver votre futur logement
           </p>
 
           <button className="green-button" onClick={handleContactClick}>
-            RESERVEZ VOTRE RENDEZ-VOUS
-            <ChevronRightIcon style={{ fontSize: '20px', marginLeft: '35px' }} />
+          NOUS CONTACTER
+          <ChevronRightIcon style={{ fontSize: '20px', marginLeft: '5px' }} />
           </button>
         </div>
       </div>
+     
+
+
       <div className="content-section">
-        <div className="overlay">
+        <div className="overlayfrance">
           <h1>Trouver un logement étudiant avant mon arrivée, une vraie aubaine !</h1> <br />
           {/* Ajout d'espacement au-dessus de la grille */}
           <Box sx={{ marginTop: "30px", backgroundColor: "#f7f7f7", padding: "20px 10px", borderRadius: "8px" }}>

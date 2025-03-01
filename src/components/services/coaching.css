@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    /* margin-top: 25px; */
 }
 
 
@@ -65,7 +66,9 @@
     margin: 0 auto;
 }
 
-
+.fin{
+    margin-top: 30px;
+}
 .coaching-container {
     padding: 16px;
     max-width: 1300px;

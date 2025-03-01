@@ -74,8 +74,13 @@ const Langue = () => {
   ];
 
   return (
-    <div className="langue-page">
+    <div className="langue-pagination">
       <h2 className="langue-title">Nos formations de Langues</h2>
+      <p className="langue-description">
+  Découvrez des formations adaptées à vos besoins : que vous soyez débutant ou avancé, apprenez avec des experts natifs. 
+  Étudiez à votre rythme grâce à nos cours flexibles, accessibles en ligne ou en présentiel. 
+  Préparez vos certifications avec un accompagnement personnalisé et professionnalisant.
+</p>
       <div className="formation-cards">
         {formations.map((formation) => (
           <div className="formation-card" key={formation.id}>

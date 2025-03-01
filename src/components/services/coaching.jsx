@@ -110,18 +110,18 @@ const Coaching = () => {
 
 
                 {/* Section 3 : Démarche */}
-                <Box sx={{ mt: 6 }}>
+                <Box sx={{ mt: 6, }}>
                     <Typography variant="h5" align="center" gutterBottom sx={{ color: '#C90076', fontWeight: 'bold' }}>
                         La Démarche Du Bilan D’Orientation "Mobiliis"
-                    </Typography>
-                    <Grid container spacing={2}>
+                    </Typography> <br />
+                    <Grid container spacing={4}  sx={{ position: 'center'  }}>
 
                         {/* Phase 1 */}
                         <Grid
                             item
                             xs={12}
                             sm={11}
-                            sx={{ marginLeft: 'auto', marginRight: 0 }}
+                             sx={{ position: 'center'  }}
                         >
                             <Card
                                 variant="outlined"
@@ -139,7 +139,7 @@ const Coaching = () => {
                                     component="img"
                                     src="/images/bureau-table.png"
                                     alt="Analyse individuelle"
-                                    sx={{ width: { xs: '100%', sm: '40%' }, borderRadius: 2, mr: 3, height: 300, width: 300, }}
+                                    sx={{ width: { xs: '100%', sm: '40%' }, borderRadius: 2, mr: 5, height: 300, width: 300, }}
                                 />
                                 {/* Contenu Texte */}
                                 <CardContent>
@@ -164,7 +164,7 @@ const Coaching = () => {
                         </Grid>
 
                         {/* Phase 2 (Personnalisée avec Image) */}
-                        <Grid item xs={12} sm={11} sx={{ marginLeft: 'auto', marginRight: 0 }} >
+                        <Grid item xs={12} sm={11} sx={{ position: 'center'  }} >
                             <Card
                                 variant="outlined"
                                 sx={{
@@ -201,7 +201,7 @@ const Coaching = () => {
                         </Grid>
 
                         {/* Phase 3 */}
-                        <Grid item xs={12} sm={11} sx={{ marginLeft: 'auto', marginRight: 0 }}>
+                        <Grid item xs={12} sm={11}  sx={{ position: 'center'  }}>
                             <Card
                                 variant="outlined"
                                 sx={{
@@ -242,7 +242,7 @@ const Coaching = () => {
                         </Grid>
 
                         {/* Phase 4 */}
-                        <Grid item xs={12} sm={11} sx={{ marginLeft: 'auto', marginRight: 0 }}>
+                        <Grid item xs={12} sm={11}  sx={{ position: 'center'  }}>
                             <Card
                                 variant="outlined"
                                 sx={{
@@ -293,7 +293,7 @@ const Coaching = () => {
                     </Typography>
 
                     {/* Conteneur des 4 sections */}
-                    <Grid container spacing={4} sx={{ mt: 2 }} className='fine'>
+                    <Grid container spacing={4} sx={{ mt: 10, pt: 10 }} className='fine'>
                         {/* Première ligne avec deux colonnes */}
                         <Grid item xs={12} sm={6} sx={{ textAlign: 'center', maxWidth: '500px', }}>
                             <Typography

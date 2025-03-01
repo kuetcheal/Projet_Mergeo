@@ -1,0 +1,122 @@
+/* Section d'arrière-plan avec l'image */
+.fran-section {
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+  }
+  
+  .fran-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+  }
+  
+  /* Overlay sombre */
+.overlayfran {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Barre décorative sous le texte */
+.underline {
+  width: 110px;
+  height: 3px;
+  background-color: #C90076;
+  margin: 0 auto;
+  
+}
+
+  /* Style pour le breadcrumb */
+  .breadfrance {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+  }
+
+
+
+  .content-section{
+    margin-top: 70px;
+    padding-top: 10px;
+  }
+
+
+  .avi-etude-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+  }
+  
+  .avi-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .avi-text {
+    flex: 1;
+  }
+  
+  .avi-text h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #004080;
+    margin-bottom: 10px;
+  }
+  
+  .avi-text h3 {
+    font-size: 24px;
+    color: #666666;
+    margin-bottom: 20px;
+  }
+  
+  .avi-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333333;
+    margin-bottom: 20px;
+  }
+  
+  .avi-text .blue-button {
+    background-color: #0047ab;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .avi-text .blue-button:hover {
+    background-color: #003680;
+  }
+  
+  .avi-image {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .avi-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  

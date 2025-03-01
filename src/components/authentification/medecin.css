@@ -1,6 +1,7 @@
 .mede-container {
   width: 100%;
-  background-color: #cfcfcf;
+   /* background-color: #cfcfcf;  */
+   background-color: white !important; 
 }
 
 
@@ -61,7 +62,8 @@
 .grand-bloc{
   margin: 0 auto;
   max-width: 1410px;
-  background-color: #cfcfcf !important;
+  background-color: white;
+  /* background-color: #cfcfcf !important; */
 }
 
 
@@ -92,44 +94,58 @@
 /* Conteneur du composant témoignages */
 .temoignage {
   width: 100%;
-  margin-top: 10px;
+  
 }
 
-.green-button {
+.greene-button {
   background-color: #1976D2;
   color: white;
   border: none;
   height: 50px;
- width: 230px;
-  padding: 10px 20px;
-  font-size: 14px;
+  width: 250px;
+  padding: 10px 10px;
+  font-size: 16px;
   font-weight: bold;
   border-radius: 2px;
   margin-top: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.green-button:hover {
+.greene-button:hover {
   background-color: #A93D87;
 }
-.tout-temoignage{
-  margin-left: 700px;
+.toute-temoignage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
 
-.entete-container {
+.entete-containere {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  max-width: 1200px;
+  height: auto; /* Ajuste la hauteur automatiquement en fonction du contenu */
+  border: 2px solid black; /* Ajoute une bordure noire */
+  padding: 20px; /* Ajoute de l'espace à l'intérieur de la boîte */
+  margin: 20px auto; /* Centre la boîte horizontalement et ajoute un espacement vertical */
+  
+  border-radius: 8px; /* Ajoute des coins arrondis pour un design plus agréable */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre pour plus de profondeur */
 }
 
+
 .stori-text {
-  text-align: justify;
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 18px; 
+  line-height: 1.6; 
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;  
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; 
 }
 
 .stori-video {
@@ -138,16 +154,12 @@
 }
 
 .stori-video iframe {
-  width: 100%; /* Adapte la vidéo à la largeur de l'écran */
-  height: auto;
+  width: 88%; /* Adapte la vidéo à la largeur de l'écran */
+  height: 500px;
   aspect-ratio: 16 / 9; /* Maintient un ratio de 16:9 */
 }
 
-.entete{
-  display: flex;
-  justify-content: space-between;
-  max-width: 1200px;
-}
+
 
 .title-container {
   text-align: center;
@@ -195,20 +207,21 @@
 }
 
 .learn-more-button {
-  background-color: #1976D2; /* Couleur de fond du bouton */
-  color: white;
+  align-self: flex-start; /* Positionne le bouton à gauche */
   padding: 10px 20px;
   font-size: 1rem;
-  border: none;
+  color: white;
+  font-size: 18px;
   width: 250px;
-  border-radius: 2px;
+  background-color: #007bff; /* Bleu par défaut pour le bouton */
+  border: none;
+  border-radius: 4px; /* Coins arrondis pour le bouton */
   cursor: pointer;
-  margin-top: 10px;
-  margin-right: 270px;
+  transition: background-color 0.3s ease;
 }
 
 .learn-more-button:hover {
-  background-color: #A93D87; /* Couleur de fond au survol */
+  background-color: #A93D87; /* Change la couleur au survol */
 }
 
 .entete-container {
