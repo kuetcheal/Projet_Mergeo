@@ -1,15 +1,21 @@
 import React from 'react';
-import DownloadIcon from '@mui/icons-material/Download'; // Optionnel, pour l'icône de téléchargement
+import DownloadIcon from '@mui/icons-material/Download';
 
 const TelechargeBrochure = () => {
   return (
-    <div>
+    <div style={styles.container}>
+      <h2 style={styles.title}>Merci pour votre intérêt !</h2>
+      <p style={styles.text}>
+        Votre demande a bien été prise en compte. Vous pouvez maintenant télécharger notre brochure en cliquant sur le bouton ci-dessous.
+      </p>
       <a
-        href="/documents/etude_cas.pdf" // Chemin vers le fichier PDF
-        download="Mobiliis_brochure.pdf" // Nom sous lequel le fichier sera téléchargé
-        target="_blank" // Ouvre dans un nouvel onglet pour éviter de naviguer en dehors de l'application
-        rel="noopener noreferrer" // Sécurité pour éviter les risques de vulnérabilités
+        href="/documents/etude_cas.pdf"
+        download="Mobiliis_brochure.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
         style={styles.button}
+        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#C90076'}
+        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#004080'}
       >
         <DownloadIcon style={styles.icon} /> Télécharger le PDF
       </a>
@@ -18,15 +24,34 @@ const TelechargeBrochure = () => {
 };
 
 const styles = {
+  container: {
+    maxWidth: '600px',
+    margin: '80px auto',
+    textAlign: 'center',
+    padding: '20px',
+  },
+  title: {
+    fontSize: '1.8rem',
+    color: '#004080',
+    marginBottom: '10px',
+  },
+  text: {
+    fontSize: '1.1rem',
+    color: '#333',
+    marginBottom: '25px',
+  },
   button: {
     display: 'inline-flex',
     alignItems: 'center',
-    padding: '10px 20px',
+    padding: '12px 24px',
     backgroundColor: '#004080',
     color: 'white',
     textDecoration: 'none',
-    borderRadius: '5px',
+    borderRadius: '6px',
     fontWeight: 'bold',
+    fontSize: '1rem',
+    transition: 'background-color 0.3s ease',
+    cursor: 'pointer',
   },
   icon: {
     marginRight: '8px',

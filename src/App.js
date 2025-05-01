@@ -35,6 +35,7 @@ import CoursFrançais from './components/langues/coursFrançais';
 import CoursAllemand from './components/langues/coursAllemand';
 
 import Presentation from "./components/mobiliis/presentation";
+import Location from "./components/mobiliis/location";
 import Presentation1 from "./components/mobiliis/presentation1";
 
 import Temoignage from "./components/temoignages/temoignage";
@@ -47,6 +48,7 @@ import PersonneTemoignage from "./components/temoignages/personneTemoignage";
  import Avi from './components/services/avi';
 
  import AviForms1 from './components/forms/aviForms1';
+ import BrochureForms from './components/forms/brochureForms';
  import AviForms2 from './components/forms/aviForms2';
  import AviForms3 from './components/forms/aviForms3';
  import FormManager from './components/forms/formManager';
@@ -102,11 +104,13 @@ const App = () => {
            <Route path="/offreEmploi" element={<OffreEmploi/>} /> 
            <Route path="/service1" element={<Service1/>} />
            <Route path="/financeEtudiant" element={<FinanceEtudiant/>} />
+           <Route path="/location" element={<Location/>} />
            <Route path="/avi" element={<Avi/>} />
            <Route path="/aviForms1" element={<AviForms1/>} />
            <Route path="/aviForms2" element={<AviForms2/>} />
            <Route path="/aviForms3" element={<AviForms3/>} />
            <Route path="/formManager" element={<FormManager/>} />
+           <Route path="/brochureForms" element={<BrochureForms/>} />
         </Routes>
       </Layout>
     </Router>

@@ -4,6 +4,7 @@ import axios from 'axios';
 import Button from '@mui/material/Button';
 import './brochure.css';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
+import { Typography } from '@mui/material';
 
 export default function BrochureForm() {
   const [formData, setFormData] = useState({
@@ -25,28 +26,29 @@ export default function BrochureForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (!formData.nom || !formData.prenom || !formData.email || !formData.telephone) {
       alert("Veuillez remplir tous les champs.");
       return;
     }
-
+  
     try {
-      // Envoie des données à la base de données
+      // Envoie à la BDD
       await axios.post('/api/enregistrer', formData);
-
-      // Téléchargement du fichier PDF
+  
+      // Téléchargement
       const link = document.createElement('a');
-      link.href = "/documents/etude_cas.pdf"; // Chemin vers le fichier PDF
-      link.download = "Mobiliis_brochure.pdf"; // Nom sous lequel le fichier sera téléchargé
+      link.href = "/documents/etude_cas.pdf";
+      link.download = "Mobiliis_brochure.pdf";
       link.click();
-
-      // Redirection vers une autre page (optionnel)
-      navigate('/telechargeBrochure');
     } catch (error) {
       console.error('Erreur lors de la soumission du formulaire :', error);
+    } finally {
+      // Toujours rediriger
+      navigate('/telechargeBrochure');
     }
   };
+  
 
   return (
     <div className="brochure-container">
@@ -101,6 +103,13 @@ export default function BrochureForm() {
             </Button>
           </div>
         </form>
+
+        <Typography variant="body2" color="textSecondary" mt={3}>
+          Les informations recueillies font l’objet d’un traitement informatique destiné aux opérations de transmission des informations
+          et documentations sollicitées. Les destinataires des données sont les chargés de la communication et du recrutement et le service commercial.
+          Vos données sont conservées dans des conditions propres à en assurer leur sécurité et
+          confidentialité pendant trois ans à compter de leur collecte ou de votre dernière correspondance avec nous.
+        </Typography>
       </div>
     </div>
   );

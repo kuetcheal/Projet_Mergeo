@@ -1,8 +1,17 @@
-import React from 'react';
-import { Box, Grid, Typography, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import React, { useState } from 'react';
+import {
+  Box,
+  Grid,
+  Typography,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails
+} from '@mui/material';
+import { PlusCircle, DashCircle } from 'react-bootstrap-icons';
 
 const France3 = () => {
+  const [expanded, setExpanded] = useState(false);
+
   const section = {
     title: "Types de logements étudiant en France",
     content: (
@@ -40,30 +49,62 @@ const France3 = () => {
           <img
             src="/images/etudiantFrance.webp"
             alt="Hébergement étudiant en France"
-            style={{ width: "100%", borderRadius: "8px", boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)" }}
+            style={{
+              width: "100%",
+              borderRadius: "8px",
+              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)"
+            }}
           />
         </Grid>
 
         {/* Texte principal */}
         <Grid item xs={12} md={7}>
-          <Typography variant="h4" fontWeight="bold" gutterBottom color='#A93D87'>
+          <Typography variant="h4" fontWeight="bold" gutterBottom color="#A93D87">
             Hébergement – Logement étudiant
           </Typography>
           <Typography variant="body1" color="textSecondary" paragraph>
             Trouver le bon type de logement étudiant est la clé de votre intégration académique et sociale !
           </Typography>
 
-          {/* Accordéon */}
-          <Accordion sx={{ marginBottom: "10px", border: "1px solid #E7C56F" }}>
+          {/* Accordéon stylisé */}
+          <Accordion
+            expanded={expanded}
+            onChange={() => setExpanded(!expanded)}
+            sx={{
+              boxShadow: 'none',
+              border: 'none',
+              '&::before': { display: 'none' },
+              marginBottom: 1,
+            }}
+          >
             <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1-content"
-              id="panel1-header"
-              sx={{ backgroundColor: "#FFF" }}
+              expandIcon={
+                expanded
+                  ? <DashCircle color="white" size={20} />
+                  : <PlusCircle color="white" size={20} />
+              }
+              sx={{
+                bgcolor: '#0056b3',
+                color: 'white',
+                padding: '12px 16px',
+                fontWeight: 'bold',
+                '& .MuiAccordionSummary-content': {
+                  margin: 0
+                }
+              }}
             >
-              <Typography fontWeight="bold" sx={{ color: "#1976D2" }}>{section.title}</Typography>
+              <Typography fontWeight={600}>{section.title}</Typography>
             </AccordionSummary>
-            <AccordionDetails>{section.content}</AccordionDetails>
+            <AccordionDetails
+              sx={{
+                bgcolor: '#f0eef4',
+                padding: 2,
+                color: '#2b2b2b',
+                fontSize: '0.95rem',
+              }}
+            >
+              {section.content}
+            </AccordionDetails>
           </Accordion>
         </Grid>
       </Grid>

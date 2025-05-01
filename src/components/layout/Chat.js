@@ -1,11 +1,90 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
 import CloseIcon from '@mui/icons-material/Close';
+import { Box, TextField, Typography, Button, Stack, Paper } from '@mui/material';
 import './chatbot.css';
 
+// Formulaire
+const ContactForm = ({ triggerNextStep }) => {
+  const [formData, setFormData] = useState({
+    nom: '',
+    telephone: '',
+    email: '',
+    message: '',
+  });
 
-// 1. Thème personnalisé pour le chatbot
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Données du formulaire :', formData);
+
+    // Ici, tu pourrais envoyer vers une API, un email, etc.
+    // Exemple : await axios.post('/api/contact', formData);
+
+    triggerNextStep(); // Affiche le message final uniquement après envoi
+  };
+
+  return (
+    <Paper elevation={3} sx={{ p: 2, backgroundColor: '#f9f9f9' }}>
+      <Typography variant="h6" gutterBottom>
+        Vos informations de contact
+      </Typography>
+  
+      <Box component="form" noValidate autoComplete="off" onSubmit={handleSubmit}>
+        <Stack spacing={2}>
+          <TextField
+            label="Nom"
+            name="nom"
+            value={formData.nom}
+            onChange={handleChange}
+            required
+            fullWidth
+          />
+          <TextField
+            label="Téléphone"
+            name="telephone"
+            value={formData.telephone}
+            onChange={handleChange}
+            required
+            fullWidth
+          />
+          <TextField
+            label="Email"
+            name="email"
+            type="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            fullWidth
+          />
+          <TextField
+            label="Message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            multiline
+            rows={4}
+            required
+            fullWidth
+          />
+  
+          <Box textAlign="right">
+            <Button variant="contained" color="primary" type="submit">
+              Envoyer
+            </Button>
+          </Box>
+        </Stack>
+      </Box>
+    </Paper>
+  );  
+};
+
+// Thème
 const theme = {
   background: '#f5f8fb',
   fontFamily: 'Helvetica Neue',
@@ -18,230 +97,144 @@ const theme = {
   userFontColor: '#4a4a4a',
 };
 
-
-// 2. Composant Formulaire de contact
-const ContactForm = ({ triggerNextStep }) => {
-  const [formData, setFormData] = useState({
-    nom: '',
-    telephone: '',
-    email: '',
-    message: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
-  };
-
-  const handleSubmit = () => {
-    console.log('Données du formulaire:', formData); // Affiche les données dans la console
-    triggerNextStep(); // Déclenche l'étape suivante
-  };
-
-  return (
-    <div style={{ width: '100%' }}>
-      <h4>Vos informations de contact</h4>
-      <form>
-        <div>
-          <label>Nom :</label>
-          <input
-            type="text"
-            name="nom"
-            value={formData.nom}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Téléphone :</label>
-          <input
-            type="tel"
-            name="telephone"
-            value={formData.telephone}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Email :</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Message :</label>
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <button type="button" onClick={handleSubmit}>
-          Envoyer
-        </button>
-      </form>
-    </div>
-  );
-};
-
-
-// 3. Étapes du chatbot
-const steps = [
-  // Menu principal
-  {
-    id: '1',
-    message: 'Bonjour ! Que désirez-vous aujourd’hui ?',
-    trigger: '2',
-  },
-  {
-    id: '2',
-    options: [
-      { value: 'voyage', label: 'Je souhaite voyager', trigger: 'destination' },
-      { value: 'cours', label: 'Je souhaite faire des cours de langue', trigger: 'coursMenu' },
-      { value: 'job', label: 'Je recherche un emploi', trigger: '4' },
-      { value: 'service', label: 'J\'ai besoin d\'un service', trigger: 'serviceMenu' },
-      { value: 'renseignement', label: 'Je veux des renseignements', trigger: '4' },
-    ],
-  },
-
-  // Destination
-  {
-    id: 'destination',
-    message: 'Quelle est votre destination ?',
-    trigger: 'destinationOptions',
-  },
-  {
-    id: 'destinationOptions',
-    options: [
-      { value: 'France', label: 'France', trigger: 'reasonMenuFrance' },
-      { value: 'Canada', label: 'Canada', trigger: 'reasonMenuCanada' },
-      { value: 'Allemagne', label: 'Allemagne', trigger: 'reasonMenuAllemagne' },
-      { value: 'Belgique', label: 'Belgique', trigger: 'reasonMenuBelgique' },
-    ],
-  },
-
-  // Raisons par destination
-  {
-    id: 'reasonMenuFrance',
-    message: 'Quelle est la raison de votre voyage en France ?',
-    trigger: 'reasonOptionsFrance',
-  },
-  {
-    id: 'reasonMenuCanada',
-    message: 'Quelle est la raison de votre voyage au Canada ?',
-    trigger: 'reasonOptionsCanada',
-  },
-  {
-    id: 'reasonMenuAllemagne',
-    message: 'Quelle est la raison de votre voyage en Allemagne ?',
-    trigger: 'reasonOptionsAllemagne',
-  },
-  {
-    id: 'reasonMenuBelgique',
-    message: 'Quelle est la raison de votre voyage en Belgique ?',
-    trigger: 'reasonOptionsBelgique',
-  },
-
-  // Options des raisons
-  {
-    id: 'reasonOptionsFrance',
-    options: [
-      { value: 'etudes', label: 'Pour mes études', trigger: 'contactForm' },
-      { value: 'tourisme', label: 'Tourisme', trigger: 'contactForm' },
-      { value: 'affaires', label: 'Voyage d\'affaires', trigger: 'contactForm' },
-      { value: 'autres', label: 'Autres raisons', trigger: 'contactForm' },
-    ],
-  },
-  {
-    id: 'reasonOptionsCanada',
-    options: [
-      { value: 'etudes', label: 'Pour mes études', trigger: 'contactForm' },
-      { value: 'tourisme', label: 'Tourisme', trigger: 'contactForm' },
-      { value: 'affaires', label: 'Immigration Canada', trigger: 'contactForm' },
-      { value: 'autres', label: 'Résidence permanente', trigger: 'contactForm' },
-    ],
-  },
-  {
-    id: 'reasonOptionsAllemagne',
-    options: [
-      { value: 'etudes', label: 'Pour mes études', trigger: 'contactForm' },
-      { value: 'tourisme', label: 'Tourisme', trigger: 'contactForm' },
-      { value: 'affaires', label: 'Voyage d\'affaires', trigger: 'contactForm' },
-      { value: 'autres', label: 'Autres raisons', trigger: 'contactForm' },
-    ],
-  },
-  {
-    id: 'reasonOptionsBelgique',
-    options: [
-      { value: 'etudes', label: 'Pour mes études', trigger: 'contactForm' },
-      { value: 'tourisme', label: 'Tourisme', trigger: 'contactForm' },
-      { value: 'affaires', label: 'Voyage d\'affaires', trigger: 'contactForm' },
-      { value: 'autres', label: 'Autres raisons', trigger: 'contactForm' },
-    ],
-  },
-
-  // Formulaire de contact
-  {
-    id: 'contactForm',
-    component: <ContactForm />,
-    trigger: 'confirmation',
-  },
-
-  // Confirmation
-  {
-    id: 'confirmation',
-    message: 'Parfait, on vous recontactera dans les brefs délais.',
-    end: true,
-  },
-
-  // Cours de langue
-  {
-    id: 'coursMenu',
-    message: 'Quel cours de langue souhaitez-vous suivre ?',
-    trigger: 'coursOptions',
-  },
-  {
-    id: 'coursOptions',
-    options: [
-      { value: 'anglais', label: 'Cours d\'anglais', trigger: '5' },
-      { value: 'allemand', label: 'Cours d\'allemand', trigger: '5' },
-      { value: 'espagnol', label: 'Cours d\'espagnol', trigger: '5' },
-    ],
-  },
-
-  // Services
-  {
-    id: 'serviceMenu',
-    message: 'Quel type de service voulez-vous ?',
-    trigger: 'serviceOptions',
-  },
-  {
-    id: 'serviceOptions',
-    options: [
-      { value: 'Recherche logement', label: 'Recherche logement', trigger: '5' },
-      { value: 'Assurance voyage', label: 'Assurance voyage', trigger: '5' },
-      { value: 'Caution Bancaire', label: 'Caution Bancaire', trigger: '5' },
-      { value: 'compte Bloqué', label: 'Compte Bloqué', trigger: '5' },
-    ],
-  },
-];
-
-
-// 4. Composant principal du chatbot
+// Composant principal
 const Chat = ({ closeChat }) => {
+  const steps = useMemo(() => [
+    {
+      id: '1',
+      message: 'Bonjour ! Que désirez-vous aujourd’hui ?',
+      trigger: '2',
+    },
+    {
+      id: '2',
+      options: [
+        { value: 'voyage', label: 'Je souhaite voyager', trigger: 'destination' },
+        { value: 'cours', label: 'Je souhaite faire des cours de langue', trigger: 'coursMenu' },
+        { value: 'job', label: 'Je recherche un emploi', trigger: '4' },
+        { value: 'service', label: 'J\'ai besoin d\'un service', trigger: 'serviceMenu' },
+        { value: 'renseignement', label: 'Je veux des renseignements', trigger: '4' },
+      ],
+    },
+    {
+      id: '4',
+      message: 'Merci pour votre intérêt ! Veuillez remplir le formulaire pour qu’un conseiller vous recontacte.',
+      trigger: 'contactForm',
+    },
+    {
+      id: 'destination',
+      message: 'Quelle est votre destination ?',
+      trigger: 'destinationOptions',
+    },
+    {
+      id: 'destinationOptions',
+      options: [
+        { value: 'France', label: 'France', trigger: 'reasonMenuFrance' },
+        { value: 'Canada', label: 'Canada', trigger: 'reasonMenuCanada' },
+        { value: 'Allemagne', label: 'Allemagne', trigger: 'reasonMenuAllemagne' },
+        { value: 'Belgique', label: 'Belgique', trigger: 'reasonMenuBelgique' },
+      ],
+    },
+    {
+      id: 'reasonMenuFrance',
+      message: 'Quelle est la raison de votre voyage en France ?',
+      trigger: 'reasonOptionsFrance',
+    },
+    {
+      id: 'reasonOptionsFrance',
+      options: [
+        { value: 'etudes', label: 'Pour mes études', trigger: 'contactForm' },
+        { value: 'tourisme', label: 'Tourisme', trigger: 'contactForm' },
+        { value: 'affaires', label: 'Voyage d\'affaires', trigger: 'contactForm' },
+        { value: 'autres', label: 'Autres raisons', trigger: 'contactForm' },
+      ],
+    },
+    {
+      id: 'reasonMenuCanada',
+      message: 'Quelle est la raison de votre voyage au Canada ?',
+      trigger: 'reasonOptionsCanada',
+    },
+    {
+      id: 'reasonOptionsCanada',
+      options: [
+        { value: 'etudes', label: 'Pour mes études', trigger: 'contactForm' },
+        { value: 'tourisme', label: 'Tourisme', trigger: 'contactForm' },
+        { value: 'affaires', label: 'Immigration Canada', trigger: 'contactForm' },
+        { value: 'autres', label: 'Résidence permanente', trigger: 'contactForm' },
+      ],
+    },
+    {
+      id: 'reasonMenuAllemagne',
+      message: 'Quelle est la raison de votre voyage en Allemagne ?',
+      trigger: 'reasonOptionsAllemagne',
+    },
+    {
+      id: 'reasonOptionsAllemagne',
+      options: [
+        { value: 'etudes', label: 'Pour mes études', trigger: 'contactForm' },
+        { value: 'tourisme', label: 'Tourisme', trigger: 'contactForm' },
+        { value: 'affaires', label: 'Voyage d\'affaires', trigger: 'contactForm' },
+        { value: 'autres', label: 'Autres raisons', trigger: 'contactForm' },
+      ],
+    },
+    {
+      id: 'reasonMenuBelgique',
+      message: 'Quelle est la raison de votre voyage en Belgique ?',
+      trigger: 'reasonOptionsBelgique',
+    },
+    {
+      id: 'reasonOptionsBelgique',
+      options: [
+        { value: 'etudes', label: 'Pour mes études', trigger: 'contactForm' },
+        { value: 'tourisme', label: 'Tourisme', trigger: 'contactForm' },
+        { value: 'affaires', label: 'Voyage d\'affaires', trigger: 'contactForm' },
+        { value: 'autres', label: 'Autres raisons', trigger: 'contactForm' },
+      ],
+    },
+    {
+      id: 'coursMenu',
+      message: 'Quel cours de langue souhaitez-vous suivre ?',
+      trigger: 'coursOptions',
+    },
+    {
+      id: 'coursOptions',
+      options: [
+        { value: 'anglais', label: 'Cours d\'anglais', trigger: 'contactForm' },
+        { value: 'allemand', label: 'Cours d\'allemand', trigger: 'contactForm' },
+        { value: 'espagnol', label: 'Cours d\'espagnol', trigger: 'contactForm' },
+      ],
+    },
+    {
+      id: 'serviceMenu',
+      message: 'Quel type de service voulez-vous ?',
+      trigger: 'serviceOptions',
+    },
+    {
+      id: 'serviceOptions',
+      options: [
+        { value: 'Recherche logement', label: 'Recherche logement', trigger: 'contactForm' },
+        { value: 'Assurance voyage', label: 'Assurance voyage', trigger: 'contactForm' },
+        { value: 'Caution Bancaire', label: 'Caution Bancaire', trigger: 'contactForm' },
+        { value: 'compte Bloqué', label: 'Compte Bloqué', trigger: 'contactForm' },
+      ],
+    },
+    {
+      id: 'contactForm',
+      component: <ContactForm />,
+      waitAction: true, // important pour ne pas avancer automatiquement
+      trigger: 'confirmation',
+    },
+    {
+      id: 'confirmation',
+      message: 'Parfait, on vous recontactera dans les brefs délais.',
+      end: true,
+    },
+    
+  ], []);
+
   return (
     <div className="chatbot-container">
       <ThemeProvider theme={theme}>
-        <ChatBot
-          steps={steps}
-          headerTitle="Assistance Mobiliis"
-          hideSubmitButton
-        />
+        <ChatBot steps={steps} headerTitle="Assistance Mobiliis" hideSubmitButton />
       </ThemeProvider>
       <CloseIcon className="chatbot-close-icon" onClick={closeChat} />
     </div>

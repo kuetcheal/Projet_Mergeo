@@ -1,138 +1,135 @@
 import React from 'react';
-import { Box, Button, Typography, Card, CardContent, CardMedia, Grid } from '@mui/material';
-// import MenuIcon from '@mui/icons-material/Menu';
+import { Box, Button, Typography, Card, CardMedia, Grid, CardActionArea } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import { PlusCircle } from 'react-bootstrap-icons';
-import './choix.css';
+import SchoolIcon from '@mui/icons-material/School';
+import { styled } from '@mui/system';
+import { useTheme } from '@mui/material/styles';
+import { green } from '@mui/material/colors';
 
-const Choix = () => {
+const destinations = [
+  {
+    name: 'CANADA',
+    image: 'https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=800&q=80',
+    path: '/canada'
+  },
+  {
+    name: 'FRANCE',
+    image: 'https://images.unsplash.com/photo-1504609813442-a8924e83f76e?auto=format&fit=crop&w=800&q=60',
+    path: '/france'
+  },
+  {
+    name: 'ALLEMAGNE',
+    image: 'https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=800&q=60',
+    path: '/allemagne'
+  },
+];
+
+const CardHover = styled(Card)(({ theme }) => ({
+  position: 'relative',
+  width: '100%',
+  maxWidth: 410,
+  height: 250,
+  borderRadius: 10,
+  overflow: 'hidden',
+  transition: 'transform 0.5s ease',
+  '&:hover .overlay-text': {
+    opacity: 0,
+    visibility: 'hidden',
+  },
+  '&:hover .card-image': {
+    transform: 'rotateY(40deg)',
+    opacity: 0,
+  },
+  '&:hover .hover-button': {
+    opacity: 1,
+    visibility: 'visible',
+  }
+}));
+
+const OverlayText = styled('div')(() => ({
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  color: 'white',
+  fontWeight: 'bold',
+  fontSize: '1.6rem',
+  textShadow: '2px 2px 6px rgba(0,0,0,0.7)',
+  zIndex: 2,
+  transition: 'opacity 0.3s ease-in-out',
+}));
+
+const HoverButton = styled(Button)(({ theme }) => ({
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  transition: 'opacity 0.4s ease, transform 0.4s ease',
+  opacity: 0,
+  visibility: 'hidden',
+  backgroundColor: theme.palette.primary.main,
+  color: '#fff',
+  zIndex: 3,
+  padding: '10px 25px',
+  borderRadius: 30,
+  fontWeight: 'bold',
+  fontSize: '0.9rem'
+}));
+
+const DestinationGrid = () => {
   const navigate = useNavigate();
-
-  const handleFrance = () => {
-    navigate('/france');
-  };
-  const handleCanada = () => {
-    navigate('/canada');
-  };
-  const handleAllemagne = () => {
-    navigate('/allemagne');
-  };
-  const handleBelgique = () => {
-    navigate('/belgique');
-  };
-
-  const sections = [
-    {
-      title: "Procédure pour le Canada",
-      description: "ESCG-PARIS, votre école de choix.",
-      image: "/images/brochure.jpeg",
-      flag: "/images/canada.jpg",
-      buttonText: "voir votre procédure",
-      buttonColor: "#004080",
-      onClick: handleCanada,
-    },
-    {
-      title: "Procédure pour la France",
-      description: "Envie de vous réorienter sans perdre.",
-      image: "/images/etudiant.jpg",
-      flag: "/images/france.jpg",
-      buttonText: "voir votre procédure",
-      buttonColor: "#004080",
-      onClick: handleFrance,
-    },
-    {
-      title: "Procédure pour l'Allemagne",
-      description: "Toute l’année, des Job Dating sont organisés.",
-      image: "/images/avion.jpg",
-      flag: "/images/Allemagne.jpg",
-      buttonText: "voir",
-      buttonColor: "#004080",
-      onClick: handleAllemagne,
-    },
-    {
-      title: "Procédure pour la Belgique",
-      description: "ESCG-PARIS, votre école de choix.",
-      image: "/images/brochure.jpeg",
-      flag: "/images/Belgique.jpg",
-      buttonText: "voir votre procédure",
-      buttonColor: "#004080",
-      onClick: handleBelgique,
-    },
-    {
-      title: "Procédure pour la France",
-      description: "Envie de vous réorienter sans perdre.",
-      image: "/images/etudiant.jpg",
-      flag: "/images/france.jpg",
-      buttonText: "voir votre procédure",
-      buttonColor: "#004080",
-      onClick: handleFrance,
-    },
-    {
-      title: "Procédure pour l'Allemagne",
-      description: "Toute l’année, des Job Dating sont organisés.",
-      image: "/images/avion.jpg",
-      flag: "/images/Allemagne.jpg",
-      buttonText: "voir",
-      buttonColor: "#004080",
-      onClick: handleAllemagne,
-    },
-  ];
+  const theme = useTheme();
 
   return (
-    <Box className="choix-container" sx={{ padding: '20px' }}>
-      {/* Titre centré */}
-      <Typography
-        variant="h4"
-        component="h3"
-        className="choix-title-with-bars"
-        sx={{ marginBottom: '20px' }}
-      >
-        Découvrir nos destinations pour votre voyage !
+    <Box sx={{ p: { xs: 2, md: 4 },}}>
+      <Typography variant="h4" textAlign="center" fontWeight={600} mb={4} color="#C90076">
+      Nos principales destinations
+      </Typography>
+      <Typography variant="h5" textAlign="center" fontWeight={600} mb={4} color="black">
+        Nous vous ouvrons un monde d'opportunités et d'expériences pour des destinations très attractives pour 
+        vos études, tourisme, résidence permanente !
       </Typography>
 
-
-      {/* Grille des cards */}
-      <Grid container spacing={3}>
-        {sections.map((section, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
-            <Card className="choix-card" sx={{ height: '470px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-              <div className="choix-image-wrapper" style={{ height: '270px', overflow: 'hidden' }}>
+      <Grid container spacing={2} justifyContent="center">
+        {destinations.map((dest, index) => (
+          <Grid item key={index}>
+            <CardHover>
+              <CardActionArea sx={{ width: '100%', height: '100%' }}>
                 <CardMedia
                   component="img"
-                  height="270"
-                  image={section.image}
-                  alt={section.title}
-                  className="choix-image"
+                  image={dest.image}
+                  alt={dest.name}
+                  className="card-image"
+                  sx={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    transition: 'transform 0.5s ease, opacity 0.5s ease',
+                  }}
                 />
-              </div>
-              <CardContent className="choix-content">
-                <Typography variant="h6" component="div" className="choix-title">
-                  {section.title}
-                </Typography>
-                {section.flag && (
-                  <div className="flag-container">
-                    <img src={section.flag} alt="Flag" className="choix-flag" />
-                  </div>
-                )}
-                <Typography variant="body2" color="text.secondary" className="choix-description">
-                  {section.description}
-                </Typography>
-              </CardContent>
-              <Button
-                variant="contained"
-                className="choix-button"
-                style={{ backgroundColor: section.buttonColor }}
-                endIcon={<PlusCircle />}
-                onClick={section.onClick}
-              >
-                {section.buttonText}
-              </Button>
-            </Card>
+                <OverlayText className="overlay-text">{dest.name}</OverlayText>
+              </CardActionArea>
+              <HoverButton className="hover-button" onClick={() => navigate(dest.path)}>
+                ÉTUDIER EN {dest.name}
+              </HoverButton>
+            </CardHover>
           </Grid>
         ))}
       </Grid>
+
+      <Box mt={6} textAlign="center">
+        <Button
+          variant="contained"
+          size="large"
+          onClick={() => navigate('/destinations')}
+          sx={{ bgcolor: '#007dc4', color: 'white', fontWeight: 'bold', mt: 4 }}
+          endIcon={<SchoolIcon sx={{ color: 'orange' }} />}
+        >
+          DÉCOUVREZ TOUTES NOS DESTINATIONS D'ÉTUDES
+        </Button>
+      </Box>
     </Box>
   );
 };
 
-export default Choix;
+export default DestinationGrid;

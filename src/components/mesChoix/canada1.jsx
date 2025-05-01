@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Box, Grid, Typography, Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
+import {
+  Box,
+  Grid,
+  Typography,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails
+} from "@mui/material";
 import { PlusCircle, DashCircle } from "react-bootstrap-icons";
 
 const Canada1 = () => {
@@ -65,7 +72,7 @@ const Canada1 = () => {
   ];
 
   return (
-    <Box sx={{ padding: "20px", backgroundColor: "#FAFAFA" }}>
+    <Box sx={{ padding: "40px 20px", backgroundColor: "#FAFAFA" }}>
       <Typography variant="h5" fontWeight="bold" gutterBottom color="#A93D87">
         Choisissez votre programme
       </Typography>
@@ -82,7 +89,7 @@ const Canada1 = () => {
           />
         </Grid>
 
-        {/* Content Section */}
+        {/* Accordéons stylisés */}
         <Grid item xs={12} md={6}>
           {sections.map((section, index) => (
             <Accordion
@@ -90,31 +97,42 @@ const Canada1 = () => {
               expanded={expanded === index}
               onChange={() => toggleExpand(index)}
               sx={{
-                marginBottom: "20px", // Adds spacing between elements
-                border: "2px solid #004080", // Border color
-                borderRadius: "6px", // Rounded corners
+                boxShadow: 'none',
+                border: 'none',
+                '&::before': { display: 'none' },
+                marginBottom: 1,
               }}
             >
               <AccordionSummary
                 expandIcon={
                   expanded === index ? (
-                    <DashCircle size={24} color="#004080" />
+                    <DashCircle color="white" size={20} />
                   ) : (
-                    <PlusCircle size={24} color="#004080" />
+                    <PlusCircle color="white" size={20} />
                   )
                 }
-                aria-controls={`panel${index}-content`}
-                id={`panel${index}-header`}
                 sx={{
-                  backgroundColor: "#FFF",
-                  padding: "10px 15px",
+                  bgcolor: '#0056b3',
+                  color: 'white',
+                  padding: '12px 16px',
+                  fontWeight: 'bold',
+                  '& .MuiAccordionSummary-content': {
+                    margin: 0
+                  }
                 }}
               >
-                <Typography fontWeight="bold" sx={{ color: "#1976D2" }}>
-                  {section.title}
-                </Typography>
+                <Typography fontWeight={600}>{section.title}</Typography>
               </AccordionSummary>
-              <AccordionDetails sx={{ padding: "15px" }}>{section.content}</AccordionDetails>
+              <AccordionDetails
+                sx={{
+                  bgcolor: '#f0eef4',
+                  padding: 2,
+                  color: '#2b2b2b',
+                  fontSize: '0.95rem',
+                }}
+              >
+                {section.content}
+              </AccordionDetails>
             </Accordion>
           ))}
         </Grid>

@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
-import './contact.css';
+import {
+  Box, Grid, TextField, Typography, Button, Paper, useMediaQuery
+} from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import PlaceIcon from '@mui/icons-material/Place';
 import CallIcon from '@mui/icons-material/Call';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
-import Map from './map';
 
-const ContactForm = () => {
+const Contact = () => {
   const [formData, setFormData] = useState({
-    nom: '',
-    prenom: '',
-    email: '',
-    telephone: '',
-    ville: '',
-    pays: '',
-    message: '',
+    nom: '', prenom: '', email: '', telephone: '', ville: '', pays: '', message: ''
   });
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -22,77 +21,112 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Ajoutez ici le code pour envoyer les données à votre backend
+    console.log(formData);
   };
 
   return (
-    <div className="contact-container">
-      <div className="infos-contact">
-        <div className="localisation">
-          <p> <PlaceIcon className="icone" style={{ fontSize: '60px' }} /></p>
-          <p style={{ fontSize: '18px', fontWeight: 'bold' }}>Ndogbong-Douala Rue du commissariat 10ème</p>
-          <p style={{ fontSize: '18px', fontWeight: 'bold' }}> Horaires: lundi-vendredi 08h-17h30</p>
+    <Box sx={{ px: { xs: 2, md: 8 }, py: 5, maxWidth: '1300px', mx: 'auto' }}>
+      {/* Bloc Infos Contact - FOND COLORÉ */}
+      <Box sx={{ bgcolor: '#004080',  color: 'white', borderRadius: 2, p: 4, mb: 6, }}>
+        <Grid container spacing={3} justifyContent="center" textAlign="center">
+          <Grid item xs={12} md={4}>
+            <PlaceIcon sx={{ fontSize: 50, color: '#C90076' }} />
+            <Typography fontWeight="bold">Ndogbong-Douala Rue du commissariat 10ᵉ</Typography>
+            <Typography fontWeight="bold">Horaires: lundi-vendredi 08h-17h30</Typography>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <CallIcon sx={{ fontSize: 50, color: '#C90076' }} />
+            <Typography fontWeight="bold">+237 675 07 00 50 / +237 6 55 19 62 54</Typography>
+            <Typography fontWeight="bold">+33 7 58 10 31 17</Typography>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <MailOutlineIcon sx={{ fontSize: 50, color: '#C90076' }} />
+            <Typography fontWeight="bold">mobiliis03@gmail.com</Typography>
+            <Typography fontWeight="bold">www.mobiliis.com</Typography>
+          </Grid>
+        </Grid>
+      </Box>
 
-        </div>
-        <div className="phone">
-          <p><CallIcon className="icone" style={{ fontSize: '60px' }} /></p>
-          <p style={{ fontSize: '18px', fontWeight: 'bold' }}>+237 675 07 00 50 / +237 6 55 19 62 54</p>
-          <p style={{ fontSize: '18px', fontWeight: 'bold' }}> +33 7 58 10 31 17</p>
-        </div>
-        <div className="mail">
-          <p > <MailOutlineIcon className="icone" style={{ fontSize: '60px' }} /></p>
-          <p style={{ fontSize: '18px', fontWeight: 'bold' }}> akuetche55@gmail.com</p>
-          <p style={{ fontSize: '18px', fontWeight: 'bold' }}>wwww.mobiliis.com</p>
-        </div>
-      </div>
-      <div className="bloc-contact">
-        <div className="map"><Map /></div>
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <h2 style={{ color: '#1976d2' }}>Nous Contacter</h2>
+      {/* Image + Formulaire */}
+      <Grid container spacing={4} alignItems="flex-start">
+        {/* 👉 Image à gauche */}
+        <Grid item xs={12} md={6}>
+          <img
+            src="/images/canada-ville.avif"
+            alt="Background"
+            style={{
+              borderRadius: '8px',
+              width: '100%',
+              height: '600px',
+              objectFit: 'cover'
+            }}
+          />
+        </Grid>
 
-          <div className="form-row">
-            <div>
-              <label>Nom<span>*</span></label>
-              <input type="text" name="nom" value={formData.nom} onChange={handleChange} required />
-            </div>
-            <div>
-              <label>Prénom<span>*</span></label>
-              <input type="text" name="prenom" value={formData.prenom} onChange={handleChange} required />
-            </div>
-          </div>
-
-          <div className="form-row">
-            <div>
-              <label>Email<span>*</span></label>
-              <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-            </div>
-            <div>
-              <label>Téléphone<span>*</span></label>
-              <input type="tel" name="telephone" value={formData.telephone} onChange={handleChange} required />
-            </div>
-          </div>
-
-          <div className="form-row">
-            <div>
-              <label>Ville<span>*</span></label>
-              <input type="text" name="ville" value={formData.ville} onChange={handleChange} required />
-            </div>
-            <div>
-              <label>Pays<span>*</span></label>
-              <input type="text" name="pays" value={formData.pays} onChange={handleChange} required />
-            </div>
-          </div>
-
-          <div className="form-full">
-            <label>Message<span>*</span></label>
-            <textarea name="message" value={formData.message} onChange={handleChange} required />
-          </div>
-
-          <button type="submit">Envoyer Message</button>
-        </form>
-      </div>
-    </div>
+        {/* 📝 Formulaire à droite */}
+        <Grid item xs={12} md={6}>
+          <Box component={Paper} elevation={4} sx={{ p: 4 }}>
+            <Typography variant="h5" sx={{ color: '#A93D87' }} mb={2} textAlign="center">Nous Contacter</Typography>
+            <form onSubmit={handleSubmit}>
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={6}>
+                  <TextField label="Nom *" fullWidth name="nom" value={formData.nom} onChange={handleChange} />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <TextField label="Prénom *" fullWidth name="prenom" value={formData.prenom} onChange={handleChange} />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <TextField label="Email *" fullWidth name="email" value={formData.email} onChange={handleChange} />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <TextField label="Téléphone *" fullWidth name="telephone" value={formData.telephone} onChange={handleChange} />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <TextField label="Ville *" fullWidth name="ville" value={formData.ville} onChange={handleChange} />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <TextField label="Pays *" fullWidth name="pays" value={formData.pays} onChange={handleChange} />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    label="Message *"
+                    fullWidth
+                    multiline
+                    rows={4}
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <Button
+                    fullWidth
+                    type="submit"
+                    variant="contained"
+                    sx={{
+                      bgcolor: '#A93D87',
+                      '&:hover': { bgcolor: '#C90076' },
+                      fontWeight: 'bold'
+                    }}
+                  >
+                    ENVOYER MESSAGE
+                  </Button>
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography variant="body2" color="textSecondary" mt={3}>
+                    Les informations recueillies font l’objet d’un traitement informatique destiné aux opérations de transmission des informations
+                    et documentations sollicitées. Les destinataires des données sont les chargés de la communication et du recrutement et le service commercial.
+                    Vos données sont conservées dans des conditions propres à en assurer leur sécurité et
+                    confidentialité pendant trois ans à compter de leur collecte ou de votre dernière correspondance avec nous.
+                  </Typography>
+                </Grid>
+              </Grid>
+            </form>
+          </Box>
+        </Grid>
+      </Grid>
+    </Box>
   );
 };
 
-export default ContactForm;
+export default Contact;
