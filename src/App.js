@@ -11,7 +11,7 @@ import Map from "./components/authentification/map";
 import Sponsor from "./components/authentification/sponsor";
 import Medecin from "./components/authentification/medecin";
 import TelechargeBrochure from "./components/authentification/telechargeBrochure";
-import Contact from "./components/authentification/contact";
+import Contact from "./components/authentification/contact";  
 import NotFound from './components/authentification/NotFound';
 import Brochure from './components/authentification/brochure';
 import Navbar from './components/authentification/navbar';
