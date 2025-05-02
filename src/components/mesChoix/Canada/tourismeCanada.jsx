@@ -33,7 +33,7 @@ const Canada = () => {
         <div className="overlayfran"></div>
         <div className="breadfrance">
           <p style={{ fontWeight: 'bold', fontSize: '40px', marginLeft: '10px', color: 'white' }}>
-            Resider et étudier au Canada
+            tourisme au Canada
           </p>
           <button className="green-button" onClick={handleContactClick}>
             NOUS CONTACTER

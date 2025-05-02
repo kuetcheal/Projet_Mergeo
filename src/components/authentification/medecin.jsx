@@ -10,6 +10,7 @@ import Brochure1 from './brochure1';
 import Langue from '../langues/langue';
 import Service1 from '../services/service1';
 import Presentation1 from '../mobiliis/presentation1';
+import Location from '../mobiliis/location';
 
 const Medecin = () => {
   const { t } = useTranslation();
@@ -94,6 +95,7 @@ const Medecin = () => {
         <Box my={4}><Presentation1 /></Box>
         <Box my={4}><Service1 /></Box>
         <Box my={4}><Temoignages /></Box>
+        
 
         <Box display="flex" justifyContent="center" mt={2}>
           <Button
@@ -113,7 +115,7 @@ const Medecin = () => {
             Lire tous les témoignages
           </Button>
         </Box>
-
+        <Box my={4}><Location /></Box>
         <Box my={6}><Langue /></Box>
         <Box my={4}><Sponsor /></Box>
         <Box my={4}><Brochure1 /></Box>

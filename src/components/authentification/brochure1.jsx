@@ -50,6 +50,7 @@ export default function BrochureForm() {
     };
 
     return (
+        <section class="brochure-bg">
         <div className="brochure-container">
             {/* Image à gauche */}
             <div className="brochure-image-container">
@@ -114,5 +115,6 @@ export default function BrochureForm() {
                 </form>
             </div>
         </div>
+        </section>
     );
 }

@@ -1,49 +1,89 @@
 .horizontal-scroll-wrapper {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 2rem; /* ✅ plus d'espace avec la barre */
-    gap: 1.5rem;
-    scroll-behavior: smooth;
-    cursor: grab;
-  }
-  
-  .horizontal-scroll-wrapper.grabbing {
-    cursor: grabbing;
-  }
-  
-  .card-slide {
-    min-width: 380px;
-    max-width: 380px;
-    height: 370px;
-    scroll-snap-align: start;
-    flex-shrink: 0;
-    transition: transform 0.3s;
-  }
-  
-  .card-slide img {
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  /* ✅ Ajout de la flèche dans le lien */
-  .discover-link {
-    color: #007bff;
-    font-weight: 500;
-    text-decoration: none;
-  }
-  
-  .discover-link:hover {
-    text-decoration: underline;
-  }
-  
-  /* ✅ Bouton vert + hover */
-  .btn-discover {
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    justify-content: start;
-  }
-  
-  .btn-discover:hover {
-    background-color: #218838; /* vert plus foncé */
-  }
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1.5rem;
+  scroll-behavior: smooth;
+  gap: 1.5rem;
+  max-width: 1200px !important;
+  margin: 0 auto; /* ✅ centre le composant */
+  padding-left: 0;
+}
+
+.debut{
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 0;
+  background: linear-gradient(to bottom, white 50%, #f9f9f9 50%);
+}
+
+/* ✅ Scrollbar plus fine */
+.horizontal-scroll-wrapper::-webkit-scrollbar {
+  height: 4px;
+}
+.horizontal-scroll-wrapper::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 3px;
+}
+
+.card-slide {
+  flex: 0 0 auto;
+  width: 300px;
+  scroll-snap-align: start;
+  border: 1px solid #ddd;
+  background: white;
+  transition: transform 0.2s ease-in-out;
+  overflow: hidden; /* ✅ pour empêcher débordement */
+}
+
+.card-slide img {
+  height: 180px;
+  width: 100%; /* ✅ prend 100% de la largeur */
+  object-fit: cover;
+  display: block;
+}
+
+.card-slide .card-body {
+  padding: 1rem;
+}
+
+.card-slide .card-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.card-slide .card-text {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.discover-link {
+  font-weight: 500;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.discover-link:hover {
+  text-decoration: underline;
+}
+
+/* ✅ Bouton vert à gauche, haut, texte blanc */
+.mon-button {
+  margin-top: 1.5rem;
+  text-align: center; /* ✅ bouton aligné à gauche */
+}
+
+.btn-discover {
+  font-weight: bold;
+  padding: 0.75rem 1.5rem; /* ✅ plus haut */
+  background-color: #198754;
+  border: none;
+  width: 300px;
+  color: white; /* ✅ texte blanc */
+  font-size: 1rem;
+}
+
+.btn-discover:hover {
+  background-color: #157347;
+}

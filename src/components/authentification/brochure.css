@@ -1,17 +1,19 @@
 /* Container principal en flexbox */
+
+.brochure-bg {
+  background-color: #f9f9f9 !important;
+  border: 1px solid black;
+  padding: 20px 0;
+}
+
 .brochure-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px; /* Espacement entre l'image et le formulaire */
-    /* max-width: 1200px; */
-    margin: 0 auto;
-    padding: 20px;
-    background: #f9f9f9;
-   
-   
-    margin-top: 40px;
-    margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
   }
   
   /* Image à gauche */
