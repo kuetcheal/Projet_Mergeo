@@ -3,7 +3,7 @@ import './france.css';
 import Canada1 from './canada1';
 import Canada2 from './canada2';
 import France3 from './france3';
-import France4 from './france4';
+import ImmigrerCanada4 from './immigrer-canada4';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { useNavigate } from 'react-router-dom';
 import { Box, Grid, Typography } from "@mui/material";
@@ -11,7 +11,7 @@ import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import MapIcon from "@mui/icons-material/Map";
 import ApartmentIcon from "@mui/icons-material/Apartment";
-import CanadaSubMenu from './CanadaSubMenu'; // 🔸 Composant barre de navigation Canada
+import CanadaSubMenu from './CanadaSubMenu'; 
 
 const Canada = () => {
   const navigate = useNavigate();
@@ -30,11 +30,11 @@ const Canada = () => {
   return (
     <div className="temoignages-page">
       <div className="fran-section">
-        <img src="/images/canada-ville.avif" alt="Background" className="fran-image" />
+        <img src="/images/vancouver.webp" alt="Background" className="fran-image" />
         <div className="overlayfran"></div>
         <div className="breadfrance">
           <p style={{ fontWeight: 'bold', fontSize: '40px', marginLeft: '10px', color: 'white' }}>
-            Resider et étudier au Canada
+            Immigrer au Canada
           </p>
           <button className="green-button" onClick={handleContactClick}>
             NOUS CONTACTER
@@ -84,7 +84,7 @@ const Canada = () => {
         <Canada1 />
         <Canada2 />
         <France3 />
-        <France4 />
+        <ImmigrerCanada4 />
 
         <button className="green-button" style={{ marginLeft: '60px' }}>
           Je postule

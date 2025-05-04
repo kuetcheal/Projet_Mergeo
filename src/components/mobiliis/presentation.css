@@ -9,7 +9,7 @@
   }
   
   .presentation-title {
-    color: #3c3b6e;
+    color: #0056b3;
     font-size: 2.5rem;
     margin-bottom: 20px;
   }
@@ -75,7 +75,7 @@
 
   .quote-icon {
     font-size: 5rem;
-    color: #66cc66;
+    color: #C90076;
     position: absolute;
     top: -20px;
     left: 30px;
@@ -83,7 +83,7 @@
   
   .story-card {
     display: flex;
-    background-color: #C90076; /* Couleur de fond verte pour le contenu */
+    background-color: #f9f9f9; /* Couleur de fond verte pour le contenu */
     padding: 30px;
     border-radius: 15px;
     max-width: 1270px;
@@ -102,7 +102,7 @@
   
   .story-text {
     color: white;
-    text-align: left;
+    /* text-align: left; */
   }
   
   .story-text h2 {
@@ -118,7 +118,7 @@
   .statistics-section {
     text-align: center;
     padding: 8px 7px;
-    background-color: #ffffff;
+    background-color: #f9f9f9 ;
     border-radius: 8px;
     height: 260px;
   }

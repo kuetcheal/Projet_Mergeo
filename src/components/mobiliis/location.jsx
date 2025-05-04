@@ -21,7 +21,7 @@ const slides = [
   {
     title: "Sydney",
     description: "Des plages à couper le souffle et l'Opéra emblématique.",
-    img: "https://images.unsplash.com/photo-1506976785307-8732e854ad6c",
+    img: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad",
   },
   {
     title: "Tokyo",

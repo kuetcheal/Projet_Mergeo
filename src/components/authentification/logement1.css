@@ -1,0 +1,60 @@
+/* Custom styles */
+.housing-card {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .housing-card .card-img-top {
+    object-fit: cover;
+    height: 200px; /* Adjust height of the image */
+    width: 100%;
+  }
+  
+  .w-25 {
+    width: 25%;
+    position: fixed;
+  }
+  
+  .w-75 {
+    width: 75%;
+  }
+  
+  .d-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .card-body {
+    text-align: left;
+  }
+  
+  .card-title {
+    font-weight: bold;
+  }
+  
+  .card-text {
+    font-size: 14px;
+  }
+  
+  button {
+    margin-top: 10px;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  @media (max-width: 767px) {
+    .d-flex {
+      flex-direction: column;
+    }
+    .w-25 {
+      width: 100%;
+    }
+    .w-75 {
+      width: 100%;
+    }
+  }
+  
