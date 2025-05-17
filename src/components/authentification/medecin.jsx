@@ -59,12 +59,25 @@ const Medecin = () => {
             zIndex: 0,
           }}
         />
-        <Box position="absolute" top={0} left={0} width="100%" height="100%" bgcolor="rgba(0,0,0,0.5)" zIndex={1} />
+        <Box
+          position="absolute"
+          top={0}
+          left={0}
+          width="100%"
+          height="100%"
+          bgcolor="rgba(0,0,0,0.5)"
+          zIndex={1}
+        />
         <Box
           position="absolute"
           top="50%"
           left="50%"
-          sx={{ transform: 'translate(-50%, -50%)', textAlign: 'center', color: 'white', zIndex: 2 }}
+          sx={{
+            transform: 'translate(-50%, -50%)',
+            textAlign: 'center',
+            color: 'white',
+            zIndex: 2,
+          }}
         >
           <Typography variant="h2" fontWeight="bold" color="#A93D87" mb={2}>
             {t('accueil.title')}
@@ -89,39 +102,78 @@ const Medecin = () => {
           </Button>
         </Box>
       </Box>
-
-      <Container maxWidth="1100" sx={{ bgcolor: 'white' }}>
+  
+      {/* Contenu classique (Choix, Présentation, Services) */}
+      <Container maxWidth="1290" sx={{ bgcolor: 'white' }}>
         <Box my={4}><Choix /></Box>
         <Box my={4}><Presentation1 /></Box>
         <Box my={4}><Service1 /></Box>
-        <Box my={4}><Temoignages /></Box>
-        
-
-        <Box display="flex" justifyContent="center" mt={2}>
-          <Button
-            onClick={handleTemoignageClick}
-            sx={{
-              backgroundColor: '#1976D2',
-              color: 'white',
-              fontWeight: 'bold',
-              fontSize: 16,
-              width: 250,
-              height: 50,
-              '&:hover': {
-                backgroundColor: '#A93D87'
-              }
-            }}
-          >
-            Lire tous les témoignages
-          </Button>
+      </Container>
+  
+      {/* Section Témoignages + bouton - plein écran avec fond */}
+      <Box
+        sx={{
+          bgcolor: '#f5f5f5',
+          py: 5,
+          px: { xs: 2, md: 10 },
+        }}
+      >
+        <Box maxWidth="1290px" mx="auto">
+          <Temoignages />
+          <Box display="flex" justifyContent="center" mt={4}>
+            <Button
+              onClick={handleTemoignageClick}
+              sx={{
+                backgroundColor: '#1976D2',
+                color: 'white',
+                fontWeight: 'bold',
+                fontSize: 16,
+                width: 250,
+                height: 50,
+                '&:hover': {
+                  backgroundColor: '#A93D87',
+                },
+              }}
+            >
+              Lire tous les témoignages
+            </Button>
+          </Box>
         </Box>
-        <Box my={4}><Location /></Box>
+      </Box>
+  
+      {/* Section Location - plein écran avec fond */}
+      <Box
+  sx={{
+    background: 'linear-gradient(to bottom, white 50%, #f9f9f9 50%)',
+    py: 5,
+    px: { xs: 2, md: 10 },
+  }}
+>
+  <Box maxWidth="1290px" mx="auto">
+    <Location />
+  </Box>
+</Box>
+
+      {/* Section Langue + Sponsor - en container classique */}
+      <Container maxWidth="1290">
         <Box my={6}><Langue /></Box>
         <Box my={4}><Sponsor /></Box>
-        <Box my={4}><Brochure1 /></Box>
       </Container>
+  
+      {/* Section Brochure1 - plein écran avec fond */}
+      <Box
+        sx={{
+          bgcolor: '#f5f5f5',
+          py: 5,
+          px: { xs: 2, md: 10 },
+        }}
+      >
+        <Box maxWidth="1290px" mx="auto">
+          <Brochure1 />
+        </Box>
+      </Box>
     </Box>
-  );
+  );  
 };
 
 export default Medecin;

@@ -6,16 +6,17 @@
   scroll-behavior: smooth;
   gap: 1.5rem;
   max-width: 1200px !important;
-  margin: 0 auto; /* ✅ centre le composant */
+  margin: 0 auto; 
   padding-left: 0;
 }
 
 .debut{
   width: 100%;
-  margin: 0 auto;
-  padding-left: 0;
-  background: linear-gradient(to bottom, white 50%, #f9f9f9 50%);
+  height: auto;
+  /* background: linear-gradient(to bottom, white 50%, #f9f9f9 50%); */
 }
+
+
 
 /* ✅ Scrollbar plus fine */
 .horizontal-scroll-wrapper::-webkit-scrollbar {
@@ -33,12 +34,12 @@
   border: 1px solid #ddd;
   background: white;
   transition: transform 0.2s ease-in-out;
-  overflow: hidden; /* ✅ pour empêcher débordement */
+  overflow: hidden;
 }
 
 .card-slide img {
   height: 180px;
-  width: 100%; /* ✅ prend 100% de la largeur */
+  width: 100%; 
   object-fit: cover;
   display: block;
 }
@@ -71,16 +72,16 @@
 /* ✅ Bouton vert à gauche, haut, texte blanc */
 .mon-button {
   margin-top: 1.5rem;
-  text-align: center; /* ✅ bouton aligné à gauche */
+  text-align: center; 
 }
 
 .btn-discover {
   font-weight: bold;
-  padding: 0.75rem 1.5rem; /* ✅ plus haut */
+  padding: 0.75rem 1.5rem; 
   background-color: #198754;
   border: none;
   width: 300px;
-  color: white; /* ✅ texte blanc */
+  color: white; 
   font-size: 1rem;
 }
 

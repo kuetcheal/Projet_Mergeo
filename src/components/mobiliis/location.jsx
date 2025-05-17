@@ -37,9 +37,12 @@ const slides = [
 
 export default function LocationCarousel() {
   return (
-    <section className="bg-light py-5 debut">
+    
+    <section className="py-5 debut">
       <Container fluid="md" className="px-0">
-        <h1 className="fw-bold fs-6">Découvrir nos dernières actualités de Mobiliis</h1>
+        <h1 className="fw-bold fs-8 pt-2">Découvrir toutes les dernières actualités de Mobiliis ainsi que les communications
+          internes de la structure.
+        </h1>
 
         <div className="horizontal-scroll-wrapper">
           {slides.map((slide, idx) => (
@@ -61,5 +64,6 @@ export default function LocationCarousel() {
         </div>
       </Container>
     </section>
+ 
   );
 }

@@ -77,8 +77,8 @@ const Connexion = () => {
           />
         </div>
         <div className="connexion-links">
-          <p>Pas encore inscrit ? <a href="/inscription" style={{color: '#A93D87'}}>Inscrivez-vous</a></p>
-          <p><a href="/motdepasseoublie" style={{color: '#A93D87'}}>Mot de passe oublié ?</a></p>
+          <p>Pas encore inscrit ? <a href="/inscription" style={{color: '#ffffff'}}>Inscrivez-vous</a></p>
+          <p><a href="/motdepasseoublie" style={{color: '#ffffff'}}>Mot de passe oublié ?</a></p>
         </div>
         <button type="submit" className="connexion-button">
           Valider

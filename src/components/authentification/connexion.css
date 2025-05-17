@@ -7,7 +7,7 @@
   border-radius: 15px;
   width: 450px;
   margin: auto;
-  background-color: #00C3D4;
+  background-color: #004080;
   margin-top: 100px;
   margin-bottom: 100px;
 }
@@ -38,7 +38,7 @@
   width: 100%;
   padding: 10px;
   border-radius: 20px;
-  background-color: black;
+  background-color: #A93D87;
   color: white;
   font-size: 16px;
   border: none;
@@ -70,7 +70,7 @@
 /* Media queries pour les petits écrans */
 @media (max-width: 768px) {
   .connexion-container {
-    width: 90%; /* Réduire la largeur pour s'adapter à l'écran */
+    width: 80%; /* Réduire la largeur pour s'adapter à l'écran */
     margin-top: 50px;
     margin-bottom: 50px;
   }

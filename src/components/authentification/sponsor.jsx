@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Box, Typography } from "@mui/material";
 import "./sponsor.css";
 
 const Sponsor = () => {
@@ -27,21 +28,61 @@ const Sponsor = () => {
   return (
     <div className="sponsor-container">
       <h2 className="sponsor-title">NOS SPONSORS</h2>
+
+      {/* ✅ Sous-titre dynamique */}
+      <Typography
+        variant="subtitle1"
+        sx={{
+          maxWidth: 1100,
+          mx: "auto",
+          mt: 2,
+          mb: 4,
+          fontSize: "1.1rem",
+          color: "#555",
+        }}
+      >
+        Nos partenaires nous accompagnent dans la réussite de votre projet de
+        mobilité. Qu'il s'agisse d’écoles, de résidences ou d’acteurs privés,
+        ils partagent notre mission : vous simplifier les démarches de voyage.
+      </Typography>
+
       <div className="sponsor-carousel">
         <button className="carousel-btn prev-btn" onClick={handlePrev}>
           ❮
         </button>
         <div className="carousel-logos">
           {logos.slice(currentIndex, currentIndex + 3).map((logo) => (
-            <div key={logo.id} className="logo-item">
-              <img src={logo.src} alt={logo.alt} className="sponsor-logo" />
-            </div>
+            <Box
+              key={logo.id}
+              sx={{
+                width: 230,
+                height: 120,
+                backgroundColor: "#f9f9f9",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                mx: 1,
+                boxShadow: 1,
+                borderRadius: 1,
+              }}
+            >
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                style={{
+                  maxWidth: "100%",
+                  maxHeight: "80%",
+                  objectFit: "contain",
+                }}
+              />
+            </Box>
           ))}
         </div>
         <button className="carousel-btn next-btn" onClick={handleNext}>
           ❯
         </button>
       </div>
+
       <div className="carousel-dots">
         {logos.map((_, index) => (
           <span
