@@ -24,22 +24,14 @@ const Temoignages = () => {
       message: "L'ESCG Paris est selon moi une école qui sait accompagner ses élèves dans leur parcours et les aide à avancer. Elle m’a donné les outils nécessaires pour réussir et avec beaucoup d'efforts et de motivation j’y suis arrivé.",
       image: '/images/avion.jpg',
     },
-    // {
-    //   nom: 'Yannick NGUEKE',
-    //   message: "L'ESCG Paris est selon moi une école qui sait accompagner ses élèves dans leur parcours et les aide à avancer. Elle m’a donné les outils nécessaires pour réussir et avec beaucoup d'efforts et de motivation j’y suis arrivé.",
-    //   image: '/images/avion.jpg',
-    // },
-    // {
-    //   nom: 'Alex KUETCHE',
-    //   message: "L'ESCG Paris est selon moi une école qui sait accompagner ses élèves dans leur parcours et les aide à avancer. Elle m’a donné les outils nécessaires pour réussir et avec beaucoup d'efforts et de motivation j’y suis arrivé.",
-    //   image: '/images/avion.jpg',
-    // },
   ];
 
   return (
     <div className="temoignons">
-      <h3 className="title">Ils nous ont fait confiance</h3><br />
-      <div className="temoignages-grid">
+      <h1 className="tit">Ils nous ont fait confiance</h1>
+      <p className="subtitle">Découvrez les témoignages inspirants de nos étudiants et partenaires</p>
+
+      <div className="temoignages-scroll">
         {temoignages.map((temoin, index) => (
           <div className="temoignage-card" key={index}>
             <div className="temoignage-image-container">
@@ -48,7 +40,7 @@ const Temoignages = () => {
             <div className="temoignage-content">
               <p className="temoignage-message">{temoin.message}</p>
               <h5 className="temoignage-nom">{temoin.nom}</h5>
-              <br /><br />
+              <br />
               <button className="read-button">
                 LIRE SON TÉMOIGNAGE <ChevronRightIcon style={{ fontSize: '20px', marginLeft: '5px' }} />
               </button>

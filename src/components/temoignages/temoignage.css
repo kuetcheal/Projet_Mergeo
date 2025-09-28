@@ -1,35 +1,49 @@
 .temoignons {
   text-align: center;
-  padding: 20px;
-  /* background-color: aqua; */
+  padding: 20px 10px;
   width: 100%;
 }
 
-.title {
-  color: #1976D2;
+.tit {
+  color: #D6007F;
   font-weight: bold;
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 38px;
+  /* margin-bottom: 5px; */
 }
 
-.temoignages-grid {
+.subtitle {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.temoignages-scroll {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-right: 35px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 2rem;
+  gap: 1.5rem;
+  scroll-behavior: smooth;
+  cursor: grab;
+}
+
+.temoignages-scroll:active {
+  cursor: grabbing;
 }
 
 .temoignage-card {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  width: calc(25% - 30px);/* 25% pour quatre cartes avec espace */
+  min-width: 350px;
+  max-width: 350px;
+  height: auto;
   padding: 20px;
   transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
+  scroll-snap-align: start;
   box-sizing: border-box;
 }
 
@@ -42,7 +56,7 @@
   height: 150px;
   overflow: hidden;
   border-radius: 50%;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .temoignage-image {
@@ -51,35 +65,33 @@
   object-fit: cover;
 }
 
-.temoignage-content {
-  text-align: center;
-}
-
 .temoignage-message {
   font-style: italic;
   font-size: 14px;
   color: #666;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .temoignage-nom {
   font-weight: bold;
   color: #333;
   font-size: 16px;
+  margin-top: 10px;
 }
 
 /* Style pour le bouton */
 .read-button {
-  background-color: #1976D2;
+  background-color: #A93D87; /* ✅ Violet comme demandé */
   color: white;
   border: none;
-  height: 60px;
- width: 300px;
+  height: 50px;
+  width: 220px;
   padding: 10px 20px;
   font-size: 14px;
   font-weight: bold;
-  border-radius: 2px;
-  margin-top: 10px;
+  border-radius: 4px;
+  margin-top: 15px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   display: flex;
@@ -88,24 +100,12 @@
 }
 
 .read-button:hover {
-  background-color: #A93D87;
+  background-color: #C90076;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-  .temoignage-card {
-    width: calc(33.33% - 20px); /* Trois cartes par ligne */
-  }
-}
-
+/* Responsive */
 @media (max-width: 768px) {
   .temoignage-card {
-    width: calc(50% - 20px); /* Deux cartes par ligne */
-  }
-}
-
-@media (max-width: 480px) {
-  .temoignage-card {
-    width: 100%; /* Une carte par ligne */
+    min-width: 280px;
   }
 }

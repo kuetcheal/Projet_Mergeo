@@ -37,13 +37,20 @@
   text-decoration: underline;
 }
 
-/* ✅ Bouton vert + hover */
+/* Bouton violet à gauche */
+.mon-button {
+  display: flex;
+  justify-content: flex-start; /* aligné à gauche */
+}
+
 .btn-discover {
+  background-color: #A93D87; /* même couleur que Temoignages */
+  border: none;
+  color: #fff;
   font-weight: bold;
   transition: background-color 0.3s ease;
-  justify-content: start;
 }
 
 .btn-discover:hover {
-  background-color: #218838; /* vert plus foncé */
+  background-color: #C90076;
 }

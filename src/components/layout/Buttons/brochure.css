@@ -14,24 +14,27 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   transition: all 0.3s ease;
-  overflow: hidden;
   padding: 0;
-  z-index: 9999;
+  z-index: 1000;   /* bouton au-dessus */
+  overflow: hidden;
 }
 
 .floating-icon {
   font-size: 24px;
-  transition: transform 0.3s ease;
-  z-index: 1;
+  flex-shrink: 0;
+  z-index: 1001;   /* 👈 force l’icône au-dessus */
+  position: relative; /* pour appliquer le z-index correctement */
 }
 
 .floating-label {
   margin-left: 8px;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
   white-space: nowrap;
   font-weight: bold;
-  z-index: 1;
+  transform: translateX(10px);
+  z-index: 1001; /* 👈 idem pour le texte */
+  position: relative;
 }
 
 .floating-button:hover {
@@ -42,6 +45,11 @@
   background-color: #C90076;
 }
 
+.floating-button:hover .floating-icon {
+  margin-right: 6px;
+}
+
 .floating-button:hover .floating-label {
   opacity: 1;
+  transform: translateX(0);
 }
