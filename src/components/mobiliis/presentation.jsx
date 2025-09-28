@@ -4,6 +4,9 @@ import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import SchoolIcon from '@mui/icons-material/School';
 import PublicIcon from '@mui/icons-material/Public';
 import GroupsIcon from '@mui/icons-material/Groups';
+import Location from './location';
+// import { Box } from '@mui/material';
+
 
 const Presentation = () => {
   return (
@@ -47,28 +50,28 @@ const Presentation = () => {
             <div className="story-text">
               <h2>Mergelin TAKOUMBO</h2>
               <p>fondateur de Mobiliis</p>
-              <p><strong>une anecdote :</strong> Abuser par des personnes mal-intentionées pour ma procedure de voyage.<br />
+              <p><strong>une anecdote :</strong> Abuser par des personnes mal-intentionées lors de me procédures d evoyage.<br />
                 <strong>Une envie :</strong>faciliter le processus pour le projet de voyage à toute personne désireuse.<br />
-                <strong>Une destination :</strong> France, SKEMA Business School!
+                <strong>Une destination :</strong> France, pour du tourisme!
               </p>
               <p>
-                Mais le chemin pour m’inscrire à l’école et m’installer à Paris fut difficile. J’ai dû surmonter des obstacles administratifs, bloquer des fonds demandés par le consulat, ouvrir un compte de paiement en France, trouver un garant et un logement. À 24 ans, ces démarches ont été stressantes avant mon départ de Yaoundé et à mon arrivée en France.
+                Mais le chemin fût long durant toute ma procédure. J’ai dû surmonter des obstacles administratifs, bloquer des fonds demandés par le consulat, touver une invitation d'un proche résident en france ainsi qu'une garantie de logement. Ces démarches ont été stressantes avant mon départ de Yaoundé et à mon arrivée en France.
               </p>
               <p>
-                Cependant, cette expérience m’a fait réaliser que de nombreux étudiants internationaux rencontrent les mêmes difficultés lors de leur mobilité étudiante.
+                Cependant, cette expérience m’a fait réaliser que de nombreuses personnes désireuses de voyager rencontrent les mêmes difficultés.
               </p>
 
             </div>
           </div>
         </div> <br /><br />
-        <h1 style={{ fontSize: "28px", fontWeight: "bold", color: "#3c3b6e" }}>
-          Un ambition
+        <h1 style={{ fontSize: "28px", fontWeight: "bold", color: "#0056b3" }}>
+          Un envi du renouveau
         </h1>
         <div className="presentation-story">
 
           <div className="story-text">
             <p style={{ color: 'black', fontSize: '21px', fontWeight: "bold" }}>Créé en 2022, Mobiliis est un cabinet spécialisé dans le conseil en
-              stratégie de formation et d’orientation de vos projets d’études et d'immigration en Europe et en Amerique.
+              stratégie de formation et d’orientation de vos projets d’études et d'immigration en France, Canada et Belgique.
               Plaçant l’avenir de vos ambitions au cœur de sa mission. Notre cabinet s’est, depuis le début,
               engagé à satisfaire au mieux leurs inquiétudes, boostant de faite leur carrière de sorte à lui donner
               une dimension internationale. C’est pourquoi nous avons noué des partenariats soudés avec les plus prestigieuses
@@ -88,13 +91,15 @@ const Presentation = () => {
           </div>
         </div>
         <br /><br />
+         
+        
 
         <section style={{ textAlign: "center", margin: "20px 0" }}>
-          <h1 style={{ fontSize: "24px", fontWeight: "bold", color: "#3c3b6e" }}>
-            NOTRE CULTURE ORGANISATIONNELLE
+          <h1 style={{ fontSize: "24px",  color: "#0056b3"}}>
+            Notre culture organisationnelle
           </h1>
-          <p style={{ margin: "20px auto", maxWidth: "900px", lineHeight: "1.5", fontSize: "18px", fontWeight: "bold" }}>
-            La culture organisationnelle de Bridge To Study se résume en un ensemble de critères qui définissent notre fonctionnement, notre identité,
+          <p style={{ margin: "20px auto", maxWidth: "1200px", lineHeight: "1.5", fontSize: "18px", fontWeight: "bold" }}>
+            La culture organisationnelle de Mobiliis se résume en un ensemble de critères qui définissent notre fonctionnement, notre identité,
             notre esprit de travail et nous distinguent de nos concurrents. Elle repose sur plusieurs traits de caractère
             et des orientations partagées par l'ensemble de notre personnel. Il s’agit entre autres de valeurs communes,
             qui décrivent notre sens élevé du métier, nos rites et notre méthode de travail au quotidien. Ces vertus essentielles,
@@ -108,7 +113,7 @@ const Presentation = () => {
           {/* Engagement */}
           <div
             style={{
-              backgroundColor: "#f7931e",
+              backgroundColor: "#0056b3",
               color: "#fff",
               padding: "20px",
               margin: "10px",
@@ -122,14 +127,14 @@ const Presentation = () => {
               Nous nous adaptons ainsi aux évolutions du métier en innovant par des pratiques et de nouvelles façons de faire axées sur les exigences des universités.
             </p>
             <p>
-              Placer les étudiants au cœur de nos préoccupations, nous donne conscience de notre engagement fort... en vue d'un bonheur partagé et des expériences multiples.
+              Placer nos clients au cœur de nos préoccupations, nous donne conscience de notre engagement fort... en vue d'un bonheur partagé et des expériences multiples.
             </p>
           </div>
 
           {/* Mission */}
           <div
             style={{
-              backgroundColor: "#f7931e",
+              backgroundColor: "#0056b3",
               color: "#fff",
               padding: "20px",
               margin: "10px",
@@ -139,17 +144,17 @@ const Presentation = () => {
           >
             <h2 style={{ fontWeight: "bold", marginBottom: "10px" }}>Notre Mission !</h2>
             <p style={{ lineHeight: "1.5" }}>
-              Référence en matière d'orientation scolaire et professionnelle, Bridge To Study a pour mission d'offrir des solutions efficaces toujours adaptées, visant à réaliser le rêve de chaque élève et étudiant.
+              Référence en matière d'orientation scolaire et professionnelle, Mobiliis a pour mission d'offrir des solutions efficaces toujours adaptées, visant à réaliser le rêve de tout un chacun.
             </p>
             <p>
-              Notre rôle majeur est de comprendre les défis actuels du monde des universités et d'aider chaque jeune à exprimer son plein potentiel.
+              Notre rôle majeur est de comprendre les défis actuels du monde des opportunités et d'aider chacun à exprimer son plein potentiel.
             </p>
           </div>
 
           {/* Vision */}
           <div
             style={{
-              backgroundColor: "#f7931e",
+              backgroundColor: "#0056b3",
               color: "#fff",
               padding: "20px",
               margin: "10px",
@@ -172,7 +177,7 @@ const Presentation = () => {
             <div className="stat-item">
               <PeopleAltIcon className="stat-icon" />
               <h3>+100</h3>
-              <h4>étudiants accompagnés</h4>
+              <h4>personnes accompagnés</h4>
             </div>
             <div className="stat-item">
               <SchoolIcon className="stat-icon" />
@@ -181,7 +186,7 @@ const Presentation = () => {
             </div>
             <div className="stat-item">
               <PublicIcon className="stat-icon" />
-              <h3>6</h3>
+              <h3>4</h3>
               <h4>pays où nous sommes présents</h4>
             </div>
             <div className="stat-item">

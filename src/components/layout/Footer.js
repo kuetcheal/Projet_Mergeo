@@ -28,7 +28,12 @@ export default function Footer() {
           <Typography variant="h6" gutterBottom>{t('footer.followTitle')}</Typography>
           <Stack spacing={1}>
             <Typography variant="h6" gutterBottom>{t('footer.newsletter')}</Typography>
-            <Box sx={{ display: 'flex', alignItems: 'center', mt: 2 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', mt: 2, justifyContent: 'center',
+              width: {
+                xs: '90%',   
+                   
+              }
+             }}>
               <TextField
                 variant="outlined"
                 placeholder={t('footer.emailPlaceholder')}

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Home from "./components/authentification/home";
 import Logement from "./components/authentification/logement";
+import Logement1 from "./components/authentification/logement1";
 import Inscription from "./components/authentification/inscription";
 import Connexion from "./components/authentification/connexion";
 import ForgetPassword from "./components/authentification/forgetPassword";
@@ -15,6 +16,8 @@ import Contact from "./components/authentification/contact";
 import NotFound from './components/authentification/NotFound';
 import Brochure from './components/authentification/brochure';
 import Navbar from './components/authentification/navbar';
+
+import CanadaSubMenu from './components/mesChoix/CanadaSubMenu';
 import Choix from './components/mesChoix/choix';
 import Notice from './components/mesChoix/notice';
 import France from './components/mesChoix/france';
@@ -28,6 +31,10 @@ import Canada1 from './components/mesChoix/canada1';
 import Canada2 from './components/mesChoix/canada2';
 import Belgique from './components/mesChoix/belgique';
 import Allemagne from './components/mesChoix/allemagne';
+import ImmigrerCanada from './components/mesChoix/immigrer-canada';
+import ResidencePermanente from './components/mesChoix/residence-permanente';
+
+
 import OffreEmploi from './components/offres/offreEmploi';
 
 import CoursAnglais from './components/langues/coursAnglais';
@@ -75,6 +82,7 @@ const App = () => {
           <Route path="/profil" element={<Profil />} />
           <Route path="/home" element={<Home />} />
           <Route path="/logement" element={<Logement />} />
+          <Route path="/logement1" element={<Logement1 />} />
           <Route path="/" element={<Medecin />} />
           <Route path="/telechargeBrochure" element={<TelechargeBrochure />} />
           <Route path="/presentation" element={<Presentation />} />
@@ -93,6 +101,13 @@ const App = () => {
           <Route path="/canada" element={<Canada/>} />
           <Route path="/canada1" element={<Canada1/>} />
           <Route path="/canada2" element={<Canada2/>} />
+          <Route path="/CanadaSubMenu" element={<CanadaSubMenu/>} />
+          <Route path="/immigrer-canada" element={<ImmigrerCanada />} />
+          <Route path="/residence-permanente" element={<ResidencePermanente />} />
+
+
+
+
           <Route path="/admin" element={<Admin />} />
           <Route path="/langue" element={<Langue />} />
           <Route path="/coursAnglais" element={<CoursAnglais />} />

@@ -30,11 +30,11 @@ const Canada = () => {
   return (
     <div className="temoignages-page">
       <div className="fran-section">
-        <img src="/images/canada-ville.avif" alt="Background" className="fran-image" />
+        <img src="/images/villes-du-canada.jpg" alt="Background" className="fran-image" />
         <div className="overlayfran"></div>
         <div className="breadfrance">
           <p style={{ fontWeight: 'bold', fontSize: '40px', marginLeft: '10px', color: 'white' }}>
-            Resider et étudier au Canada
+            Residence permanente au Canada
           </p>
           <button className="green-button" onClick={handleContactClick}>
             NOUS CONTACTER

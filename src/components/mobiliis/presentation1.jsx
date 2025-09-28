@@ -10,7 +10,7 @@ const Presentation1 = () => {
       };
 
   return (
-    <Box sx={{ p: 4, backgroundColor: '#fff', borderRadius: 2, boxShadow: 3 }}>
+    <Box sx={{ p: 4, backgroundColor: '#f9f9f9', }}>
       <Grid container spacing={4} alignItems="center">
         <Grid item xs={12} md={6}>
           <img
@@ -21,30 +21,30 @@ const Presentation1 = () => {
           />
         </Grid>
         <Grid item xs={12} md={6}>
-          <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold', color: '#FFD700' }}>
+          <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold', color: '#D6007F' }}>
             Votre partenaire fiable!
           </Typography>
           <Typography variant="body1" paragraph>
-            En choisissant d’intégrer YimmiLine dans votre projet de voyage, profitez d’un accompagnement expert étape par étape.
+            En choisissant d’intégrer Mobiliis dans votre projet de voyage, profitez d’un accompagnement expert étape par étape.
             Nos compétences sur mesure sont ajustées en fonction de votre profil et de votre projet.
           </Typography>
           <Typography variant="body1" paragraph>
             Découvrez plus en détail notre approche distinctive et notre vision de la préparation de votre envol
-            <strong> vers la France, la Belgique, le Canada, l’Italie, l’Allemagne suivie de votre intégration.</strong>
+            <strong> vers la France, la Belgique, le Canada, suivie de votre intégration.</strong>
           </Typography>
           <List>
             {[
-              'YimmiLine pour études',
-              'YimmiLine pour les paiements',
-              'YimmiLine pour les transferts d’argent',
-              'YimmiLine pour les recherches de logement',
-              'YimmiLine pour les crédits et préfinancement',
-              'YimmiLine pour les touristes et autres voyageurs',
-              'YimmiLine pour les recherches de stage, de job',
+              'Mobiliis pour vos études',
+              'Mobiliis pour votre procédure immigration Canada',
+              'Mobiliis pour votre résidnece permanente Canada',
+              'Mobiliis pour les recherches de logement',
+              'Mobiliis pour les préfinancements de votre procédure',
+              'Mobiliis pour les touristes et autres voyageurs',
+              'Mobiliis pour les recherches de stage, de job',
             ].map((text, index) => (
               <ListItem key={index}>
                 <ListItemIcon>
-                  <SendIcon sx={{ color: '#FFD700' }} />
+                  <SendIcon sx={{ color: '#D6007F' }} />
                 </ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>

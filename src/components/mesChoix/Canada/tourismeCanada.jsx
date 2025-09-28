@@ -11,7 +11,6 @@ import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import MapIcon from "@mui/icons-material/Map";
 import ApartmentIcon from "@mui/icons-material/Apartment";
-import CanadaSubMenu from './CanadaSubMenu'; // 🔸 Composant barre de navigation Canada
 
 const Canada = () => {
   const navigate = useNavigate();
@@ -34,7 +33,7 @@ const Canada = () => {
         <div className="overlayfran"></div>
         <div className="breadfrance">
           <p style={{ fontWeight: 'bold', fontSize: '40px', marginLeft: '10px', color: 'white' }}>
-            Resider et étudier au Canada
+            tourisme au Canada
           </p>
           <button className="green-button" onClick={handleContactClick}>
             NOUS CONTACTER
@@ -43,12 +42,58 @@ const Canada = () => {
         </div>
       </div>
 
-      {/* 🔽 Barre de navigation contextuelle */}
-      
-
       <div className="content-section">
         <div className="overlayfrance">
-        <CanadaSubMenu />
+          
+          {/* 🔽 Ajout du menu horizontal entre les pages */}
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              maxWidth: "700px",
+              margin: "0 auto 30px",
+              gap: "25px",
+            }}
+          >
+            <Typography
+              onClick={() => navigate("/immigrer-canada")}
+              sx={{
+                cursor: "pointer",
+                fontSize: "22px",
+                color: "#D6007F",
+                fontWeight: "bold",
+                "&:hover": { textDecoration: "underline" },
+              }}
+            >
+              Immigrer au Canada
+            </Typography>
+
+            <Typography
+              sx={{
+                fontSize: "22px",
+                fontWeight: "bold",
+                color: "#D6007F", // titre central
+                textAlign: "center",
+              }}
+            >
+              Étudier au Canada
+            </Typography>
+
+            <Typography
+              onClick={() => navigate("/residence-permanente")}
+              sx={{
+                cursor: "pointer",
+                fontSize: "22px",
+                color: "#D6007F",
+                fontWeight: "bold",
+                "&:hover": { textDecoration: "underline" },
+              }}
+            >
+              Résidence permanente
+            </Typography>
+          </Box>
+
           <Box sx={{ marginTop: "30px", backgroundColor: "#f7f7f7", padding: "20px 10px", borderRadius: "8px" }}>
             <Grid container spacing={2} justifyContent="center">
               {features.map((feature, index) => (
