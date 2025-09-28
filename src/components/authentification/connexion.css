@@ -1,57 +1,66 @@
-/* Style général pour la page de connexion */
+/* 🌸 Conteneur principal */
 .connexion-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 15px 15px;
-  border-radius: 15px;
-  width: 450px;
-  margin: auto;
-  background-color: #00C3D4;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  max-width: 450px;          /* un peu plus étroit que l’inscription */
+  margin: 80px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* ombre douce */
+  border-radius: 12px;
+  font-family: Arial, sans-serif;
+  color: #333;
 }
 
+/* 🌸 Titre */
 .connexion-title {
-  font-size: 24px;
+  text-align: center;
+  font-size: 2rem;
   font-weight: bold;
-  color: white;
-  margin-bottom: 20px;
+  color: #A93D87;
+  margin-bottom: 25px;
 }
 
+/* 🌸 Formulaire */
 .connexion-form {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  gap: 15px;
 }
 
+/* 🌸 Champs */
 .connexion-row {
   display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  margin-bottom: 15px;
+  flex-direction: column;
 }
 
-
-
-.connexion-button {
-  width: 100%;
-  padding: 10px;
-  border-radius: 20px;
-  background-color: black;
-  color: white;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
+.connexion-input {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.connexion-input:focus {
+  border-color: #A93D87;
+  box-shadow: 0 0 6px rgba(169, 61, 135, 0.3);
+}
+
+/* 🌸 Liens inscription / mot de passe */
 .connexion-links {
-  margin-bottom: 20px;
+  margin-top: 10px;
+  font-size: 0.95rem;
   text-align: center;
 }
 
+.connexion-links p {
+  margin: 5px 0;
+  color: #333;
+}
+
 .connexion-links a {
-  color: black;
+  font-weight: bold;
+  color: #A93D87;
   text-decoration: none;
 }
 
@@ -59,65 +68,42 @@
   text-decoration: underline;
 }
 
-.connexion-input {
-  width: 80%; /* Réduction à 80% de la largeur parent */
-  padding: 10px;
-  border-radius: 20px;
+/* 🌸 Bouton */
+.connexion-button {
+  background-color: #A93D87;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 12px;
   border: none;
-  margin: 0 auto; /* Centrer les inputs */
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 15px;
 }
 
-/* Media queries pour les petits écrans */
+.connexion-button:hover {
+  background-color: #C90076;
+  transform: translateY(-2px);
+}
+
+.connexion-button:active {
+  transform: translateY(0);
+}
+
+/* 🌸 Responsive */
 @media (max-width: 768px) {
   .connexion-container {
-    width: 90%; /* Réduire la largeur pour s'adapter à l'écran */
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin: 40px 15px;
+    padding: 20px;
+    max-width: 95%;
   }
 
   .connexion-title {
-    font-size: 20px; /* Réduire la taille de la police pour les petits écrans */
-  }
-
-  .connexion-row {
-    flex-direction: column; /* Empiler les éléments */
-    gap: 10px; /* Réduire l'écart */
+    font-size: 1.6rem;
   }
 
   .connexion-input {
-    padding: 8px; /* Réduire la taille du padding */
-    font-size: 14px; /* Adapter la taille de la police */
-  }
-
-  .connexion-button {
-    padding: 8px;
-    font-size: 14px;
-  }
-
-  .connexion-input {
-    width: 90%; /* Réduction encore plus importante sur mobile */
-    padding: 8px;
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .connexion-title {
-    font-size: 18px; /* Réduire davantage la taille de la police */
-  }
-
-  .connexion-container {
-    padding: 10px; /* Réduire la marge intérieure */
-    border-radius: 10px; /* Réduire les coins arrondis */
-  }
-
-  .connexion-links {
-    font-size: 12px; /* Ajuster la taille de la police des liens */
-  }
-
-  .connexion-input {
-    width: 90%; /* Presque toute la largeur de l'écran sur très petits écrans */
-    padding: 6px;
-    font-size: 12px;
+    font-size: 0.95rem;
   }
 }

@@ -1,80 +1,101 @@
+/* 🌸 Conteneur principal */
 .inscrip-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #00C3D4; 
-  padding: 20px;
-  border-radius: 15px;
-  width: 600px;
-  margin: auto;
-  margin-top: 80px;
-  margin-bottom: 80px;
-  height: auto;
+  max-width: 500px;          /* 👉 largeur réduite */
+  margin: 60px auto;         /* centré verticalement et horizontalement */
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);  /* 👉 ombre plus visible */
+  border-radius: 12px;
+  font-family: Arial, sans-serif;
+  color: #333;
 }
 
+/* 🌸 Titre */
 .inscription-title {
-  font-size: 24px;
+  text-align: center;
+  font-size: 2rem;
   font-weight: bold;
-  color: black;
-  margin-bottom: 20px;
+  color: #A93D87;
+  margin-bottom: 25px;
 }
 
+/* 🌸 Formulaire */
 .inscription-form {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  gap: 15px;
 }
 
-.inscription-label {
-  font-size: 14px;
-  color: black;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
+/* 🌸 Champs de saisie */
 .inscrip-input {
-  width: 80%;
-  padding: 10px;
-  border-radius: 25px;
-  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
   outline: none;
-  gap: 17px;
-  background-color: white;
-  margin-bottom: 15px;
-  text-align: center;
-  font-size: 14px;
-  margin-left: 40px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.inscrip-input:focus {
+  border-color: #A93D87;
+  box-shadow: 0 0 6px rgba(169, 61, 135, 0.3);
+}
+
+/* 🌸 Bouton */
 .inscription-button {
-  background-color: #000000;
+  background-color: #A93D87;
   color: white;
-  padding: 10px;
-  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 12px;
   border: none;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 16px;
-  text-align: center;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
   width: 100%;
 }
 
 .inscription-button:hover {
-  background-color: #333333;
+  background-color: #C90076;
+  transform: translateY(-2px);
 }
 
+.inscription-button:active {
+  transform: translateY(0);
+}
+
+/* 🌸 Lien vers connexion */
 .inscription-login-link {
-  text-align: center;
   margin-top: 20px;
-  font-size: 14px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #333;
 }
 
+.inscription-login-link a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #A93D87;
+}
+
+.inscription-login-link a:hover {
+  text-decoration: underline;
+}
+
+/* 🌸 Responsive */
 @media (max-width: 768px) {
   .inscrip-container {
-      width: 90%;
+    margin: 30px 15px;
+    padding: 20px;
+    max-width: 95%;  /* 👉 prend presque toute la largeur sur mobile */
   }
 
-  .inscription-input {
-      width: 100%;
+  .inscription-title {
+    font-size: 1.6rem;
+  }
+
+  .inscrip-input {
+    font-size: 0.95rem;
   }
 }

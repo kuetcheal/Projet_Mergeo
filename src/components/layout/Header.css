@@ -8,7 +8,7 @@
   font-size: 14px;
   height: 40px;
   justify-content: space-between;
-  width: 100%;
+  width: 97.3%;
  
 }
 .information{
@@ -134,14 +134,37 @@
   position: absolute;
   top: 60px;
   right: 0;
-  background-color: black;
+  background-color: white;
   color: black;
   padding: 10px;
-  gap: 20px;
+  gap: 12px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  z-index: 10;
+  z-index: 10000;
+  list-style: none; 
+  width: 120px;
+  height: 120px;
 }
+
+.dropdownMenu li {
+  margin: 8px 0;
+}
+
+.dropdownMenu li a {
+  display: block;
+  color: #333;             /* couleur du texte */
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.dropdownMenu li a:hover {
+  background-color: #f0f0f0; /* effet hover */
+  color: #000;
+}
+
+
 
 .logoutLabel, .navLink {
   color: white;

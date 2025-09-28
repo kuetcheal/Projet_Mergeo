@@ -127,7 +127,7 @@ const Header = () => {
 
             <ul className="nav-list">
               <li className="navItem">
-                <Link to="#" className="navLink" >{t('header.home')}</Link>
+                <Link to="/" className="navLink" >{t('header.home')}</Link>
               </li>
 
 
@@ -256,8 +256,8 @@ const Header = () => {
               <PersonIcon style={{ width: "60px", height: "60px", marginRight: "10px", color: "#004080", cursor: "pointer" }} />
 
               {showProfileMenu && (
-                <div className="dropdownMenu" style={{backgroundColor: 'white', width:'150px', height:'100px'}}>
-                  <li><Link to="/inscrption">s'inscrire</Link></li>
+                <div className="dropdownMenu">
+                  <li><Link to="/inscription">s'inscrire</Link></li>
                     <li><Link to="/connexion">Se connecter</Link></li>
                     <li><Link to="/allemagne">Mon compte</Link></li>
                 </div>

@@ -23,9 +23,7 @@ const ContactForm = ({ triggerNextStep }) => {
     e.preventDefault();
     console.log('Données du formulaire :', formData);
 
-    // Ici, tu pourrais envoyer vers une API, un email, etc.
-    // Exemple : await axios.post('/api/contact', formData);
-
+   
     triggerNextStep(); // Affiche le message final uniquement après envoi
   };
 
