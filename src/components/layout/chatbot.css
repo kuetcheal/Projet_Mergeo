@@ -26,7 +26,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   .chatbot-container {
       bottom: 85px;
       right: 10px;
@@ -34,12 +34,16 @@
       max-width: 320px;
   }
 
-  .chatbot-close-icon {
-   position: fixed;
-   z-index: 1005;
-    top: 260px;
-    right: 20px;
-    font-size: 18px;
-  }
+.chatbot-close-icon {
+  position: absolute;
+  top: 10px;           /* descend légèrement */
+  right: 10px;         /* colle à droite dans le header */
+  color: white;
+  cursor: pointer;
+  z-index: 2000;
+  font-size: 22px;
+  padding-right: 10px;
+}
+
   
 }

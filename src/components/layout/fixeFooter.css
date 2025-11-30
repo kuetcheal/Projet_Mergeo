@@ -1,28 +1,40 @@
+/* Caché sur desktop */
 .fixe-button {
-    display: none; 
-  }
-  
-  @media (max-width: 800px) {
-    .fixe-button {
-      display: flex; 
-      background-color: #A93D87; /* Couleur de fond */
-      position: fixed;
-      bottom: 0;
-      width: 100%; 
-      justify-content: space-around; 
-      padding: 10px;
-      z-index: 1000; 
-      height: 58px;
-      position: fixed;
-    }
-  
-    .appel {
-      flex: 1; 
-      text-align: center; 
-    }
+  display: none;
+}
 
-    .telechargement{
-      margin-left: 10px;
-    }
+/* Mobile / tablette (max 800px) */
+@media (max-width: 800px) {
+  .fixe-button {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 8px;
+    gap: 8px;
+    background-color: #a93d87; /* bande de fond */
+    z-index: 1000;
   }
-  
+
+  .fixe-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    background-color: #a93d87;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .fixe-btn-icon {
+    font-size: 20px;
+  }
+}
