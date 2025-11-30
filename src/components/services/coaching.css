@@ -1,210 +1,125 @@
 /* Conteneur principal */
-.entretien{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    /* margin-top: 25px; */
+.entretien {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-
-
+/* HERO */
 .anglaise-sectione {
-    position: relative;
-    height: 450px;
-    overflow: hidden;
+  position: relative;
+  height: 360px;
+  overflow: hidden;
 }
 
-.anglaise-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.anglais-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Overlay sombre */
 .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 1;
 }
 
 /* Contenu texte */
 .breadcrumb-content {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
 }
 
 .breadcrumb-orientation {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .underline {
-    width: 80px;
-    height: 2px;
-    background-color: #C90076;
-    margin: 0 auto;
-    margin-bottom: 20px;
+  width: 80px;
+  height: 3px;
+  background-color: #c90076;
+  margin: 0 auto;
 }
 
-
-.contenu{
-    max-width: 1250px !important;
-    align-items: center !important;
-    padding: 10px 15px;
-    text-align: center;
-    margin: 0 auto;
+/* CONTENU */
+.contenu {
+  max-width: 1250px;
+  padding: 16px;
+  margin: 0 auto;
 }
 
-.fin{
-    margin-top: 30px;
-}
-.coaching-container {
-    padding: 16px;
-    max-width: 1300px;
-    margin: 0 auto;
+/* Grids blancs */
+.grid,
+.fine {
+  background-color: #ffffff;
 }
 
-/* Titre principal */
-.main-title {
-    color: #C90076;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 16px;
+/* -------- Cards colorées section "Pourquoi choisir..." -------- */
+
+.why-card {
+  /* background: linear-gradient(135deg, #ffffff 0%, #f5e6f3 100%); */
+  border-radius: 12px;
+  padding-top: 8px;
+  background-color: #c90076;
 }
 
-/* Sous-titre */
-.sub-title {
-    font-size: 18px;
-    margin-top: 10px;
-    text-align: center;
+.why-number {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #c99048;
+  font-style: italic;
+  text-align: left;
 }
 
-/* Texte d'introduction */
-.intro-text, .sub-text {
-    font-size: 18px;
-    font-weight: bold;
-    text-align: justify;
-    margin: 0 auto 20px;
-    line-height: 1.6;
+.why-title {
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: #001f54;
+  margin-bottom: 8px;
+  text-align: left;
 }
 
-/* Liste */
-.list {
-    font-size: 17px;
-    margin-left: 20px;
-    line-height: 1.6;
+.why-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: left;
 }
 
-/* Section Public */
-.public-grid {
-    margin-top: 20px;
-    text-align: center;
+/* -------- RESPONSIVE -------- */
+
+@media (max-width: 900px) {
+  .anglaise-sectione {
+    height: 260px;
+  }
+
+  .breadcrumb-orientation {
+    font-size: 1.8rem;
+  }
+
+  .contenu {
+    padding: 12px;
+  }
 }
 
-.public-item {
-    margin-bottom: 20px;
-}
+@media (max-width: 600px) {
+  .breadcrumb-orientation {
+    font-size: 1.6rem;
+  }
 
-.public-text {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 10px;
-}
+  .why-card {
+    text-align: left;
+  }
 
-/* Section Phases */
-.phases-grid {
-    margin-top: 20px;
-}
-
-.phase-card-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: #f7f7f7;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 16px;
-}
-
-.phase-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.phase-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 10px;
-    color: #C90076;
-}
-
-.phase-text {
-    font-size: 16px;
-    margin-top: 10px;
-    text-align: center;
-}
-
-.grid, .fine{
-    background-color: #ffffff;
-}
-
-.fine{
-    background-color: #ffffff;
-    padding: 18px 15px;
-}
-
-/* Responsivité */
-@media (max-width: 768px) {
-    .intro-text, .sub-text, .list {
-        font-size: 16px;
-    }
-
-    .public-grid {
-        flex-direction: column;
-    }
-
-    .phase-card-content {
-        padding: 10px;
-    }
-
-    .phase-title {
-        font-size: 18px;
-    }
-    .fin {
-        margin-right: 36px !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .main-title {
-        font-size: 20px;
-    }
-
-    .sub-title {
-        font-size: 16px;
-    }
-
-    .fin {
-        margin-right: 36px !important;
-    }
-    .contenu{
-        width: 95%!important;
-        align-items: center !important;
-        padding: 10px 15px;
-        text-align: center;
-        margin: 0 auto;
-    }
-    
+  .why-text {
+    font-size: 0.9rem;
+  }
 }
