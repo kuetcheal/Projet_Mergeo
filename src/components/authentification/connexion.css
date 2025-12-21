@@ -1,16 +1,16 @@
-/* 🌸 Conteneur principal */
+
 .connexion-container {
-  max-width: 450px;          /* un peu plus étroit que l’inscription */
+  max-width: 450px;          
   margin: 80px auto;
   padding: 30px;
   background-color: #ffffff;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* ombre douce */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
   font-family: Arial, sans-serif;
   color: #333;
 }
 
-/* 🌸 Titre */
+
 .connexion-title {
   text-align: center;
   font-size: 2rem;
@@ -19,14 +19,14 @@
   margin-bottom: 25px;
 }
 
-/* 🌸 Formulaire */
+
 .connexion-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-/* 🌸 Champs */
+
 .connexion-row {
   display: flex;
   flex-direction: column;
@@ -46,7 +46,7 @@
   box-shadow: 0 0 6px rgba(169, 61, 135, 0.3);
 }
 
-/* 🌸 Liens inscription / mot de passe */
+
 .connexion-links {
   margin-top: 10px;
   font-size: 0.95rem;

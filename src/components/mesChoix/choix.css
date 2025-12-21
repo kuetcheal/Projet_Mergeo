@@ -1,137 +1,175 @@
-.choix-container {
-    display: flex;
-   flex-direction: column;
-    gap: 30px !important; /* Augmente l'espace entre les cartes */
-    flex-wrap: wrap;
-    margin: 20px auto;
-    max-width: 1400px;
-  }
-  
-  .choix-title-with-bars {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #2b2b70; /* Couleur du texte */
-    text-align: center;
-  }
-  
-  .choix-title-with-bars::before,
-  .choix-title-with-bars::after {
-    content: "";
-    flex: 1;
-    height: 5px;
-    background-color: #b73a93; /* Couleur des barres */
-    margin: 0 16px; /* Espacement entre la barre et le texte */
-  }
-  
+/* =============================
+   WRAPPER + TITRES (alignés à gauche)
+============================= */
 
+.choix-wrapper {
+  margin: 20px auto;
+  max-width: 1400px;
+  padding: 0 16px; /* ✅ évite débordement mobile */
+}
 
-  /* .choix-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: calc(33.333% - 20px);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 450px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
-  } */
+.choix-title-main {
+  text-align: left;          /* ✅ gauche */
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #C90076;
+  margin: 10px 0 12px;
+}
 
-  .choix-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-   
-  }
-  
-  .choix-card:hover {
-    transform: scale(1.05); /* Agrandit la carte au survol */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Ombre plus forte au survol */
-  }
-  
-  .choix-image-wrapper {
-    height: 60%;
-    overflow: hidden;
-  }
+.choix-subtitle {
+  text-align: left;          /* ✅ gauche */
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 26px;
+  max-width: 980px;
+  line-height: 1.35;
+}
 
-  /* .choix-image-wrapper {
-    text-align: center;
+/* ✅ Responsive titres */
+@media (max-width: 768px) {
+  .choix-title-main {
+    font-size: 1.6rem;
   }
-   */
-  .choix-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .choix-subtitle {
+    font-size: 1.05rem;
+    margin-bottom: 18px;
   }
-  
-  .choix-content {
-    padding: 15px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+}
+
+@media (max-width: 480px) {
+  .choix-title-main {
+    font-size: 1.45rem;
   }
-  
-  .choix-title {
+  .choix-subtitle {
+    font-size: 0.98rem;
+  }
+}
+
+/* =============================
+   GRILLE DES DESTINATIONS
+============================= */
+
+.choix-container-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+
+/* tablette -> 2 colonnes */
+@media (max-width: 900px) {
+  .choix-container-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* mobile -> 1 colonne */
+@media (max-width: 600px) {
+  .choix-container-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* =============================
+   CARD DESTINATION (hover conservé)
+============================= */
+
+.dest-card {
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #ddd;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.dest-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.18);
+}
+
+.dest-image {
+  width: 100%;
+  height: 250px; /* desktop */
+  object-fit: cover;
+  display: block;
+}
+
+/* ✅ Réduction hauteur image en mobile */
+@media (max-width: 600px) {
+  .dest-image {
+    height: 190px;
+  }
+}
+
+/* overlay */
+.dest-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 14px;
+  text-align: center;
+}
+
+/* titre CANADA/FRANCE */
+.dest-name {
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.6rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  margin-bottom: 10px;
+  transition: opacity 0.25s ease;
+}
+
+/* bouton : caché par défaut */
+.dest-btn {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  background-color: #1976D2;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 22px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+/* ✅ Hover : le texte disparaît et le bouton apparaît */
+.dest-card:hover .dest-name {
+  opacity: 0;
+}
+
+.dest-card:hover .dest-btn {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* ✅ Mobile : réduction du texte + bouton un peu plus bas */
+@media (max-width: 600px) {
+  .dest-name {
     font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
   }
-  
-  .choix-description {
-    font-size: 0.9rem;
-    color: #333;
+
+  .dest-btn {
+    font-size: 0.85rem;
+    padding: 9px 18px;
+    transform: translateY(18px); /* 👈 descend un peu le bouton */
   }
-  
-  .choix-button {
-    width: 100%;
-    padding: 10px;
-    color: #fff;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #004080; /* Couleur par défaut */
-    transition: background-color 0.3s ease; /* Animation de la couleur */
+
+  /* au hover, on le remet bien en place */
+  .dest-card:hover .dest-btn {
+    transform: translateY(8px); /* 👈 un peu plus bas que desktop */
   }
-  
-  .choix-button:hover {
-    background-color: #A93D87 !important; /* Couleur au survol */
-  }
-  
-  .choix-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .choix-flag {
-    width: 100px;
-    height: auto;
-    margin-bottom: 20px;
-  }
-  
-  .flag-container {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  @media (max-width: 768px) {
-    .choix-card {
-      width: calc(50% - 20px);
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .choix-card {
-      width: 100%;
-    }
-  }
-  
+}

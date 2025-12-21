@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import Home from "./components/authentification/home";
+// import Home from "./pages/home/home";
 import Logement from "./components/authentification/logement";
 import Logement1 from "./components/authentification/logement1";
 import Inscription from "./components/authentification/inscription";
@@ -10,7 +10,7 @@ import ForgetPassword from "./components/authentification/forgetPassword";
 import Profil from "./components/authentification/profil";
 import Map from "./components/authentification/map";
 import Sponsor from "./components/authentification/sponsor";
-import Medecin from "./components/authentification/medecin";
+ import Medecin from "./components/authentification/medecin";
 import TelechargeBrochure from "./components/authentification/telechargeBrochure";
 import Contact from "./components/authentification/contact";  
 import NotFound from './components/authentification/NotFound';
@@ -23,8 +23,7 @@ import Notice from './components/mesChoix/notice';
 import France from './components/mesChoix/france';
 import Langue from './components/langues/langue';
 import France1 from './components/mesChoix/france1';
-import France2 from './components/mesChoix/france2';
-import France3 from './components/mesChoix/france3';
+
 import France4 from './components/mesChoix/france4';
 import Canada from './components/mesChoix/canada';
 import Canada1 from './components/mesChoix/canada1';
@@ -80,7 +79,7 @@ const App = () => {
           <Route path="/forgetPassword" element={<ForgetPassword />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/profil" element={<Profil />} />
-          <Route path="/home" element={<Home />} />
+          {/* <Route path="/" element={<Home />} /> */}
           <Route path="/logement" element={<Logement />} />
           <Route path="/logement1" element={<Logement1 />} />
           <Route path="/" element={<Medecin />} />
@@ -95,8 +94,7 @@ const App = () => {
           <Route path="/belgique" element={<Belgique />} />
           <Route path="/france" element={<France />} />
           <Route path="/france1" element={<France1 />} />
-          <Route path="/france2" element={<France2 />} />
-          <Route path="/france3" element={<France3 />} />
+         
           <Route path="/france4" element={<France4 />} />
           <Route path="/canada" element={<Canada/>} />
           <Route path="/canada1" element={<Canada1/>} />

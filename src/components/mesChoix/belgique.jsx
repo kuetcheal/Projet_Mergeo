@@ -2,7 +2,7 @@ import React from 'react';
 import './belgique.css';
 import Canada1 from './canada1';
 import Canada2 from './canada2';
-import France3 from './france3';
+import France1 from './france1';
 import Belgique1 from './belgique1';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { useNavigate } from 'react-router-dom';
@@ -78,7 +78,7 @@ const Canada = () => {
          l’Europe dans un environnement d’études multilingue, multiculturel et de grande qualité.</h3> <br />
         <Canada1 />
         <Canada2 />
-        <France3 />
+        <France1 />
         <Belgique1 />
         <button className="green-button" style={{marginLeft: '60px'}}>
             Je postule

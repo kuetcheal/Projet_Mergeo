@@ -1,8 +1,8 @@
 import React from 'react';
 import './france.css';
 import France1 from './france1';
-import France2 from './france2';
-import France3 from './france3';
+// import France2 from './france2';
+// import France3 from './france3';
 import France4 from './france4';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { useNavigate } from 'react-router-dom';
@@ -79,8 +79,8 @@ const France = () => {
           détenir un diplôme français facilite l’accès au marché du travail, et ce, partout dans les pays francophones et mêmes dans certains
           pays Anglophones juste l'équivalence dans certains cas est suffisant pour faire valoir votre Dipôme.</h3> <br />
         <France1 />
-        <France2 />
-        <France3 />
+        {/* <France2 />
+        <France3 /> */}
         <France4 />
         <button className="green-button" style={{ marginLeft: '60px' }}>
           Je postule

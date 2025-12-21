@@ -3,7 +3,6 @@ import { Box, Typography, Button, Container } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { useTranslation } from 'react-i18next';
-
 import Temoignages from '../temoignages/temoignage';
 import Choix from '../mesChoix/choix';
 import Sponsor from './sponsor';
@@ -17,8 +16,12 @@ const Medecin = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
-  const handleContactClick = () => navigate('/contact');
-  const handleTemoignageClick = () => navigate('/toutTemoignages');
+  const handleContactClick = () => {
+    navigate('/contact');
+  };
+  const handleTemoignageClick = () => {
+    navigate('/toutTemoignages');
+  };
 
   const images = ["/images/bureau.jpeg", "/images/passport.jpg", "/images/catable.jpg"];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -28,24 +31,16 @@ const Medecin = () => {
     const interval = setInterval(() => {
       setFade(false);
       setTimeout(() => {
-        setCurrentImageIndex((prev) => (prev + 1) % images.length);
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
         setFade(true);
       }, 300);
     }, 4000);
     return () => clearInterval(interval);
   }, []);
 
-  // ✅ 1 seul container “standard” réutilisé partout
-  const pageContainerSx = {
-    // largeur max cohérente partout
-    maxWidth: "1290px",
-    mx: "auto",
-    // padding responsive pour éviter les débordements mobile
-    px: { xs: 2, sm: 3, md: 4 },
-  };
-
   return (
-    <Box width="100%" bgcolor="white" sx={{ overflowX: "hidden" }}>
+    <Box width="100%" bgcolor="white">
+      {/* Section image animée */}
       <Box position="relative" height={520} overflow="hidden">
         <Box
           component="img"
@@ -82,27 +77,14 @@ const Medecin = () => {
             textAlign: 'center',
             color: 'white',
             zIndex: 2,
-            px: 2, 
-            width: { xs: "100%", md: "auto" }
           }}
         >
-          <Typography variant="h2" fontWeight="bold" color="#A93D87" mb={2}
-            sx={{
-              fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
-              lineHeight: 1.1
-            }}
-          >
+          <Typography variant="h2" fontWeight="bold" color="#A93D87" mb={2}>
             {t('accueil.title')}
           </Typography>
-
-          <Typography variant="h4" fontStyle="italic" color="whitesmoke" mb={3}
-            sx={{
-              fontSize: { xs: "1.1rem", sm: "1.4rem", md: "1.8rem" }
-            }}
-          >
+          <Typography variant="h4" fontStyle="italic" color="whitesmoke" mb={3}>
             {t('accueil.description')}
           </Typography>
-
           <Button
             variant="contained"
             onClick={handleContactClick}
@@ -110,7 +92,7 @@ const Medecin = () => {
             sx={{
               bgcolor: '#007bff',
               '&:hover': { bgcolor: '#A93D87' },
-              fontSize: { xs: 14, sm: 16, md: 18 },
+              fontSize: 18,
               fontWeight: 'bold',
               px: 3,
               py: 1,
@@ -120,26 +102,24 @@ const Medecin = () => {
           </Button>
         </Box>
       </Box>
-
-     {/* Sections blanches en container */}
-<Box sx={pageContainerSx}>
-  <Box my={{ xs: 3, md: 4 }}><Choix /></Box>
-</Box>
-
-{/* Presentation full width bg + contenu centré (géré par Presentation1) */}
-<Presentation1 />
-
-{/* Sections blanches en container */}
-<Box sx={pageContainerSx}>
-  <Box my={{ xs: 3, md: 4 }}><Service1 /></Box>
-</Box>
-
-
-      {/* ================= TEMOIGNAGES : BG FULL WIDTH + CONTENU EN CONTAINER ================= */}
-      <Box sx={{ bgcolor: '#f5f5f5', py: { xs: 4, md: 5 } }}>
-        <Box sx={pageContainerSx}>
+  
+      {/* Contenu classique (Choix, Présentation, Services) */}
+      <Container maxWidth="1290" sx={{ bgcolor: 'white' }}>
+        <Box my={4}><Choix /></Box>
+        <Box my={4}><Presentation1 /></Box>
+        <Box my={4}><Service1 /></Box>
+      </Container>
+  
+      {/* Section Témoignages + bouton - plein écran avec fond */}
+      <Box
+        sx={{
+          bgcolor: '#f5f5f5',
+          py: 5,
+          px: { xs: 2, md: 10 },
+        }}
+      >
+        <Box maxWidth="1290px" mx="auto">
           <Temoignages />
-
           <Box display="flex" justifyContent="center" mt={4}>
             <Button
               onClick={handleTemoignageClick}
@@ -148,10 +128,11 @@ const Medecin = () => {
                 color: 'white',
                 fontWeight: 'bold',
                 fontSize: 16,
-                width: { xs: "100%", sm: 280 },
-                maxWidth: 320,
+                width: 250,
                 height: 50,
-                '&:hover': { backgroundColor: '#A93D87' },
+                '&:hover': {
+                  backgroundColor: '#A93D87',
+                },
               }}
             >
               Lire tous les témoignages
@@ -159,33 +140,40 @@ const Medecin = () => {
           </Box>
         </Box>
       </Box>
+  
+      {/* Section Location - plein écran avec fond */}
+      <Box
+  sx={{
+    background: 'linear-gradient(to bottom, white 50%, #f9f9f9 50%)',
+    py: 5,
+    px: { xs: 2, md: 10 },
+  }}
+>
+  <Box maxWidth="1290px" mx="auto">
+    <Location />
+  </Box>
+</Box>
 
-      {/* ================= LOCATION : BG FULL WIDTH + CONTENU EN CONTAINER ================= */}
+      {/* Section Langue + Sponsor - en container classique */}
+      <Container maxWidth="1290">
+        <Box my={6}><Langue /></Box>
+        <Box my={4}><Sponsor /></Box>
+      </Container>
+  
+      {/* Section Brochure1 - plein écran avec fond */}
       <Box
         sx={{
-          background: 'linear-gradient(to bottom, white 50%, #f9f9f9 50%)',
-          py: { xs: 4, md: 5 },
+          bgcolor: '#f5f5f5',
+          py: 5,
+          px: { xs: 2, md: 10 },
         }}
       >
-        <Box sx={pageContainerSx}>
-          <Location />
-        </Box>
-      </Box>
-
-    
-      <Box sx={pageContainerSx}>
-        <Box my={{ xs: 4, md: 6 }}><Langue /></Box>
-        <Box my={{ xs: 3, md: 4 }}><Sponsor /></Box>
-      </Box>
-
-      
-      <Box sx={{ bgcolor: '#f5f5f5', py: { xs: 4, md: 5 } }}>
-        <Box sx={pageContainerSx}>
+        <Box maxWidth="1290px" mx="auto">
           <Brochure1 />
         </Box>
       </Box>
     </Box>
-  );
+  );  
 };
 
 export default Medecin;

@@ -2,7 +2,7 @@ import React from 'react';
 import './france.css';
 import Canada1 from './canada1';
 import Canada2 from './canada2';
-import France3 from './france3';
+
 import ImmigrerCanada4 from './immigrer-canada4';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { useNavigate } from 'react-router-dom';
@@ -83,7 +83,7 @@ const Canada = () => {
 
         <Canada1 />
         <Canada2 />
-        <France3 />
+       
         <ImmigrerCanada4 />
 
         <button className="green-button" style={{ marginLeft: '60px' }}>

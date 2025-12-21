@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './ScrollToTop.css'; // Pour styliser le bouton
+import './ScrollToTop.css'; 
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Fonction pour faire défiler vers le haut
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -13,7 +12,6 @@ const ScrollToTop = () => {
     });
   };
 
-  // Détection de la position de défilement
   useEffect(() => {
     const toggleVisibility = () => {
       if (window.pageYOffset > 300) {
@@ -24,7 +22,6 @@ const ScrollToTop = () => {
     };
 
     window.addEventListener('scroll', toggleVisibility);
-
     return () => {
       window.removeEventListener('scroll', toggleVisibility);
     };
