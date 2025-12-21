@@ -1,41 +1,40 @@
-.floating-button {
+.call-floating-button {
   position: fixed;
-  top: 280px;
+  top: 220px;
   right: 20px;
+
   height: 50px;
   width: 50px;
   border-radius: 50%;
   background-color: #004080;
-  color: white;
+  color: #fff;
   border: none;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  
+
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   cursor: pointer;
+  text-decoration: none;
+
   transition: all 0.3s ease;
-  padding: 0;
   z-index: 1000;
   overflow: hidden;
+  position: fixed;
 }
 
-/* Icône */
-.floating-icon {
+.call-floating-icon {
   font-size: 24px;
   flex-shrink: 0;
-  z-index: 1001;
-  position: relative;
-  color: #ffffff !important;
+  color: #fff !important;
   line-height: 1;
-  margin-left: 5px;
+  z-index: 1001;
 }
 
-/* Forcer l’icône MUI à rester visible */
-.floating-button .floating-icon,
-.floating-button .floating-icon svg {
+
+.call-floating-button .call-floating-icon,
+.call-floating-button .call-floating-icon svg {
   opacity: 1 !important;
   visibility: visible !important;
   display: inline-block !important;
@@ -43,10 +42,11 @@
   fill: currentColor !important;
 }
 
-/* Label — n’occupe AUCUNE place hors hover */
-.floating-label {
+
+.call-floating-label {
   max-width: 0;
   overflow: hidden;
+
   opacity: 0;
   margin-left: 0;
 
@@ -61,21 +61,19 @@
     transform 0.3s ease;
 
   z-index: 1001;
-  position: relative;
 }
 
-/* Hover */
-.floating-button:hover {
-  width: 140px;
+
+.call-floating-button:hover {
+  width: 190px;           
   border-radius: 25px;
   justify-content: flex-start;
   padding-left: 14px;
   background-color: #C90076;
 }
 
-/* Apparition du label */
-.floating-button:hover .floating-label {
-  max-width: 90px; /* ajustable selon le texte */
+.call-floating-button:hover .call-floating-label {
+  max-width: 140px;      
   opacity: 1;
   margin-left: 8px;
   transform: translateX(0);
