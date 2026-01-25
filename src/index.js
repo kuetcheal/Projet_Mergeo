@@ -1,28 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import './i18n';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+import "bootstrap/dist/css/bootstrap.min.css"; 
+import "./index.css";
+
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import "./i18n";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   palette: {
-    primary: {
-      main: '#A93D87', 
-    },
-    secondary: {
-      main: '#004080',
-    },
+    primary: { main: "#A93D87" },
+    secondary: { main: "#004080" },
   },
 });
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  
- <ThemeProvider theme={theme}>
+  <ThemeProvider theme={theme}>
     <App />
- </ThemeProvider>
-  
+  </ThemeProvider>
 );
+
 reportWebVitals();

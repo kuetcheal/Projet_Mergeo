@@ -1,25 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import { Box, Typography, Button, Container } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import { useTranslation } from 'react-i18next';
+import React, { useState, useEffect } from "react";
+import { Box, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
-import Temoignages from '../temoignages/temoignage';
-import Choix from '../mesChoix/choix';
-import Sponsor from './sponsor';
-import Brochure1 from './brochure1';
-import Langue from '../langues/langue';
-import Service1 from '../services/service1';
-import Presentation1 from '../mobiliis/presentation1';
-import Location from '../mobiliis/location';
+import Temoignages from "../temoignages/temoignage";
+import Choix from "../mesChoix/choix";
+import Sponsor from "./sponsor";
+import Brochure1 from "./brochure1";
+import Langue from "../langues/langue";
+import Service1 from "../services/service1";
+import Presentation1 from "../mobiliis/presentation1";
+import Location from "../mobiliis/location";
+
+// ✅ Import du slider
+import Slider from "../slider/Slider";
 
 const Medecin = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
-  const handleContactClick = () => navigate('/contact');
-  const handleTemoignageClick = () => navigate('/toutTemoignages');
+  const handleContactClick = () => navigate("/contact");
+  const handleTemoignageClick = () => navigate("/toutTemoignages");
 
+  // (Tu peux laisser, même si Slider a ses propres images)
   const images = ["/images/bureau.jpeg", "/images/passport.jpg", "/images/catable.jpg"];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [fade, setFade] = useState(true);
@@ -33,110 +36,39 @@ const Medecin = () => {
       }, 300);
     }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
 
   // ✅ 1 seul container “standard” réutilisé partout
   const pageContainerSx = {
-    // largeur max cohérente partout
     maxWidth: "1290px",
     mx: "auto",
-    // padding responsive pour éviter les débordements mobile
     px: { xs: 2, sm: 3, md: 4 },
   };
 
   return (
     <Box width="100%" bgcolor="white" sx={{ overflowX: "hidden" }}>
-      <Box position="relative" height={520} overflow="hidden">
-        <Box
-          component="img"
-          src={images[currentImageIndex]}
-          alt="Slideshow"
-          sx={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            transition: 'opacity 0.5s ease-in-out, filter 0.5s ease-in-out',
-            opacity: fade ? 1 : 0,
-            filter: fade ? 'blur(0px)' : 'blur(5px)',
-            zIndex: 0,
-          }}
-        />
-        <Box
-          position="absolute"
-          top={0}
-          left={0}
-          width="100%"
-          height="100%"
-          bgcolor="rgba(0,0,0,0.5)"
-          zIndex={1}
-        />
-        <Box
-          position="absolute"
-          top="50%"
-          left="50%"
-          sx={{
-            transform: 'translate(-50%, -50%)',
-            textAlign: 'center',
-            color: 'white',
-            zIndex: 2,
-            px: 2, 
-            width: { xs: "100%", md: "auto" }
-          }}
-        >
-          <Typography variant="h2" fontWeight="bold" color="#A93D87" mb={2}
-            sx={{
-              fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
-              lineHeight: 1.1
-            }}
-          >
-            {t('accueil.title')}
-          </Typography>
+      {/* ✅ Remplacement du gros bloc hero par le Slider */}
+      <Slider height={520} intervalMs={4000} onPrimaryCta={handleContactClick} />
 
-          <Typography variant="h4" fontStyle="italic" color="whitesmoke" mb={3}
-            sx={{
-              fontSize: { xs: "1.1rem", sm: "1.4rem", md: "1.8rem" }
-            }}
-          >
-            {t('accueil.description')}
-          </Typography>
-
-          <Button
-            variant="contained"
-            onClick={handleContactClick}
-            endIcon={<ChevronRightIcon />}
-            sx={{
-              bgcolor: '#007bff',
-              '&:hover': { bgcolor: '#A93D87' },
-              fontSize: { xs: 14, sm: 16, md: 18 },
-              fontWeight: 'bold',
-              px: 3,
-              py: 1,
-            }}
-          >
-            NOUS CONTACTER
-          </Button>
+      {/* Sections blanches en container */}
+      <Box sx={pageContainerSx}>
+        <Box my={{ xs: 3, md: 4 }}>
+          <Choix />
         </Box>
       </Box>
 
-     {/* Sections blanches en container */}
-<Box sx={pageContainerSx}>
-  <Box my={{ xs: 3, md: 4 }}><Choix /></Box>
-</Box>
+      {/* Presentation full width bg + contenu centré (géré par Presentation1) */}
+      <Presentation1 />
 
-{/* Presentation full width bg + contenu centré (géré par Presentation1) */}
-<Presentation1 />
-
-{/* Sections blanches en container */}
-<Box sx={pageContainerSx}>
-  <Box my={{ xs: 3, md: 4 }}><Service1 /></Box>
-</Box>
-
+      {/* Sections blanches en container */}
+      <Box sx={pageContainerSx}>
+        <Box my={{ xs: 3, md: 4 }}>
+          <Service1 />
+        </Box>
+      </Box>
 
       {/* ================= TEMOIGNAGES : BG FULL WIDTH + CONTENU EN CONTAINER ================= */}
-      <Box sx={{ bgcolor: '#f5f5f5', py: { xs: 4, md: 5 } }}>
+      <Box sx={{ bgcolor: "#f5f5f5", py: { xs: 4, md: 5 } }}>
         <Box sx={pageContainerSx}>
           <Temoignages />
 
@@ -144,14 +76,14 @@ const Medecin = () => {
             <Button
               onClick={handleTemoignageClick}
               sx={{
-                backgroundColor: '#1976D2',
-                color: 'white',
-                fontWeight: 'bold',
+                backgroundColor: "#1976D2",
+                color: "white",
+                fontWeight: "bold",
                 fontSize: 16,
                 width: { xs: "100%", sm: 280 },
                 maxWidth: 320,
                 height: 50,
-                '&:hover': { backgroundColor: '#A93D87' },
+                "&:hover": { backgroundColor: "#A93D87" },
               }}
             >
               Lire tous les témoignages
@@ -163,7 +95,7 @@ const Medecin = () => {
       {/* ================= LOCATION : BG FULL WIDTH + CONTENU EN CONTAINER ================= */}
       <Box
         sx={{
-          background: 'linear-gradient(to bottom, white 50%, #f9f9f9 50%)',
+          background: "linear-gradient(to bottom, white 50%, #f9f9f9 50%)",
           py: { xs: 4, md: 5 },
         }}
       >
@@ -172,14 +104,16 @@ const Medecin = () => {
         </Box>
       </Box>
 
-    
       <Box sx={pageContainerSx}>
-        <Box my={{ xs: 4, md: 6 }}><Langue /></Box>
-        <Box my={{ xs: 3, md: 4 }}><Sponsor /></Box>
+        <Box my={{ xs: 4, md: 6 }}>
+          <Langue />
+        </Box>
+        <Box my={{ xs: 3, md: 4 }}>
+          <Sponsor />
+        </Box>
       </Box>
 
-      
-      <Box sx={{ bgcolor: '#f5f5f5', py: { xs: 4, md: 5 } }}>
+      <Box sx={{ bgcolor: "#f5f5f5", py: { xs: 4, md: 5 } }}>
         <Box sx={pageContainerSx}>
           <Brochure1 />
         </Box>

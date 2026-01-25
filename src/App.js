@@ -53,6 +53,8 @@ import PersonneTemoignage from "./components/temoignages/personneTemoignage";
  import Service1 from './components/services/service1';
  import Avi from './components/services/avi';
 
+ import Slider from './components/slider/Slider';
+
  import AviForms1 from './components/forms/aviForms1';
  import BrochureForms from './components/forms/brochureForms';
  import AviForms2 from './components/forms/aviForms2';
@@ -73,6 +75,9 @@ const App = () => {
           < Route path="/inscription" element={<Inscription />} />
           <Route path="/connexion" element={<Connexion />} />
           <Route path="/navbar" element={<Navbar />} />
+
+           <Route path="/Slider" element={<Slider />} />
+
           <Route path="/sponsor" element={<Sponsor />} />
           <Route path="/map" element={<Map />} />
           <Route path="/brochure" element={<Brochure />} />
