@@ -51,7 +51,7 @@ const Medecin = () => {
       <Slider height={520} intervalMs={4000} onPrimaryCta={handleContactClick} />
 
       {/* Sections blanches en container */}
-      <Box sx={pageContainerSx}>
+      <Box >
         <Box my={{ xs: 3, md: 4 }}>
           <Choix />
         </Box>
@@ -61,34 +61,16 @@ const Medecin = () => {
       <Presentation1 />
 
       {/* Sections blanches en container */}
-      <Box sx={pageContainerSx}>
+      <Box >
         <Box my={{ xs: 3, md: 4 }}>
           <Service1 />
         </Box>
       </Box>
 
       {/* ================= TEMOIGNAGES : BG FULL WIDTH + CONTENU EN CONTAINER ================= */}
-      <Box sx={{ bgcolor: "#f5f5f5", py: { xs: 4, md: 5 } }}>
-        <Box sx={pageContainerSx}>
+      <Box sx={{ bgcolor: "#f5f5f5", }}>
+        <Box>
           <Temoignages />
-
-          <Box display="flex" justifyContent="center" mt={4}>
-            <Button
-              onClick={handleTemoignageClick}
-              sx={{
-                backgroundColor: "#1976D2",
-                color: "white",
-                fontWeight: "bold",
-                fontSize: 16,
-                width: { xs: "100%", sm: 280 },
-                maxWidth: 320,
-                height: 50,
-                "&:hover": { backgroundColor: "#A93D87" },
-              }}
-            >
-              Lire tous les témoignages
-            </Button>
-          </Box>
         </Box>
       </Box>
 
@@ -96,25 +78,21 @@ const Medecin = () => {
       <Box
         sx={{
           background: "linear-gradient(to bottom, white 50%, #f9f9f9 50%)",
-          py: { xs: 4, md: 5 },
         }}
       >
-        <Box sx={pageContainerSx}>
+        <Box>
           <Location />
         </Box>
       </Box>
 
-      <Box sx={pageContainerSx}>
-        <Box my={{ xs: 4, md: 6 }}>
+      <Box>
+        <Box >
           <Langue />
-        </Box>
-        <Box my={{ xs: 3, md: 4 }}>
-          <Sponsor />
         </Box>
       </Box>
 
       <Box sx={{ bgcolor: "#f5f5f5", py: { xs: 4, md: 5 } }}>
-        <Box sx={pageContainerSx}>
+        <Box>
           <Brochure1 />
         </Box>
       </Box>

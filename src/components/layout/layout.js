@@ -56,26 +56,7 @@ const Layout = ({ children }) => {
           {/* Chatbot */}
           {!isAdminPage && !hideElements && (
             <div className="chatbot-container">
-              {/* ✅ Tooltip affiché seulement si showTooltip = true */}
-              {showTooltip && (
-                <div className="chatbot-tooltip">
-                  {/* le texte ouvre le chatbot */}
-                  <span className="tooltip-text" onClick={toggleChatbot}>
-                    Une question ? Nous sommes là pour vous aider !
-                  </span>
-
-                  {/* ✅ la croix ferme le tooltip */}
-                  <button
-                    type="button"
-                    className="tooltip-close"
-                    onClick={closeTooltip}
-                    aria-label="Fermer"
-                  >
-                    ✕
-                  </button>
-                </div>
-              )}
-
+             
               <img
                 src="/images/chatbot.png"
                 alt="Chatbot"

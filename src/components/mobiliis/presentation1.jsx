@@ -16,7 +16,7 @@ const Presentation1 = () => {
       {/* ✅ contenu dans un container interne (même largeur partout) */}
       <Box
         sx={{
-          maxWidth: "1290px",
+          maxWidth: "1400px",
           mx: "auto",
           px: { xs: 2, sm: 3, md: 4 },
         }}

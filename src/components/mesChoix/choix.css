@@ -4,7 +4,7 @@
 
 .choix-wrapper {
   margin: 20px auto;
-  max-width: 1400px;
+  max-width: 1380px;
   padding: 0 16px; /* ✅ évite débordement mobile */
 }
 

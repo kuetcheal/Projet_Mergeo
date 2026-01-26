@@ -1,28 +1,41 @@
+/* ✅ SECTION AVEC BG (remis) */
 .temoignons {
-  text-align: center;
-  padding: 20px 10px;
-  width: 100%;
+  background: #f4f6fb;       /* ✅ remets ton bg */
+  padding: 42px 0;
+  font-family: Arial, sans-serif;
 }
 
+/* ✅ Container */
+.temoignages-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ✅ Titre + sous-titre alignés début */
 .tit {
   color: #d6007f;
-  font-weight: bold;
-  font-size: 34px;
+  font-weight: 900;
+  font-size: 30px;
+  margin: 0;
+  text-align: left;
+  line-height: 1.05;
 }
 
 .subtitle {
   font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 30px;
+  font-weight: 800;
+  margin: 10px 0 18px 0;
+  text-align: left;
 }
 
-/* Scroll horizontal type "carousel" */
+/* ✅ CAROUSEL */
 .temoignages-scroll {
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding-bottom: 1.8rem;
-  gap: 1.25rem;
+  padding-bottom: 18px;
+  gap: 22px;
   scroll-behavior: smooth;
   cursor: grab;
 }
@@ -31,33 +44,27 @@
   cursor: grabbing;
 }
 
-/* ✅ Carte compacte + hauteur stable */
+/* ✅ Card */
 .temoignage-card-slide {
   background-color: #ffffff;
   border-radius: 12px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
-  min-width: 320px;
-  max-width: 320px;
-  height: 360px;                 /* ✅ évite que le texte écrase l’avatar */
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.08);
+  min-width: 380px;
+  max-width: 380px;
+  height: 420px;
   scroll-snap-align: start;
   flex-shrink: 0;
   border: 1px solid rgba(0, 0, 0, 0.06);
   overflow: hidden;
-  transition: transform 0.25s ease;
 }
 
-.temoignage-card-slide:hover {
-  transform: translateY(-3px);
-}
-
-/* ✅ Avatar toujours rond + jamais écrasé */
+/* ✅ Avatar */
 .temoignage-avatar-wrap {
-  width: 110px;
-  height: 110px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   overflow: hidden;
-  margin: 14px auto 6px auto;
-  flex: 0 0 auto;
+  margin: 18px auto 10px auto;
 }
 
 .temoignage-avatar {
@@ -66,91 +73,172 @@
   object-fit: cover;
 }
 
-/* ✅ Texte limité en nombre de lignes */
+/* ✅ Body : aligné START */
+.temoignage-body {
+  padding: 10px 18px 18px;   /* ✅ aligné texte + bouton */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ✅ Message : aligné à gauche + clamp */
 .temoignage-message {
   font-style: italic;
-  font-size: 13px;
-  line-height: 1.5;
-  color: #666;
-  text-align: center;
-  width: 100 px;
-  height: 80px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #6b6b6b;
+  text-align: left;          /* ✅ start */
+  margin: 0;
 
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5;       /* ✅ réduit la place */
+  -webkit-line-clamp: 5;
   overflow: hidden;
+  min-height: calc(1.7em * 5);
 }
 
-/* Nom */
+/* ✅ Nom : aligné à gauche */
 .temoignage-nom {
-  font-weight: 800;
+  font-weight: 900;
   color: #333;
-  font-size: 14px;
-  margin-top: 6px;
+  font-size: 16px;
+  margin: 0;
+  text-align: left;          /* ✅ start */
 }
 
-/* ✅ Bouton aligné début (gauche) */
+/* ✅ Bouton : plus full width + aligné start */
 .read-button {
-  background-color: #a93d87;
-  color: white;
+  background-color: #1c78d0;
+  color: #fff;
   border: none;
-  height: 42px;
+  height: 46px;
   padding: 0 18px;
   font-size: 13px;
-  font-weight: 800;
-  border-radius: 8px;
+  font-weight: 900;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.25s ease;
+  transition: 0.25s ease;
 
-  align-self: flex-start;      /* ✅ au début */
+  align-self: flex-start;    /* ✅ aligné au texte */
+  width: auto;               /* ✅ plus full width */
+  white-space: nowrap;
 }
 
 .read-button:hover {
-  background-color: #c90076;
+  background-color: #145ea2;
+}
+
+/* ✅ Bouton "Tous les témoignages" (rectangle en bas) */
+.temoignages-bottom {
+  margin-top: 18px;
+  display: flex;
+  justify-content: flex-start; /* ✅ à gauche */
+}
+
+.temoignages-all-btn {
+  background: #a93d87;
+  border: none;
+  color: white;
+  font-weight: 900;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.temoignages-all-btn:hover {
+  background: #c90076;
 }
 
 /* ✅ Responsive */
 @media (max-width: 992px) {
+  .tit {
+    font-size: 36px;
+  }
+  .subtitle {
+    font-size: 18px;
+  }
+
   .temoignage-card-slide {
-    min-width: 280px;
-    max-width: 280px;
-    height: 340px;
+    min-width: 320px;
+    max-width: 320px;
+    height: 390px;
   }
 
   .temoignage-avatar-wrap {
-    width: 96px;
-    height: 96px;
+    width: 105px;
+    height: 105px;
   }
 
   .temoignage-message {
+    font-size: 14px;
     -webkit-line-clamp: 4;
-  }
-
-  .tit {
-    font-size: 30px;
-  }
-
-  .subtitle {
-    font-size: 18px;
+    min-height: calc(1.6em * 4);
   }
 }
 
 @media (max-width: 576px) {
+  .temoignons {
+    padding: 22px 0;
+  }
+
+  .temoignages-container {
+    padding: 0 10px;
+  }
+
+  .tit {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    line-height: 1.35;
+    margin: 8px 0 14px 0;
+  }
+
+  .temoignages-scroll {
+    gap: 12px;
+    padding-bottom: 12px;
+  }
+
   .temoignage-card-slide {
-    min-width: 250px;
-    max-width: 250px;
-    height: 330px;
+    min-width: 260px;
+    max-width: 260px;
+    height: 340px;
+    border-radius: 10px;
+  }
+
+  .temoignage-avatar-wrap {
+    width: 86px;
+    height: 86px;
+    margin: 14px auto 8px auto;
+  }
+
+  .temoignage-body {
+    padding: 8px 12px 12px;
+    gap: 8px;
   }
 
   .temoignage-message {
-    -webkit-line-clamp: 4;
     font-size: 12.5px;
+    -webkit-line-clamp: 4;
+    min-height: calc(1.45em * 4);
+  }
+
+  .temoignage-nom {
+    font-size: 14px;
   }
 
   .read-button {
     height: 40px;
-    font-size: 12.5px;
-    padding: 0 14px;
+    font-size: 12px;
+    padding: 0 12px;
+    border-radius: 7px;
+  }
+
+  .temoignages-all-btn {
+    padding: 10px 14px;
+    font-size: 12px;
+    border-radius: 8px;
   }
 }

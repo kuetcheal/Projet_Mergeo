@@ -30,11 +30,16 @@ const Temoignages = () => {
     },
   ];
 
+  const handleAll = () => {
+    // ✅ adapte la route si besoin
+    // window.location.href = "/temoignages";
+  };
+
   return (
-    <section className="temoignons py-4">
-      <div className="container-fluid px-3 px-md-0">
-        <h1 className="tit mb-2">Ils nous ont fait confiance</h1>
-        <p className="subtitle mb-4">
+    <section className="temoignons">
+      <div className="temoignages-container">
+        <h1 className="tit">Ils nous ont fait confiance</h1>
+        <p className="subtitle">
           Découvrez les témoignages inspirants de nos étudiants et partenaires
         </p>
 
@@ -49,19 +54,28 @@ const Temoignages = () => {
                 />
               </div>
 
-              <div className="card-body d-flex flex-column p-2">
-                <p className="temoignage-message mb-2">{temoin.message}</p>
+              <div className="card-body temoignage-body">
+                <p className="temoignage-message">{temoin.message}</p>
 
-                <h5 className="temoignage-nom mb-3">{temoin.nom}</h5>
+                <h5 className="temoignage-nom">{temoin.nom}</h5>
 
-                {/* ✅ bouton aligné à gauche */}
-                <button type="button" className="read-button d-inline-flex align-items-center gap-2">
+                <button
+                  type="button"
+                  className="read-button d-inline-flex align-items-center gap-2"
+                >
                   LIRE SON TÉMOIGNAGE
                   <ChevronRightIcon style={{ fontSize: 20 }} />
                 </button>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* ✅ bouton "tous les témoignages" en bas à gauche */}
+        <div className="temoignages-bottom">
+          <button className="temoignages-all-btn" onClick={handleAll}>
+            Tous les témoignages
+          </button>
         </div>
       </div>
     </section>

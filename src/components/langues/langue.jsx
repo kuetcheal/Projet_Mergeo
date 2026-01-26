@@ -1,116 +1,99 @@
 import React from "react";
 import "./langue.css";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const Langue = () => {
   const navigate = useNavigate();
 
-  const handleCanada = () => {
-    navigate('/coursCanada');
-  };
-  const handleAnglais = () => {
-    navigate('/coursAnglais');
-  };
-  const handleAllemand = () => {
-    navigate('/coursAllemand');
-  };
+  const handleCanada = () => navigate("/coursCanada");
+  const handleAnglais = () => navigate("/coursAnglais");
+  const handleAllemand = () => navigate("/coursAllemand");
 
   const formations = [
     {
       id: 1,
-      logo: "images/angleterre.jpg",
+      logo: "images/toeic.jpg",
       title: "Anglais général et professionnel - Préparation aux TOEFL et IELTS",
-      offer: "Offre spéciale",
-      testimonies: "Témoignages",
       description: "Cours particuliers en visio: professeurs natifs",
       location: "À distance · En entreprise",
-      contact: "Nous contacter",
-      financement: "Finançable CPF",
-      button: "Je m'informe gratuitement",
+      button: "À savoir plus",
       onClick: handleAnglais,
     },
     {
       id: 2,
-      logo: "images/canada.jpg",
-      title: "Préparation aux TCF, TEF Canada - DALF et DELF",
-      offer: "Offre spéciale",
-      testimonies: "Témoignages",
+      logo: "images/tcf.webp",
+      title: "Français  professionnel - Préparation aux TCF, TEF Canada ",
       description: "À partir de 10h en visioformation",
-      location: "À distance",
-      contact: "Nous contacter",
-      financement: "Finançable CPF",
-      button: "Je m'informe gratuitement",
+      location: "À distance · En entreprise",
+      button: "À savoir plus",
       onClick: handleCanada,
     },
     {
       id: 3,
-      logo: "images/Allemagne.jpg",
-      title: "Allemand Général et Professionnel - Préparation aux DSH et TestDAF",
-      offer: "Offre spéciale",
-      testimonies: "Avis du centre",
+      logo: "images/DELF-DALF.avif",
+      title: "Allemand Général - Préparation aux DSH et TestDAF",
       description: "Cours particuliers + e-learning + collectifs",
-      location: "À distance",
-      contact: "Nous contacter",
-      financement: "Finançable CPF",
-      reduction: "10 % de réduction",
-      oldPrice: "1500",
-      newPrice: "1350",
-      button: "Je m'informe gratuitement",
+      location: "À distance · En entreprise",
+      button: "À savoir plus",
       onClick: handleAllemand,
     },
     {
       id: 4,
-      logo: "images/espagne.jpg",
+      logo: "images/tcf.webp",
       title: "Formation personnalisée en Espagnol",
-      offer: "Offre spéciale",
-      testimonies: "Avis des élèves",
       description: "Formation flexible avec des experts natifs",
       location: "À distance ou en présentiel",
-      contact: "Nous contacter",
-      financement: "Plusieurs Modalités",
-      button: "Je m'informe gratuitement",
-      onClick: null, // Pas d'action définie pour cette formation
+      button: "À savoir plus",
+      onClick: null,
     },
   ];
 
   return (
-    <div className="langue-pagination">
-      <h2 className="langue-title">Nos formations de Langues</h2>
-      <p className="langue-description">
-  Découvrez des formations adaptées à vos besoins : que vous soyez débutant ou avancé, apprenez avec des experts natifs. 
-  Étudiez à votre rythme grâce à nos cours flexibles, accessibles en ligne ou en présentiel. 
-  Préparez vos certifications avec un accompagnement personnalisé et professionnalisant.
-</p>
-      <div className="formation-cards">
-        {formations.map((formation) => (
-          <div className="formation-card" key={formation.id}>
-            <img src={formation.logo} alt="Logo" className="formation-logo" />
-            <h3 className="formation-title">{formation.title}</h3>
-            <button className="formation-offer">{formation.offer}</button>
-            <p className="formation-testimonies">{formation.testimonies}</p>
-            <ul className="formation-details">
-              <li>{formation.description}</li>
-              <li>{formation.location}</li>
-              <li>{formation.contact}</li>
-            </ul>
-            {formation.reduction && (
-              <div className="formation-price">
-                <span className="old-price">{formation.oldPrice}€</span>{" "}
-                <span className="new-price">{formation.newPrice}€</span>{" "}
-                <span className="reduction">{formation.reduction}</span>
+    <section className="lg-section">
+      <div className="lg-container">
+        <h2 className="lg-title">Nos formations de Langues</h2>
+
+        <p className="lg-description">
+          Découvrez des formations adaptées à vos besoins : que vous soyez débutant ou avancé,
+          apprenez avec des experts natifs. Étudiez à votre rythme grâce à nos cours flexibles,
+          accessibles en ligne ou en présentiel. Préparez vos certifications avec un accompagnement
+          personnalisé et professionnalisant.
+        </p>
+
+        <div className="lg-scroll">
+          {formations.map((formation) => (
+            <div className="lg-card" key={formation.id}>
+              <img
+                src={formation.logo}
+                alt={formation.title}
+                className="lg-image"
+              />
+
+              <div className="lg-body">
+                <h3 className="lg-card-title">{formation.title}</h3>
+
+                <ul className="lg-details">
+                  <li className="lg-detail">{formation.description}</li>
+                  <li className="lg-detail">{formation.location}</li>
+                </ul>
+
+                <button
+                  className="lg-btn"
+                  onClick={formation.onClick || undefined}
+                  disabled={!formation.onClick}
+                >
+                  {formation.button}
+                </button>
               </div>
-            )}
-            <div className="formation-financement">{formation.financement}</div><br /><br />
-            <button
-              className="formation-button"
-              onClick={formation.onClick} // Associe la fonction à l'événement onClick
-            >
-              {formation.button}
-            </button>
-          </div>
-        ))}
+            </div>
+          ))}
+        </div>
+
+        <div className="lg-bottom">
+          <button className="lg-discover">toutes les formations</button>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

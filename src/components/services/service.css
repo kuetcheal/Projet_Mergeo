@@ -1,20 +1,210 @@
+/* ✅ Section */
+.service-section {
+  padding: 40px 0;
+  background: #fff;
+  font-family: Arial, sans-serif;
+}
+
+/* ✅ Container */
+.service-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ✅ Titre */
 .service-title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #2b2b70; /* Couleur du texte */
-    text-align: center;
+  display: flex;
+  /* align-items: center; */
+  justify-content: start;
+  position: relative;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #D6007F;
+  /* text-align: center; */
+}
+
+/* .service-title::before,
+.service-title::after {
+  content: "";
+  flex: 1;
+  height: 4px;
+  width: 50px !important;
+  background-color: #b73a93;
+  margin: 0 16px;
+} */
+
+/* ✅ CAROUSEL */
+.service-horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  padding: 22px 0 12px;
+  scroll-behavior: smooth;
+}
+
+/* ✅ largeur augmentée (comme ton tracé) */
+.service-slide {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 340px;        /* ✅ avant 300 */
+  flex: 0 0 340px;
+}
+
+.service-card {
+  width: 340px;
+}
+
+/* ✅ image */
+.service-image-container {
+  height: 220px;
+}
+
+/* ✅ overlay hover */
+.service-imageWrap {
+  position: relative;
+}
+
+.service-imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.0);
+  transition: background 0.25s ease-in-out;
+  pointer-events: none;
+}
+
+.service-card:hover .service-imageOverlay {
+  background: rgba(0,0,0,0.35); /* ✅ overlay */
+}
+
+.service-card:hover .image {
+  transform: scale(1.03);
+}
+
+/* ✅ content */
+.service-content {
+  color: #ffffff !important;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+/* ✅ tag */
+.service-tag {
+  background-color: #ffffff;
+  color: #00274d;
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-weight: bold;
+  position: absolute;
+  top: -14px;
+  left: 16px;
+}
+
+/* ✅ titre */
+.service-cardTitle {
+  margin-top: 20px !important;
+}
+
+/* ✅ description : hauteur fixe + limite (2 lignes + “…”) */
+.service-desc {
+  margin-top: 8px !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+
+  /* ✅ limitation visuelle */
+  display: -webkit-box;
+  -webkit-line-clamp: 4;      /* ✅ nombre de lignes (ajuste ici) */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  /* ✅ hauteur fixe (4 lignes * line-height approx) */
+  min-height: calc(1.5em * 4);
+}
+
+/* ✅ bouton aligné au début */
+.service-action {
+  padding: 0 16px 16px;
+  text-align: left;           /* ✅ */
+}
+
+.service-btn {
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+  text-transform: none !important;
+}
+
+.service-btn:hover {
+  background-color: #ffffff !important;
+  color: #00274d !important;
+}
+
+/* ✅ bouton en bas "Tous nos services" */
+.service-bottom {
+  margin-top: 14px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.service-all-btn {
+  background-color: #0047AB;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.service-all-btn:hover {
+  background-color: #C90076;
+}
+
+/* ✅ MOBILE : réduire */
+@media (max-width: 768px) {
+  .service-section {
+    padding: 18px 0;
   }
-  
+
+  .service-container {
+    padding: 0 10px;
+  }
+
+  .service-title {
+    font-size: 1.35rem;
+  }
+
   .service-title::before,
   .service-title::after {
-    content: "";
-    flex: 1;
-    height: 4px;
-    width: 50px !important;
-    background-color: #b73a93; /* Couleur des barres */
-    margin: 0 16px; /* Espacement entre la barre et le texte */
+    height: 3px;
+    margin: 0 10px;
   }
+
+  .service-horizontal-scroll {
+    gap: 10px;
+    padding: 12px 0 8px;
+  }
+
+  .service-slide,
+  .service-card {
+    width: 240px !important;
+    flex: 0 0 240px !important;
+  }
+
+  .service-image-container {
+    height: 150px !important;
+  }
+
+  .service-desc {
+    font-size: 12px !important;
+    -webkit-line-clamp: 3;          /* ✅ moins de lignes en mobile */
+    min-height: calc(1.4em * 3);
+    line-height: 1.4 !important;
+  }
+
+  .service-all-btn {
+    padding: 9px 12px;
+    font-size: 12px;
+    border-radius: 6px;
+  }
+}

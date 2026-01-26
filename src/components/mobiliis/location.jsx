@@ -16,7 +16,7 @@ const slides = [
   {
     title: "Berlin",
     description: "Une histoire riche et une modernité vibrante en un seul endroit.",
-    img: "https://images.unsplash.com/photo-1602931524607-bce851240504",
+    img: "images/DELF-DALF.avif",
   },
   {
     title: "Sydney",
@@ -31,39 +31,46 @@ const slides = [
   {
     title: "Tokyo",
     description: "Un mélange de technologie moderne et de culture traditionnelle.",
-    img: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad",
+    img:"images/DELF-DALF.avif",
   },
 ];
 
 export default function LocationCarousel() {
   return (
-    
-    <section className="py-5 debut">
-      <Container fluid="md" className="px-0">
-        <h1 className="fw-bold fs-8 pt-2">Découvrir toutes les dernières actualités de Mobiliis ainsi que les communications
-          internes de la structure.
-        </h1>
+    <section className="location-section">
+      <Container fluid="md" className="location-container px-0">
+        {/* ✅ aligné début */}
+        <h2 className="location-title">Nos Dernières activités</h2>
 
-        <div className="horizontal-scroll-wrapper">
+        {/* ✅ aligné début */}
+        <p className="location-subtitle">
+          Découvrir toutes les dernières actualités de Mobiliis ainsi que les communications
+          internes de la structure.
+        </p>
+
+        <div className="location-scroll">
           {slides.map((slide, idx) => (
-            <Card key={idx} className="card-slide">
-              <Card.Img variant="top" src={slide.img} alt={slide.title} />
-              <Card.Body>
-                <Card.Title>{slide.title}</Card.Title>
-                <Card.Text>{slide.description}</Card.Text>
-                <a href="#" className="discover-link">Découvrir l'actualité →</a>
+            <Card key={idx} className="location-card location-slide">
+              <Card.Img className="location-image" variant="top" src={slide.img} alt={slide.title} />
+              <Card.Body className="location-body">
+                <Card.Title className="location-card-title">{slide.title}</Card.Title>
+
+                <Card.Text className="location-card-text">
+                  {slide.description}
+                </Card.Text>
+
+                <a href="#" className="discover-link">
+                  Découvrir l'actualité →
+                </a>
               </Card.Body>
             </Card>
           ))}
         </div>
-         <br />
-        <div className="mon-button">
-          <Button variant="success" className="btn-discover">
-            toutes les actualités
-          </Button>
+
+        <div className="locationne">
+          <Button className="decouvert">toutes les actualités</Button>
         </div>
       </Container>
     </section>
- 
   );
 }
