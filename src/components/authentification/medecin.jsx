@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { Box, Button } from "@mui/material";
+//import React, { useState, useEffect } from "react";
+import { Box} from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { useTranslation } from "react-i18next";
+//import { useTranslation } from "react-i18next";
 
 import Temoignages from "../temoignages/temoignage";
 import Choix from "../mesChoix/choix";
-import Sponsor from "./sponsor";
+// import Sponsor from "./sponsor";
 import Brochure1 from "./brochure1";
 import Langue from "../langues/langue";
 import Service1 from "../services/service1";
@@ -16,34 +16,34 @@ import Location from "../mobiliis/location";
 import Slider from "../slider/Slider";
 
 const Medecin = () => {
-  const { t } = useTranslation();
+ // const { t } = useTranslation();
   const navigate = useNavigate();
 
   const handleContactClick = () => navigate("/contact");
-  const handleTemoignageClick = () => navigate("/toutTemoignages");
+  //const handleTemoignageClick = () => navigate("/toutTemoignages");
 
   // (Tu peux laisser, même si Slider a ses propres images)
-  const images = ["/images/bureau.jpeg", "/images/passport.jpg", "/images/catable.jpg"];
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [fade, setFade] = useState(true);
+ // const images = ["/images/bureau.jpeg", "/images/passport.jpg", "/images/catable.jpg"];
+  // const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  //const [fade, setFade] = useState(true);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFade(false);
-      setTimeout(() => {
-        setCurrentImageIndex((prev) => (prev + 1) % images.length);
-        setFade(true);
-      }, 300);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [images.length]);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setFade(false);
+  //     setTimeout(() => {
+  //       setCurrentImageIndex((prev) => (prev + 1) % images.length);
+  //       setFade(true);
+  //     }, 300);
+  //   }, 4000);
+  //   return () => clearInterval(interval);
+  // }, [images.length]);
 
   // ✅ 1 seul container “standard” réutilisé partout
-  const pageContainerSx = {
-    maxWidth: "1290px",
-    mx: "auto",
-    px: { xs: 2, sm: 3, md: 4 },
-  };
+  // const pageContainerSx = {
+  //   maxWidth: "1290px",
+  //   mx: "auto",
+  //   px: { xs: 2, sm: 3, md: 4 },
+  // };
 
   return (
     <Box width="100%" bgcolor="white" sx={{ overflowX: "hidden" }}>

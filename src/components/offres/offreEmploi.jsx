@@ -1,9 +1,9 @@
 import React from 'react';
 import './offreEmploi.css';
-import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
-import SchoolIcon from '@mui/icons-material/School';
-import PublicIcon from '@mui/icons-material/Public';
-import GroupsIcon from '@mui/icons-material/Groups';
+// import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+// import SchoolIcon from '@mui/icons-material/School';
+// import PublicIcon from '@mui/icons-material/Public';
+// import GroupsIcon from '@mui/icons-material/Groups';
 
 const OffreEmploi = () => {
   return (

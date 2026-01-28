@@ -72,26 +72,26 @@ const Profil = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleChangePassword = async () => {
-    try {
-      const response = await fetch(`http://localhost:3001/patients/${userId}/change-password`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ mot_de_passe: newPassword }),
-      });
+  // const handleChangePassword = async () => {
+  //   try {
+  //     const response = await fetch(`http://localhost:3001/patients/${userId}/change-password`, {
+  //       method: 'PUT',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({ mot_de_passe: newPassword }),
+  //     });
 
-      if (response.ok) {
-        console.log('Mot de passe modifié avec succès !');
-        handleClose();
-      } else {
-        console.error('Erreur lors de la modification du mot de passe.');
-      }
-    } catch (error) {
-      console.error('Erreur:', error);
-    }
-  };
+  //     if (response.ok) {
+  //       console.log('Mot de passe modifié avec succès !');
+  //       handleClose();
+  //     } else {
+  //       console.error('Erreur lors de la modification du mot de passe.');
+  //     }
+  //   } catch (error) {
+  //     console.error('Erreur:', error);
+  //   }
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();

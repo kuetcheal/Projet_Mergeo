@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './Header.css';
@@ -15,7 +15,7 @@ import CloseIcon from '@mui/icons-material/Close';
 
 
 const Header = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  //const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [showLangMenu, setShowLangMenu] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
@@ -30,30 +30,30 @@ const Header = () => {
     i18n.changeLanguage(lng);
   };
 
-  useEffect(() => {
-    const checkSession = async () => {
-      const response = await fetch('/api/check-session', {
-        method: 'GET',
-        credentials: 'include'
-      });
-      if (response.ok) {
-        setIsLoggedIn(true);
-      } else {
-        setIsLoggedIn(false);
-      }
-    };
+  // useEffect(() => {
+  //   const checkSession = async () => {
+  //     const response = await fetch('/api/check-session', {
+  //       method: 'GET',
+  //       credentials: 'include'
+  //     });
+  //     if (response.ok) {
+  //       setIsLoggedIn(true);
+  //     } else {
+  //       setIsLoggedIn(false);
+  //     }
+  //   };
 
-    checkSession();
-  }, []);
+  //   checkSession();
+  // }, []);
 
-  const handleLogout = async () => {
-    await fetch('/api/logout', {
-      method: 'POST',
-      credentials: 'include'
-    });
-    setIsLoggedIn(false);
-    console.log('Déconnexion réussie');
-  };
+  // const handleLogout = async () => {
+  //   await fetch('/api/logout', {
+  //     method: 'POST',
+  //     credentials: 'include'
+  //   });
+  //   setIsLoggedIn(false);
+  //   console.log('Déconnexion réussie');
+  // };
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);

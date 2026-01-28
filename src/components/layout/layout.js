@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
 
   // ✅ nouveau state pour afficher/cacher le tooltip
-  const [showTooltip, setShowTooltip] = useState(true);
+  //const [showTooltip, setShowTooltip] = useState(true);
 
   const location = useLocation();
 
@@ -24,18 +24,18 @@ const Layout = ({ children }) => {
   const toggleChatbot = () => {
     setIsChatbotOpen((prev) => !prev);
     // optionnel : si on ouvre le chatbot, on cache le tooltip
-    setShowTooltip(false);
+   // setShowTooltip(false);
   };
 
   const closeChatbot = () => {
     setIsChatbotOpen(false);
   };
 
-  const closeTooltip = (e) => {
-    // ✅ éviter que le clic sur la croix déclenche toggleChatbot
-    e.stopPropagation();
-    setShowTooltip(false);
-  };
+  // const closeTooltip = (e) => {
+  //   // ✅ éviter que le clic sur la croix déclenche toggleChatbot
+  //   e.stopPropagation();
+  //   setShowTooltip(false);
+  // };
 
   return (
     <div>

@@ -6,11 +6,11 @@ import './avi.css';
 // import France4 from './france4';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { useNavigate } from 'react-router-dom';
-import { Box, Grid, Typography, CardContent, Card, Button, CardActions } from "@mui/material";
-import PersonAddIcon from "@mui/icons-material/PersonAdd";
-import AssignmentIcon from "@mui/icons-material/Assignment";
-import MapIcon from "@mui/icons-material/Map";
-import ApartmentIcon from "@mui/icons-material/Apartment";
+import { Typography } from "@mui/material";
+// import PersonAddIcon from "@mui/icons-material/PersonAdd";
+// import AssignmentIcon from "@mui/icons-material/Assignment";
+// import MapIcon from "@mui/icons-material/Map";
+// import ApartmentIcon from "@mui/icons-material/Apartment";
 
 const Canada = () => {
     const navigate = useNavigate();

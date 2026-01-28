@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from'react';
 import { useNavigate } from 'react-router-dom';
 import './allemagne.css';
-import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
-import SchoolIcon from '@mui/icons-material/School';
-import PublicIcon from '@mui/icons-material/Public';
-import GroupsIcon from '@mui/icons-material/Groups';
+// import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+// import SchoolIcon from '@mui/icons-material/School';
+// import PublicIcon from '@mui/icons-material/Public';
+// import GroupsIcon from '@mui/icons-material/Groups';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 const Allemagne = () => {

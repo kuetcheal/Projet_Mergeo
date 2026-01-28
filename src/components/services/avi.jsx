@@ -10,7 +10,7 @@ import { Box, Grid, Typography, CardContent, Card, Button, CardActions } from "@
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import MapIcon from "@mui/icons-material/Map";
-import ApartmentIcon from "@mui/icons-material/Apartment";
+//import ApartmentIcon from "@mui/icons-material/Apartment";
 
 const Canada = () => {
     const navigate = useNavigate();
@@ -223,7 +223,8 @@ const Canada = () => {
                                 component="img"
                                 src="/images/bureau-table.png"
                                 alt="Analyse individuelle"
-                                sx={{ width: { xs: '100%', sm: '40%' }, borderRadius: 2, mr: 5, height: 300, width: 300, }}
+                                sx={{ width: { xs: '100%', sm: '40%' }, borderRadius: 2, mr: 5, height: "300", }}
+                                className='analyse'
                             />
                             {/* Contenu Texte */}
                             <CardContent>
@@ -279,7 +280,8 @@ const Canada = () => {
                                 component="img"
                                 src="/images/reflexion.png" // Chemin de ton image
                                 alt="Analyse individuelle"
-                                sx={{ width: { xs: '100%', sm: '40%' }, borderRadius: 2, mr: 3, height: 300, width: 300 }}
+                                sx={{ width: { xs: '100%', sm: '40%' }, borderRadius: 2, mr: 3, height: 300,  }}
+                                className='analyse'
                             />
                         </Card>
                     </Grid>
@@ -301,7 +303,8 @@ const Canada = () => {
                                 component="img"
                                 src="/images/explore.png" // Chemin de ton image
                                 alt="Analyse individuelle"
-                                sx={{ width: { xs: '100%', sm: '40%' }, borderRadius: 2, mr: 3, height: 300, width: 300, }}
+                                sx={{ width: { xs: '100%', sm: '40%' }, borderRadius: 2, mr: 3, height: 300, }}
+                                className='analyse'
                             />
                             {/* Contenu Texte */}
                             <CardContent>
@@ -356,7 +359,8 @@ const Canada = () => {
                                 component="img"
                                 src="/images/face.png" // Chemin de ton image
                                 alt="Analyse individuelle"
-                                sx={{ width: { xs: '100%', sm: '40%' }, borderRadius: 2, mr: 3, height: 300, width: 300 }}
+                                sx={{ width: { xs: '100%', sm: '40%' }, borderRadius: 2, mr: 3, height: 300,  }}
+                                className='analyse'
                             />
                         </Card>
                     </Grid>

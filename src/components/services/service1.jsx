@@ -81,10 +81,10 @@ const FullImage = styled(CardMedia)(() => ({
 }));
 
 // ✅ utilitaire : limite par N caractères (si tu préfères cette option)
-const truncateChars = (text, max = 140) => {
-  if (!text) return "";
-  return text.length > max ? text.slice(0, max).trim() + "..." : text;
-};
+// const truncateChars = (text, max = 140) => {
+//   if (!text) return "";
+//   return text.length > max ? text.slice(0, max).trim() + "..." : text;
+// };
 
 const Service = () => {
   const navigate = useNavigate();

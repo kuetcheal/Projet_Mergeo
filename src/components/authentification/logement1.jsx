@@ -1,10 +1,10 @@
 import React from 'react';
 import { Card, Button, Row, Col, Form } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import './logement1.css';
 
 const Logement = () => {
-  const navigate = useNavigate();
+ // const navigate = useNavigate();
 
   const handleContactSubmit = (e) => {
     e.preventDefault();
