@@ -59,9 +59,9 @@ export default function LocationCarousel() {
                   {slide.description}
                 </Card.Text>
 
-                <a href="#" className="discover-link">
+                <p href="#" className="discover-link">
                   Découvrir l'actualité →
-                </a>
+                </p>
               </Card.Body>
             </Card>
           ))}

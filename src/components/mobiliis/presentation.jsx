@@ -4,7 +4,7 @@ import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import SchoolIcon from '@mui/icons-material/School';
 import PublicIcon from '@mui/icons-material/Public';
 import GroupsIcon from '@mui/icons-material/Groups';
-import Location from './location';
+// import Location from './location';
 // import { Box } from '@mui/material';
 
 
