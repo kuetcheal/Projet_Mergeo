@@ -141,65 +141,83 @@
   background-color: #C90076;
 }
 
-/* ✅ MOBILE : réduit proprement */
 @media (max-width: 768px) {
   .lg-section {
     padding: 18px 0;
   }
 
+  /* ✅ padding unique, stable */
   .lg-container {
-    padding: 0 10px;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
   }
 
+  /* ✅ on garde aligné à gauche (comme ton design desktop) */
   .lg-title {
     font-size: 1.5rem;
-    text-align: center;
+    text-align: left;
+    margin: 0 0 8px 0;
   }
 
   .lg-description {
     font-size: 12px;
     line-height: 1.4;
-    text-align: center;
-    margin-bottom: 12px;
+    text-align: left;
+    margin: 0 0 12px 0;
   }
 
+  /* ✅ carrousel aligné parfaitement avec le texte */
   .lg-scroll {
-    gap: 10px;
-    padding: 10px 0 10px;
+    gap: 12px;
+    padding: 10px 0 12px;
+    margin-left: 0;
+    margin-right: 0;
+
+    scroll-padding-left: 14px; /* 🔥 aligne la 1ère card */
+    -webkit-overflow-scrolling: touch;
   }
 
   .lg-card {
-    width: 220px !important;
-    flex: 0 0 220px !important;
+    width: 250px !important;
+    flex: 0 0 250px !important;
   }
 
   .lg-image {
-    height: 80px;
+    height: 110px; /* un peu plus propre que 80px */
   }
 
   .lg-card-title {
-    font-size: 12px;
-    margin: 8px 8px 0;
+    font-size: 12.5px;
+    margin: 8px 10px 0;
   }
 
   .lg-details {
-    margin: 0 8px;
+    margin: 0 10px;
   }
 
   .lg-detail {
-    font-size: 10.5px;
+    font-size: 10.8px;
   }
 
   .lg-btn {
-    width: calc(100% - 16px);
-    margin: 8px 8px 12px;
-    padding: 9px 8px;
+    width: calc(100% - 20px);
+    margin: 8px 10px 12px;
+    padding: 10px 8px;
     font-size: 11px;
     border-width: 1px;
   }
 
+  /* ✅ bouton bas aligné comme le reste */
+  .lg-bottom {
+    margin-top: 10px;
+    justify-content: flex-start;
+    padding-left: 0;
+  }
+
   .lg-discover {
-    padding: 10px 14px;
+    width: 100%;
+    max-width: 320px;
+    padding: 12px 14px;
     font-size: 12px;
     border-radius: 8px;
   }

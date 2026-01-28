@@ -161,12 +161,15 @@
     padding: 22px 0;
   }
 
+  /* ✅ une seule valeur de padding pour tout aligner */
   .location-container {
-    padding: 0 10px;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
   }
 
   .location-title {
     font-size: 26px;
+    margin: 0;
   }
 
   .location-subtitle {
@@ -175,23 +178,28 @@
     margin: 8px 0 14px 0;
   }
 
+  /* ✅ le scroll commence pile au même alignement que le texte */
   .location-scroll {
     gap: 12px;
     padding: 8px 0 14px;
+    margin-left: 0;
+    margin-right: 0;
+
+    scroll-padding-left: 14px; /* 🔥 aligne la 1ère card */
+    -webkit-overflow-scrolling: touch;
   }
 
   .location-slide {
-    width: 240px !important;
-    flex: 0 0 240px !important;
+    width: 260px !important;
+    flex: 0 0 260px !important;
   }
 
   .location-card {
     height: 320px;
-    border-radius: 10px;
   }
 
   .location-image {
-    height: 120px; /* ✅ image plus petite */
+    height: 130px;
   }
 
   .location-card-title {
@@ -204,9 +212,15 @@
     min-height: calc(1.45em * 3);
   }
 
-  .btn-discover {
-    padding: 10px 14px;
-    font-size: 12px;
-    border-radius: 8px;
+  /* ✅ bouton aligné comme le reste */
+  .locationne {
+    margin-top: 12px;
+    justify-content: flex-start;
+    padding-left: 0;
+  }
+
+  .decouvert {
+    width: 100% !important;     
+    max-width: 320px;
   }
 }

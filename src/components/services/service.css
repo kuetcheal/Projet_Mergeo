@@ -166,6 +166,10 @@
     padding: 18px 0;
   }
 
+  .loger {
+    font-size: 15px !important;
+    font-weight: bold !important;
+  }
   .service-container {
     padding: 0 10px;
   }

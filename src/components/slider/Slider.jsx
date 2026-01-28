@@ -4,13 +4,6 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 import { useTranslation } from "react-i18next";
 
-/**
- * Hero Slider (full width) inspiré de ton composant Vue/Element+.
- * - Auto slide (intervalMs)
- * - Overlay + texte
- * - Pagination barres cliquables + animation progress
- * - Scroll indicator
- */
 export default function Slider({
   height = 520,
   intervalMs = 4000,
@@ -87,7 +80,7 @@ export default function Slider({
       sx={{
         position: "relative",
         width: "100%",
-        height: 700,
+        height: 600,
         overflow: "hidden",
       }}
     >
@@ -105,7 +98,7 @@ export default function Slider({
           filter: fade ? "blur(0px)" : "blur(5px)",
           zIndex: 0,
           objectFit: "cover",
-          height : 800,
+          height : 600,
         }}
       />
 

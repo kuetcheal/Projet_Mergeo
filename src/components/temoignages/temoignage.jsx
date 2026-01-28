@@ -8,7 +8,7 @@ const Temoignages = () => {
       nom: "Bojer KINZONZI",
       message:
         "La formation à l'ESCG Paris s’est donc avérée pertinente, puisque j’ai réalisé ma dernière année en alternance ainsi qu’un mémoire professionnel sur une problématique liée à mon entreprise d’accueil.",
-      image: "/images/photo_Alex.jpeg",
+      image: "/images/avion.jpg",
     },
     {
       nom: "Hubert CASTELNAU",
@@ -36,7 +36,7 @@ const Temoignages = () => {
   };
 
   return (
-    <section className="temoignons">
+    <section className="temoignions">
       <div className="temoignages-container">
         <h1 className="tit">Ils nous ont fait confiance</h1>
         <p className="subtitle">

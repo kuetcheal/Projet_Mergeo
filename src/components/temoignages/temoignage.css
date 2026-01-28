@@ -1,5 +1,5 @@
 /* ✅ SECTION AVEC BG (remis) */
-.temoignons {
+.temoignions {
   background: #f4f6fb;       /* ✅ remets ton bg */
   padding: 42px 0;
   font-family: Arial, sans-serif;
@@ -177,17 +177,21 @@
   }
 }
 
+
 @media (max-width: 576px) {
-  .temoignons {
+  .temoignions {
     padding: 22px 0;
   }
 
+  /* ✅ même padding que tes autres sections */
   .temoignages-container {
-    padding: 0 10px;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
   }
 
   .tit {
     font-size: 28px;
+    margin: 0;
   }
 
   .subtitle {
@@ -196,14 +200,19 @@
     margin: 8px 0 14px 0;
   }
 
+  /* ✅ ALIGNEMENT COMME LA LIGNE VERTE */
   .temoignages-scroll {
     gap: 12px;
-    padding-bottom: 12px;
+    padding: 8px 0 12px;   /* pas de padding left/right */
+    margin: 0;             /* pas de décalage */
+
+    scroll-padding-left: 0; /* le snap commence pile au bord du container */
+    -webkit-overflow-scrolling: touch;
   }
 
   .temoignage-card-slide {
-    min-width: 260px;
-    max-width: 260px;
+    min-width: 270px;
+    max-width: 270px;
     height: 340px;
     border-radius: 10px;
   }
@@ -230,15 +239,25 @@
   }
 
   .read-button {
+    align-self: flex-start;
     height: 40px;
     font-size: 12px;
     padding: 0 12px;
-    border-radius: 7px;
+    border-radius: 8px;
+  }
+
+  /* ✅ bouton du bas aligné pareil */
+  .temoignages-bottom {
+    margin-top: 12px;
+    display: flex;
+    justify-content: flex-start;
   }
 
   .temoignages-all-btn {
-    padding: 10px 14px;
+    width: 100%;
+    max-width: 320px;
+    padding: 12px 14px;
     font-size: 12px;
-    border-radius: 8px;
+    border-radius: 10px;
   }
 }

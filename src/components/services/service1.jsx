@@ -117,7 +117,7 @@ const Service = () => {
       <div className="service-container">
         <h2 className="service-title">Nos Services</h2>
 
-        <Typography variant="h5" component="h3"  gutterBottom>
+        <Typography variant="h5" component="h3"  gutterBottom className="loger">
           Nous proposons des services complets ou spécifiques pour votre procédure de voyage dans
           nos différentes destinations et pays de votre choix selon vos besoins.
         </Typography>

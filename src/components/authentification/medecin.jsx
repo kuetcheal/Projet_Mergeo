@@ -3,7 +3,7 @@ import { Box} from "@mui/material";
 import { useNavigate } from "react-router-dom";
 //import { useTranslation } from "react-i18next";
 
-import Temoignages from "../temoignages/temoignage";
+import Temoignage from "../temoignages/temoignage";
 import Choix from "../mesChoix/choix";
 // import Sponsor from "./sponsor";
 import Brochure1 from "./brochure1";
@@ -65,7 +65,7 @@ const Medecin = () => {
 
       <Box sx={{ bgcolor: "#f5f5f5", }}>
         <Box>
-          <Temoignages />
+          <Temoignage />
         </Box>
       </Box>
 
