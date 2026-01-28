@@ -47,34 +47,28 @@ const Medecin = () => {
 
   return (
     <Box width="100%" bgcolor="white" sx={{ overflowX: "hidden" }}>
-      {/* ✅ Remplacement du gros bloc hero par le Slider */}
       <Slider height={520} intervalMs={4000} onPrimaryCta={handleContactClick} />
 
-      {/* Sections blanches en container */}
       <Box >
         <Box my={{ xs: 3, md: 4 }}>
           <Choix />
         </Box>
       </Box>
 
-      {/* Presentation full width bg + contenu centré (géré par Presentation1) */}
       <Presentation1 />
 
-      {/* Sections blanches en container */}
       <Box >
         <Box my={{ xs: 3, md: 4 }}>
           <Service1 />
         </Box>
       </Box>
 
-      {/* ================= TEMOIGNAGES : BG FULL WIDTH + CONTENU EN CONTAINER ================= */}
       <Box sx={{ bgcolor: "#f5f5f5", }}>
         <Box>
           <Temoignages />
         </Box>
       </Box>
 
-      {/* ================= LOCATION : BG FULL WIDTH + CONTENU EN CONTAINER ================= */}
       <Box
         sx={{
           background: "linear-gradient(to bottom, white 50%, #f9f9f9 50%)",

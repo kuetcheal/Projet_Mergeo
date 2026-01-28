@@ -1,74 +1,84 @@
-/* Bloc supérieur pour les informations */
+/* =========================
+   TOP BAR (infos)
+========================= */
 .header-infos {
   display: flex;
   align-items: center;
-  background-color: #A93D87 ; /* Couleur de fond bleu foncé */
+  justify-content: space-between;
+
+  background-color: #A93D87;
   color: white;
-  padding: 5px 20px;
+
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 16px;
+
+  height: auto;
+  min-height: 40px;
+  overflow: hidden;
   font-size: 14px;
-  height: 40px;
-  justify-content: space-between;
-  width: 97.3%;
- 
-}
-.information{
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  margin-right: 50px;
-  font-size: 19px;
-  cursor: pointer;
-}
-.informat{
- display: flex;
- flex-direction: row;
-}
-.email{
-  margin-right: 110px;
-  font-size: 20px;
-}
-.lieu{
-  margin-right: 80px;
-  font-size: 20px;
 }
 
 .tel {
   display: flex;
   align-items: center;
-  gap: 7px;
-  margin-left: 40px;
-  font-size: 19px;
+  gap: 10px;
+  margin-left: 0; /* évite le décalage */
+  font-size: 16px;
   cursor: pointer;
 }
 
 .phone-icon {
-  margin-right: 4px; /* Espace entre l'icône et les numéros */
+  margin-right: 4px;
 }
 
 .phone-numbers {
   display: flex;
-  gap: 1px; /* Espacement entre chaque numéro */
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap; /* si ça manque de place, ça passe à la ligne */
 }
 
-.head{
-  width: 100%;
-  box-shadow: none;
+.sep {
+  opacity: 0.85;
 }
+
+.informat {
+  display: flex;
+  align-items: center;
+  gap: 18px; /* remplace les margin-right énormes */
+}
+
+.email,
+.lieu {
+  margin-right: 0;
+  font-size: 16px;
+}
+
 .header-infos p {
   margin: 0;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
 }
 
-/* Bloc principal pour le logo et la navigation */
+/* =========================
+   HEADER MAIN
+========================= */
+.head {
+  width: 100%;
+  box-shadow: none;
+}
+
 .header-main {
-  background-color: white; /* Couleur de fond blanche */
+  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
-  height: 90px;
+
+  padding: 10px 10px;
+  height: auto;
+
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -86,26 +96,35 @@
 }
 
 .slogan {
-  color: #004080; /* Couleur texte bleu foncé */
+  color: #004080;
   font-weight: bold;
-  margin-top: -10px; /* Ajuste la position du slogan sans affecter les autres éléments */
+  margin-top: -10px;
   font-size: 20px;
 }
 
-/* Styles de la barre de navigation */
 .nav {
   display: flex;
+  flex-direction: row;
   list-style-type: none;
   gap: 25px;
   margin: 0;
 }
 
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
 .navItem {
   display: flex;
   align-items: center;
-  color: #004080; /* Couleur texte bleu foncé */
+  color: #004080;
   font-size: 18px;
   cursor: pointer;
+  margin: 0;
 }
 
 .navItem .navLink {
@@ -116,14 +135,45 @@
 }
 
 .navItem .navLink svg {
-  margin-left: 3px; /* Espace entre le texte et l'icône */
+  margin-left: 3px;
 }
 
 .navItem:hover {
-  color: #A93D87; /* Couleur jaune lors du survol */
+  color: #A93D87;
 }
 
-/* Avatar et menu déroulant */
+
+.subMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+  width: 220px;
+}
+
+.subMenu li {
+  padding: 10px 14px;
+  border-bottom: 1px solid #ddd;
+}
+
+.subMenu li:last-child {
+  border-bottom: none;
+}
+
+.subMenu li a {
+  color: #004080;
+  text-decoration: none;
+}
+
+.subMenu li:hover {
+  background-color: #f0f0f0;
+}
+
 .avatarContainer {
   position: relative;
   display: flex;
@@ -141,9 +191,8 @@
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   z-index: 10000;
-  list-style: none; 
-  width: 120px;
-  height: 120px;
+  list-style: none;
+  width: 160px;
 }
 
 .dropdownMenu li {
@@ -152,7 +201,7 @@
 
 .dropdownMenu li a {
   display: block;
-  color: #333;             /* couleur du texte */
+  color: #333;
   text-decoration: none;
   padding: 6px 10px;
   border-radius: 4px;
@@ -160,111 +209,44 @@
 }
 
 .dropdownMenu li a:hover {
-  background-color: #f0f0f0; /* effet hover */
+  background-color: #f0f0f0;
   color: #000;
 }
-
-
-
-.logoutLabel, .navLink {
-  color: white;
-  display: block;
-  padding: 5px 10px;
-}
-
-/* .logoutLabel:hover, .navLink:hover {
-  background-color: #00bcd4;
-} */
 
 .langMenu {
   position: absolute;
   top: 50px;
+  right: 70px;
   background-color: white;
   padding: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  z-index: 10;
+  z-index: 10000;
 }
 
 .langMenu p {
   margin: 5px 0;
   cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 4px;
 }
 
 .langMenu p:hover {
   background-color: #f0f0f0;
 }
 
-/* Menu responsive en plein écran */
-.nav-open {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #004080; /* Couleur de fond bleu */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  padding-top: 50px;
-}
-.nav-open {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  list-style-type: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 300px;
-  height: 100vh;
-  background-color: green; /* Couleur de fond */
-  padding: 20px;
-  z-index: 10; /* Au-dessus du backdrop */
-}
 
-/* Icône de fermeture dans le menu */
-.close-icon {
-  align-self: flex-end;
-  color: white;
-  cursor: pointer;
-  margin-bottom: 20px;
-  font-size: 24px;
-}
-
-.nav-open .nav-list {
-  flex-direction: column;
-}
-
-.nav-list {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-}
-
-.navItem {
-  margin: 15px 0;
-}
-
-.navLink {
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
-  
-}
 .backdrop {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); /* Effet semi-transparent */
-  z-index: 9; /* Sous le menu mais au-dessus de tout le reste */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
 }
 
-/* Afficher le bouton burger en mode responsive */
+
 .burger-container {
   display: none;
 }
@@ -272,166 +254,85 @@
 .burger-icon {
   cursor: pointer;
   font-size: 2rem;
- 
 }
 
-/* Cache le menu en mode desktop */
-.nav {
+.nav-open {
   display: flex;
-  flex-direction: row; /* Par défaut, en ligne pour le mode desktop */
+  flex-direction: column;
+  justify-content: flex-start;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  width: 300px;
+  height: 100vh;
+
+  background-color: #004080;
+  padding: 20px;
+
+  z-index: 9999;
 }
 
-
-.subMenu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: white;
-  border: 1px solid #ddd;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  z-index: 1000;
-  width: 200px;
+.close-icon {
+  align-self: flex-end;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 28px;
 }
 
-.subMenu li {
-  padding: 8px 16px;
-  border-bottom: 1px solid #ddd;
+.nav-open .nav-list {
+  flex-direction: column;
+  gap: 10px;
 }
 
-.subMenu li:last-child {
-  border-bottom: none;
+.nav-open .navItem {
+  margin: 10px 0;
 }
 
-.subMenu li a {
-  color: #004080; /* Couleur du lien */
+.nav-open .navLink {
+  color: white !important;
+  font-size: 1.1rem;
   text-decoration: none;
 }
 
-.subMenu li:hover {
-  background-color: #f0f0f0; /* Couleur de survol */
+.nav-open .navLink:hover {
+  color: #ffeb3b !important;
 }
 
 
-
-
-
-/* Mode responsive pour afficher le bouton burger */
 @media (max-width: 1000px) {
-
-  .head{
-    width: 100%;
-  }
-  h4{
-    font-size: 12px;
-    margin-left: 30px;
-  }
-  /* .header-infos {
-    display: flex;
-    align-items: center;
-    background-color: #A93D87 ;
-    color: white;
-    padding: 3px 14px;
-    font-size: 14px;
-    flex-direction: column;
-    width: auto; 
-    height: 100px;
-  } */
-
-
   .header-infos {
     display: none;
-    /* align-items: center;
-    background-color: #A93D87 ;
-    color: white;
-    padding: 3px 14px;
-    font-size: 14px;
-    flex-direction: column;
-    width: auto; 
-    height: 100px; */
   }
 
-
-  .email{
-    margin-bottom: 20px;
-    margin-right: 15px;
-  }
-  .information {
-    display: flex;
-    flex-direction: column; /* Ajuste pour le mode colonne en mobile */
-    font-size: 15px;
-    width: 100%; /* Assurez-vous qu'il prend la largeur disponible */
-    align-items: center; /* Centre le contenu */
-    margin: 5px 0; /* Un petit espacement autour */
-    color: white !important;
-  }
-
-  .phone-numbers {
-    display: flex;
-    flex-direction: row;
-    gap: 1px; /* Espace entre chaque numéro */
-    white-space: nowrap; /* Empêche le retour à la ligne */
-    margin-right: 20px;
-  }
-
-  .tel {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    cursor: pointer;
-    margin-right: 18px;
-  }
-
-  
+  /* cache le menu par défaut */
   .nav {
-    display: none; /* Masque le menu en mode responsive */
+    display: none;
   }
 
-  .nav-open {
-    display: flex; /* Affiche le menu uniquement si la classe nav-open est présente */
-    flex-direction: column;
-    justify-content: flex-start;
-    list-style-type: none;
-    position: fixed;
-    top: 0; /* Aligne le menu en haut de la page */
-    right: 0; /* Place le menu à droite */
-    width: 300px;
-    height: 100vh; /* Couvre toute la hauteur de l'écran */
-    background-color: #004080;
-    padding: 20px;
-    color: white;
-    z-index: 9999; /* Assure que le menu est au-dessus des autres éléments */
-}
-
-  .nav-list {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-  }
-
-  .navItem {
-    margin: 15px 0;
+  /* 🔥 mais si menuOpen => nav + nav-open, on l’affiche */
+  .nav.nav-open {
+    display: flex;
   }
 
   .burger-container {
     display: block;
+    z-index: 10000; /* au-dessus */
   }
 
-  .navLink {
-    color: white !important; /* Couleur blanche pour les liens */
-    text-decoration: none;
+  .slogan {
+    font-size: 16px;
+    margin-right: 0;
   }
 
-  .navLink:hover {
-    color: #ffeb3b; /* Couleur jaune pour le survol */
+  .logo {
+    margin-right: 0;
   }
-  .slogan{
-   margin-right: 37px;
-  }
-  .logo{
-    margin-right: 15px;
+
+  h4 {
+    font-size: 12px;
+    margin-left: 0;
   }
 }
-
-

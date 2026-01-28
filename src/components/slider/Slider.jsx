@@ -29,7 +29,7 @@ export default function Slider({
         description:
           "Nous vous accompagnons dans vos projets avec des solutions modernes, fiables et adaptées.",
         ctaLabel: "NOUS CONTACTER",
-        image: "/images/bureau.jpeg",
+        image: "/images/belge.jpg",
       },
       {
         id: 2,

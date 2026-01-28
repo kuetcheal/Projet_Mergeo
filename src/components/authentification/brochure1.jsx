@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Button from '@mui/material/Button';
 import './brochure.css';
-import FileDownloadIcon from '@mui/icons-material/FileDownload';
 
 export default function BrochureForm() {
     const [formData, setFormData] = useState({
@@ -59,7 +58,7 @@ export default function BrochureForm() {
 
             {/* Formulaire à droite */}
             <div className="brochure-form-container">
-                <h2 className="brochure-form-title">Veuillez nous contacter !</h2>
+                <h1 className="brochure-form-title">Veuillez nous contacter !</h1>
                 <form onSubmit={handleSubmit} className="brochure-form">
                     <input
                         type="text"
@@ -104,12 +103,12 @@ export default function BrochureForm() {
                         onChange={handleChange}
                         required
                         className="brochure-input"
-                        style={{ height: '180px', resize: 'none' }} // Hauteur personnalisée
+                        style={{ height: '180px', resize: 'none' }} 
                     ></textarea>
 
                     <div className="brochure-actions">
-                        <Button type="submit" className="submit-button" variant="contained" color="primary">
-                            <FileDownloadIcon /> Contacter
+                        <Button type="submit" className="submit-button" variant="contained" color="secondary">
+                            Contacter
                         </Button>
                     </div>
                 </form>
