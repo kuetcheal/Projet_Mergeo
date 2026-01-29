@@ -1,29 +1,62 @@
+/* ======================================================
+   SCROLL TO TOP – POSITION FIXE
+   ====================================================== */
+
 .scroll-to-top {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    z-index: 1000;
+  position: fixed;
+  bottom: 24px;
+  left: 24px;            /* ✅ BAS À GAUCHE */
+  z-index: 9999;         /* ✅ au-dessus de tout */
+}
+
+/* ======================================================
+   BOUTON
+   ====================================================== */
+
+.scroll-button {
+  width: 44px;
+  height: 44px;
+
+  background-color: #c90076;
+  border-radius: 50%;    /* ✅ rond (UX moderne) */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.scroll-button:hover {
+  background-color: #a80063;
+  transform: translateY(-3px);
+}
+
+/* Icône */
+.scroll-button svg {
+  font-size: 26px;
+  color: #ffffff;
+}
+
+/* ======================================================
+   MOBILE – PRIORITÉ VISIBILITÉ
+   ====================================================== */
+
+@media (max-width: 576px) {
+  .scroll-to-top {
+    bottom: 80px;     /* ✅ au-dessus du footer/chat */
+    left: 16px;       /* ✅ marge mobile propre */
   }
-  
+
   .scroll-button {
-    width: 40px;
-    height:40px;
-    background-color: #C90076;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s;
+    width: 48px;      /* ✅ taille doigt */
+    height: 48px;
   }
-  
-  .scroll-button:hover {
-    background-color: #C90076; /* Couleur lors du hover */
+
+  .scroll-button svg {
+    font-size: 28px;
   }
-  
-  .scroll-button span {
-    font-size: 24px;
-    color: white;
-  }
-  
+}

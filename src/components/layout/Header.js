@@ -266,7 +266,7 @@ const Header = () => {
 
             <div className="burger-container">
               {menuOpen ? (
-                <CloseIcon className="burger-icon" onClick={toggleMenu} style={{ color: "#004080" }} />
+                <CloseIcon className="burger-icon" onClick={toggleMenu} style={{ color: "#004080", fontSize: "35px" }} />
               ) : (
                 <MenuIcon className="burger-icon" onClick={toggleMenu} style={{ color: "#004080" }} />
               )}

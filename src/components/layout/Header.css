@@ -319,7 +319,12 @@
 
   .burger-container {
     display: block;
-    z-index: 10000; /* au-dessus */
+    z-index: 10000; 
+    margin-right: 15px;
+  }
+
+  .burger-icon{
+  font-size: 35px;
   }
 
   .slogan {

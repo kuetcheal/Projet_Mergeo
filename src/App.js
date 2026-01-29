@@ -34,6 +34,9 @@ import ImmigrerCanada from './components/mesChoix/immigrer-canada';
 import ResidencePermanente from './components/mesChoix/residence-permanente';
 
 
+// composants réutilisable
+//import CardTemoin from "./components/temoignages/cardTemoin";
+
 import OffreEmploi from './components/offres/offreEmploi';
 
 import CoursAnglais from './components/langues/coursAnglais';
@@ -47,6 +50,7 @@ import Presentation1 from "./components/mobiliis/presentation1";
 import Temoignage from "./components/temoignages/temoignage";
 import ToutTemoignages from "./components/temoignages/toutTemoignages";
 import PersonneTemoignage from "./components/temoignages/personneTemoignage";
+import CardTemoin from "./components/temoignages/cardTemoin";
 
  import Coaching from './components/services/coaching';
  import Admission from './components/services/admission';
@@ -77,6 +81,8 @@ const App = () => {
           <Route path="/navbar" element={<Navbar />} />
 
            <Route path="/Slider" element={<Slider />} />
+
+           <Route path="/cardTemon" element={<CardTemoin/>} />
 
           <Route path="/sponsor" element={<Sponsor />} />
           <Route path="/map" element={<Map />} />
