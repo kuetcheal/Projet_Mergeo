@@ -1,6 +1,5 @@
 import React from "react";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import "./cardTemoin.css";
 
 const CardTemoin = ({
   nom,
@@ -11,27 +10,40 @@ const CardTemoin = ({
   className = "",
 }) => {
   return (
-    <div className={`card card-temoin ${className}`}>
-      <div className="card-temoin__avatarWrap">
-        <img src={image} alt={nom} className="card-temoin__avatar" />
+    <article
+      className={[
+        "w-full max-w-[320px] rounded-2xl bg-white shadow-sm ring-1 ring-black/10",
+        "px-5 pt-6 pb-4",
+        "transition hover:-translate-y-1 hover:shadow-md",
+        className,
+      ].join(" ")}
+    >
+      {/* Avatar */}
+      <div className="mx-auto mb-4 h-24 w-24 overflow-hidden rounded-full ring-2 ring-black/10">
+        <img src={image} alt={nom} className="h-full w-full object-cover" />
       </div>
 
-      <div className="card-body card-temoin__body">
-        <p className="card-temoin__message">{message}</p>
-      <div className="bloc2">
-        <h5 className="card-temoin__nom">{nom}</h5>
+      {/* Message */}
+      <p className="line-clamp-5 text-center text-sm italic leading-relaxed text-black/60">
+        {message}
+      </p>
+
+      {/* Bas de card */}
+      <div className="mt-4 flex flex-col items-center">
+        <h5 className="text-center text-base font-extrabold text-black/80">
+          {nom}
+        </h5>
 
         <button
           type="button"
-          className="card-temoin__readBtn d-inline-flex align-items-center gap-2"
           onClick={onRead}
+          className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#1976D2] px-4 py-3 text-sm font-extrabold text-white hover:bg-[#A93D87]"
         >
           {buttonLabel}
-          <ChevronRightIcon style={{ fontSize: 20 }} />
+          <ChevronRightIcon sx={{ fontSize: 20 }} />
         </button>
-        </div>
       </div>
-    </div>
+    </article>
   );
 };
 

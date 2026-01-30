@@ -34,8 +34,9 @@ import ImmigrerCanada from './components/mesChoix/immigrer-canada';
 import ResidencePermanente from './components/mesChoix/residence-permanente';
 
 
-// composants réutilisable
-//import CardTemoin from "./components/temoignages/cardTemoin";
+// pages
+import Temoignage from "./pages/temoignage/temoignage";
+import TemoignageSlug from "./pages/temoignage/TemoignageSlug";
 
 import OffreEmploi from './components/offres/offreEmploi';
 
@@ -47,8 +48,8 @@ import Presentation from "./components/mobiliis/presentation";
 import Location from "./components/mobiliis/location";
 import Presentation1 from "./components/mobiliis/presentation1";
 
-import Temoignage from "./components/temoignages/temoignage";
-import ToutTemoignages from "./components/temoignages/toutTemoignages";
+// import Temoignage from "./components/temoignages/temoignage";
+
 import PersonneTemoignage from "./components/temoignages/personneTemoignage";
 import CardTemoin from "./components/temoignages/cardTemoin";
 
@@ -98,7 +99,7 @@ const App = () => {
           <Route path="/presentation" element={<Presentation />} />
           <Route path="/presentation1" element={<Presentation1 />} />
           <Route path="/temoignage" element={<Temoignage />} />
-          <Route path="/toutTemoignages" element={<ToutTemoignages />} />
+
           <Route path="/personneTemoignage" element={<PersonneTemoignage />} />
           <Route path="/choix" element={<Choix />} />
           <Route path="/notice" element={<Notice />} />
@@ -114,7 +115,9 @@ const App = () => {
           <Route path="/immigrer-canada" element={<ImmigrerCanada />} />
           <Route path="/residence-permanente" element={<ResidencePermanente />} />
 
-
+          {/* les pages du site */}
+          <Route path="/temoignage"  element={<Temoignage/>} />
+          <Route path="/temoignage/:slug" element={<TemoignageSlug />} />
 
 
           <Route path="/admin" element={<Admin />} />

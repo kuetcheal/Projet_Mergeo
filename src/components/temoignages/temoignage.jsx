@@ -1,8 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import CardTemoin from "./cardTemoin";
 import "./temoignage.css";
 
 const Temoignages = () => {
+  const navigate = useNavigate();
+
   const temoignages = [
     {
       nom: "Alex KUETCHE",
@@ -30,14 +33,14 @@ const Temoignages = () => {
     },
   ];
 
+
   const handleAll = () => {
-    // window.location.href = "/temoignages";
+    navigate("/temoignage"); 
   };
 
   const handleRead = (temoin) => {
-    // ✅ exemple : rediriger vers une page détail
-    // window.location.href = `/temoignages/${temoin.nom}`;
     console.log("Lire :", temoin);
+  
   };
 
   return (

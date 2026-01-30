@@ -1,6 +1,6 @@
 import React from "react";
-import "./toutTemoignage.css";
-import PersonneTemoignage from "../temoignages/personneTemoignage";
+import "./temoignage.css";
+import PersonneTemoignage from "../../components/temoignages/personneTemoignage";
 
 const Temoignages = () => {
   return (
