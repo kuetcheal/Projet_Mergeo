@@ -1,11 +1,15 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 :root {
   --bs-primary: #A93D87;
   --bs-secondary: #004080;
 }
 
 
-
-/* ✅ BTN PRIMARY : normal = primary / hover = secondary */
 .btn-primary {
   background-color: var(--bs-primary) !important;
   border-color: var(--bs-primary) !important;
@@ -19,13 +23,12 @@
   border-color: var(--bs-secondary) !important;
 }
 
-/* (optionnel) transition douce */
 .btn {
   transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 
-/* Bouton auto selon contenu */
+
 .btn-auto {
   width: fit-content;
   padding: 0.75rem 1.5rem;
@@ -34,7 +37,9 @@
 }
 
 
-/* Force primary + hover secondary (même si d'autres règles existent) */
+/* =========================
+   FORCE PRIMARY + HOVER
+   ========================= */
 .btn.btn-primary {
   background-color: #A93D87 !important;
   border-color: #A93D87 !important;

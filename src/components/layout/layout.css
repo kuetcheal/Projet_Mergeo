@@ -6,13 +6,13 @@
 .chat-icon {
   position: fixed;
   bottom: 30px;
-  right: 20px !important;
-  right: 2px;
-  width: 60px; 
+  right: 20px;
+  width: 60px;
   height: 60px;
   cursor: pointer;
   z-index: 1000;
 }
+
 
 .chatbot-popup {
   position: fixed;

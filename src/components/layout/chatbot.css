@@ -1,49 +1,201 @@
-.chatbot-container {
-  position: fixed;
-  bottom: 20px;
-  right: 70px;
-  z-index: 1000;
-  width: 300px; /* Augmente légèrement la largeur */
-}
-
-/* Positionner l'icône de fermeture en haut à droite dans l'en-tête */
-.chatbot-close-icon {
-  position: absolute;
-  top: 12px;
-  left: 305px;
-  color: white;
-  cursor: pointer;
-  z-index: 1005;
-  font-size: 20px;
-}
-
-/* Styles pour les petits écrans */
-@media (max-width: 1000px) {
-  .chatbot-container {
-      bottom: 50px;
-      right: 10px;
-      width: 270px; 
-  }
-}
-
-@media (max-width: 767px) {
-  .chatbot-container {
-      bottom: 85px;
-      right: 10px;
-      width: 100%; 
-      max-width: 320px;
-  }
-
-.chatbot-close-icon {
-  position: absolute;
-  top: 10px;           /* descend légèrement */
-  right: 10px;         /* colle à droite dans le header */
-  color: white;
-  cursor: pointer;
+/* =========================
+   WRAPPER (ton composant Chat)
+   ========================= */
+.chatbot-box {
+  width: 340px;
+  max-width: 92vw;
+  position: relative;
   z-index: 2000;
-  font-size: 22px;
-  padding-right: 10px;
 }
 
-  
+/* Croix (ton CloseIcon MUI) */
+.chatbot-close-icon {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 3000;
+  font-size: 22px;
+}
+
+/* =========================
+   REACT-SIMPLE-CHATBOT (classes internes)
+   ========================= */
+
+/* Le cadre global */
+.rsc-container {
+  background: #f5f8fb !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Header */
+.rsc-header {
+  background: #a93d87 !important;
+  color: #fff !important;
+  padding-right: 46px !important; /* laisse la place à ta croix */
+}
+
+.rsc-header-title {
+  color: #fff !important;
+  font-weight: 800 !important;
+  font-size: 18px !important;
+}
+
+/* Zone des messages (fond) */
+.rsc-content {
+  background: #f5f8fb !important;
+}
+
+/* Scrollbar (optionnel) */
+.rsc-content::-webkit-scrollbar {
+  width: 6px;
+}
+.rsc-content::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 99px;
+}
+
+/* =========================
+   AVATARS : ronds + taille propre
+   ========================= */
+.rsc-ts-bot .rsc-ts-avatar,
+.rsc-ts-user .rsc-ts-avatar,
+.rsc-ts-bot img,
+.rsc-ts-user img {
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  overflow: hidden !important;
+}
+
+/* =========================
+   BULLES : FIX DEFINITIF
+   On ne style PLUS .rsc-ts-bubble seul.
+   On style selon le parent BOT/USER.
+   ========================= */
+
+/* Reset léger (évite héritages chelous) */
+.rsc-ts-bubble,
+.rsc-ts-user-bubble {
+  background: transparent !important;
+  color: inherit !important;
+}
+
+/* BOT = question (violet) */
+.rsc-ts-bot .rsc-ts-bubble,
+.rsc-ts-bot .rsc-ts-user-bubble {
+  background: #a93d87 !important;
+  color: #fff !important;
+  border-radius: 14px !important;
+  padding: 12px 14px !important;
+  max-width: 92% !important;
+  line-height: 1.35 !important;
+  font-weight: 600 !important;
+  border: none !important;
+}
+
+/* USER = réponse (blanc) */
+.rsc-ts-user .rsc-ts-bubble,
+.rsc-ts-user .rsc-ts-user-bubble {
+  background: #ffffff !important;
+  color: #222 !important;
+  border-radius: 14px !important;
+  padding: 12px 14px !important;
+  max-width: 92% !important;
+  line-height: 1.35 !important;
+  font-weight: 600 !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Espace entre messages */
+.rsc-ts {
+  padding: 10px 10px 0 !important;
+}
+
+/* =========================
+   OPTIONS : boutons neutres (comme ton exemple)
+   ========================= */
+
+.rsc-os-options {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  justify-content: flex-start !important; /* rendu plus naturel */
+  padding: 4px 0 10px !important;
+}
+
+/* Bouton option */
+.rsc-os-option {
+  background: #ffffff !important;
+  color: #222 !important;
+  border: 1px solid rgba(0,0,0,0.20) !important;
+  border-radius: 10px !important;
+  padding: 10px 12px !important;
+  min-width: 120px !important;
+  height: 42px !important;
+
+  box-shadow: none !important;
+  text-shadow: none !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  cursor: pointer !important;
+}
+
+/* IMPORTANT : supprime tout fond/couleur interne */
+.rsc-os-option * {
+  background: transparent !important;
+  color: inherit !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Hover : léger */
+.rsc-os-option:hover {
+  border-color: rgba(169, 61, 135, 0.55) !important;
+  color: #a93d87 !important;
+}
+
+/* Active/selected (quand cliqué) */
+.rsc-os-option:active {
+  transform: scale(0.98);
+}
+
+/* =========================
+   Footer input (en bas)
+   ========================= */
+.rsc-footer {
+  background: #fff !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+
+.rsc-input {
+  font-size: 13px !important;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+@media (max-width: 767px) {
+  .chatbot-box {
+    width: 320px;
+    max-width: 92vw;
+  }
+
+  .rsc-ts-bot .rsc-ts-bubble,
+  .rsc-ts-user .rsc-ts-bubble,
+  .rsc-ts-bot .rsc-ts-user-bubble,
+  .rsc-ts-user .rsc-ts-user-bubble {
+    max-width: 94% !important;
+  }
+
+  .rsc-os-option {
+    min-width: 135px !important;
+  }
 }
