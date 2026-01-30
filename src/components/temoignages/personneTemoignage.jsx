@@ -20,8 +20,8 @@ const PersonneTemoignage = () => {
   const temoignagesEtudiants = useMemo(
     () => [
       {
-        nom: "Bojer KINZONZI",
-        slug: "bojer-kinzonzi",
+        nom: "Alex KUETCHE",
+        slug: "alex-kuetche",
         message:
           "La formation à l'ESCG Paris s’est donc avérée pertinente, puisque j’ai réalisé ma dernière année en alternance ainsi qu’un mémoire professionnel sur une problématique liée à mon entreprise d’accueil.",
         image: "/images/photo_Alex.jpeg",

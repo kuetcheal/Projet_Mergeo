@@ -88,6 +88,7 @@
   gap: 5px;
   flex-direction: column;
   margin-top: 9px;
+  padding-bottom: 8px;
 }
 
 .logoImage {

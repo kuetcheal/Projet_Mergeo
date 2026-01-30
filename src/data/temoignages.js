@@ -1,8 +1,9 @@
 export const temoignages = [
   {
-    slug: "bojer-kinzonzi",
-    nom: "Bojer KINZONZI",
+    slug: "alex-kuetche",
+    nom: "Alex KUETCHE",
     categorie: "etudiants",
+    describe : "j'ai parcouru plusieurs centres en vain pour m'aider dans ma procédure de voyage pour étudier en France, j'ai essuyé echec après échec jusqu'au jour où j'ai decouvert mobiliis et grâce à leur accompagnement j'ai réussi à obtenir mon visa étudiat pour la France",
     image: "/images/photo_Alex.jpeg",
 
     // ✅ video : soit youtube (recommandé), soit mp4
