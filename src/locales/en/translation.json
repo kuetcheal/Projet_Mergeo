@@ -1,10 +1,10 @@
 {
-   "header": {
-    "phone1": "+33 (0)1 23 45 67 89 |",
-    "phone2": "+237 675 07 00 50",
+  "header": {
+    "phone1": "+237 655 45 67 89 |",
+    "phone2": "+237 675 070 050",
     "phone3": "| +33 7 58 10 31 17",
-    "email": "akuetche55@gmail.com",
-    "position": "Ndogbong-Douala",
+    "email": "mobiliis03@gmail.com",
+    "position": "Ndogbong-Douala, Rue du Commissariat 10ème",
     "home": "Home",
     "services": "Our Services",
     "mobiliis": "Mobiliis",
@@ -18,39 +18,105 @@
     "english": "English Courses: IELTS, TOEFL",
     "german": "German Courses: DSH, TestDaf",
     "french": "French Tests: TCF, TEF, DALF, DELF, TEF Canada",
-    "spanish": "Spanish Courses"
+    "spanish": "Spanish Courses",
+    "menu": "Menu"
   },
 
-  
   "accueil": {
-    "title": "Home",
-    "description": "The e-health sanctuary to manage your wellness schedule."
+    "title": "Mobiliis",
+    "description": "With Mobiliis, travel without borders to study, explore and grow."
   },
-
 
   "footer": {
-  "followTitle": "FOLLOW OUR NEWS!",
-  "newsletter": "Subscribe to our Newsletter",
-  "emailPlaceholder": "Email",
-  "subscribe": "SUBSCRIBE",
-  "socialText": "Follow us on:",
-  "contactTitle": "CONTACT US",
-  "phone": "+237 675 070 050 | +33 7 58 10 31 17",
-  "email": "mobiliis03@gmail.com",
-  "address": "Ndogbong-Douala, Rue du Commissariat 10ème",
-  "hours": "Monday to Friday from 8:30am to 6:00pm",
-  "offer": "Our offers",
-  "sponsorship": "Sponsorship",
-  "practicalInfo": "Practical information",
-  "financing": "Financing",
-  "tuition": "Tuition fees",
-  "legalTitle": "LEGAL INFORMATION",
-  "legalNotice": "Legal notice",
-  "privacy": "Privacy policy",
-  "cookies": "Cookies and consent",
-  "copyright": "Copyright © 2024 | Alex KUETCHE. EasyTech solution WebSite",
-  "updated": "Updated: October 31, 2024"
-}
+    "followTitle": "FOLLOW OUR NEWS!",
+    "newsletter": "Subscribe to our Newsletter",
+    "emailPlaceholder": "Email",
+    "subscribe": "SUBSCRIBE",
+    "socialText": "Follow us on:",
+    "contactTitle": "CONTACT US",
+    "phone": "+237 675 070 050 | +33 7 58 10 31 17",
+    "email": "mobiliis03@gmail.com",
+    "address": "Ndogbong-Douala, Rue du Commissariat 10ème",
+    "hours": "Monday to Friday from 8:30am to 6:00pm",
+    "offer": "Our offers",
+    "sponsorship": "Sponsorship",
+    "practicalInfo": "Practical information",
+    "financing": "Financing",
+    "tuition": "Tuition fees",
+    "legalTitle": "LEGAL INFORMATION",
+    "legalNotice": "Legal notice",
+    "privacy": "Privacy policy",
+    "cookies": "Cookies and consent",
+    "copyright": "Copyright © 2024 | Alex KUETCHE. EasyTech solution WebSite",
+    "updated": "Updated: October 31, 2024"
+  },
 
+  "sous-menu": {
+    "contact": "Contact",
+    "cta": "Admission Request",
+
+    "services": "Our Services",
+    "servicesPrefinance": "Student Pre-financing",
+    "servicesImmigration": "Immigration Support & Services",
+    "servicesCoaching": "Coaching & School Guidance",
+    "servicesAdmission": "Admission Request",
+    "servicesVisa": "Visa Request",
+    "servicesAvi": "AVI + Travel Insurance",
+    "servicesSupport": "Student Support",
+    "servicesHousing": "Housing Search",
+
+    "mobiliis": "Mobiliis",
+    "destinations": "Destinations",
+    "offers": "Our Offers",
+    "logout": "Logout",
+    "login": "Login",
+    "signup": "Sign Up",
+    "myaccount": "My Account",
+    "courses": "Language Courses",
+
+    "english": "English Courses: IELTS, TOEFL",
+    "german": "German Courses: DSH, TestDaf",
+    "french": "Tests: TCF, TEF, DELF/DALF, TEF Canada",
+    "spanish": "Spanish Courses",
+
+    "mobiliisPresentation": "Presentation",
+    "mobiliisAdvantages": "Employee Benefits",
+    "mobiliisPartners": "Our Partnerships",
+
+    "offersJobs": "Job Offers",
+    "offersProcess": "Recruitment Process",
+    "offersTestimonials": "Testimonials",
+
+    "germany": "Germany",
+    "belgium": "Belgium",
+    "spain": "Spain"
+  },
+
+  "slider": {
+    "slides": [
+      {
+        "eyebrow": "Mobiliis • Expertise and Support",
+        "title": "Your project, our priority",
+        "subtitle": "Reliable, human, and effective guidance",
+        "description": "We support your plans with modern, trustworthy solutions tailored to your situation.",
+        "cta": "CONTACT US"
+      },
+      {
+        "eyebrow": "Immigration • Studies • Residency",
+        "title": "Simplified procedures",
+        "subtitle": "End-to-end personalized follow-up",
+        "description": "From profile assessment to file preparation, we guide you step by step until submission.",
+        "cta": "CONTACT US"
+      },
+      {
+        "eyebrow": "Quality • Transparency • Results",
+        "title": "A success-driven service",
+        "subtitle": "Goal: your project succeeds",
+        "description": "Clear guidance, practical advice, and a responsive team to answer your questions.",
+        "cta": "CONTACT US"
+      }
+    ],
+    "scroll": "Scroll",
+    "ariaGoTo": "Go to slide {{index}}"
   }
-  
+}

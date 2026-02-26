@@ -4,53 +4,50 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 import { useTranslation } from "react-i18next";
 
-export default function Slider({
-  height = 520,
-  intervalMs = 4000,
-  onPrimaryCta,
-}) {
+export default function Slider({ height = 520, intervalMs = 4000, onPrimaryCta }) {
   const { t } = useTranslation();
 
-  // ✅ Mets ici tes slides (tu peux changer images / textes)
+  const images = useMemo(
+    () => ["/images/belge.jpg", "/images/passport.jpg", "/images/catable.jpg"],
+    []
+  );
+
   const slides = useMemo(
     () => [
       {
         id: 1,
-        eyebrow: "Mobiliis • Expertise et accompagnement",
-        title: t("accueil.title"),
-        subtitle: t("accueil.description"),
-        description:
-          "Nous vous accompagnons dans vos projets avec des solutions modernes, fiables et adaptées.",
-        ctaLabel: "NOUS CONTACTER",
-        image: "/images/belge.jpg",
+        image: images[0],
+        eyebrow: t("slider.slides.0.eyebrow"),
+        title: t("slider.slides.0.title"),
+        subtitle: t("slider.slides.0.subtitle"),
+        description: t("slider.slides.0.description"),
+        ctaLabel: t("slider.slides.0.cta")
       },
       {
         id: 2,
-        eyebrow: "Immigration • Études • Résidence",
-        title: "Des démarches simplifiées",
-        subtitle: "Un suivi complet et personnalisé",
-        description:
-          "De l’analyse du profil à la constitution du dossier, nous vous guidons étape par étape.",
-        ctaLabel: "NOUS CONTACTER",
-        image: "/images/passport.jpg",
+        image: images[1],
+        eyebrow: t("slider.slides.1.eyebrow"),
+        title: t("slider.slides.1.title"),
+        subtitle: t("slider.slides.1.subtitle"),
+        description: t("slider.slides.1.description"),
+        ctaLabel: t("slider.slides.1.cta")
       },
       {
         id: 3,
-        eyebrow: "Qualité • Transparence • Résultats",
-        title: "Un service orienté réussite",
-        subtitle: "Objectif : votre projet aboutit",
-        description:
-          "Une approche claire, des conseils concrets et une équipe disponible pour vous.",
-        ctaLabel: "NOUS CONTACTER",
-        image: "/images/catable.jpg",
-      },
+        image: images[2],
+        eyebrow: t("slider.slides.2.eyebrow"),
+        title: t("slider.slides.2.title"),
+        subtitle: t("slider.slides.2.subtitle"),
+        description: t("slider.slides.2.description"),
+        ctaLabel: t("slider.slides.2.cta")
+      }
     ],
-    [t]
+    [t, images]
   );
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [fade, setFade] = useState(true);
-  const timerRef = useRef(null);
+  const timeoutRef = useRef(null);
 
   const goTo = (index) => {
     const safe = (index + slides.length) % slides.length;
@@ -62,17 +59,25 @@ export default function Slider({
   };
 
   useEffect(() => {
-    timerRef.current = window.setInterval(() => {
+    if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
+
+    timeoutRef.current = window.setTimeout(() => {
       goTo(activeIndex + 1);
     }, intervalMs);
 
     return () => {
-      if (timerRef.current) window.clearInterval(timerRef.current);
+      if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeIndex, intervalMs]);
 
   const slide = slides[activeIndex];
+
+  const handlePrimaryCta = () => {
+    if (typeof onPrimaryCta === "function") return onPrimaryCta(slide, activeIndex);
+    // fallback possible:
+    // window.location.href = "/contact";
+  };
 
   return (
     <Box
@@ -80,8 +85,8 @@ export default function Slider({
       sx={{
         position: "relative",
         width: "100%",
-        height: 600,
-        overflow: "hidden",
+        height,
+        overflow: "hidden"
       }}
     >
       {/* Background image */}
@@ -91,29 +96,28 @@ export default function Slider({
           inset: 0,
           backgroundImage: `url(${slide.image})`,
           backgroundPosition: "center",
+          
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           transition: "opacity 0.5s ease-in-out, filter 0.5s ease-in-out",
           opacity: fade ? 1 : 0,
           filter: fade ? "blur(0px)" : "blur(5px)",
-          zIndex: 0,
-          objectFit: "cover",
-          height : 600,
+          zIndex: 0
         }}
       />
 
-      {/* Overlay gradient (comme ton Vue) */}
+      {/* Overlay gradient */}
       <Box
         sx={{
           position: "absolute",
           inset: 0,
           background:
             "linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.7) 100%)",
-          zIndex: 1,
+          zIndex: 1
         }}
       />
 
-      {/* Content container (aligné à gauche, centré verticalement) */}
+      {/* Content */}
       <Box
         sx={{
           position: "relative",
@@ -123,7 +127,7 @@ export default function Slider({
           mx: "auto",
           px: { xs: 2, sm: 3, md: 4 },
           display: "flex",
-          alignItems: "center",
+          alignItems: "center"
         }}
       >
         <Box sx={{ maxWidth: 560, color: "white" }}>
@@ -133,7 +137,7 @@ export default function Slider({
               letterSpacing: "0.22em",
               fontSize: "0.78rem",
               mb: 1.2,
-              color: "#f97373",
+              color: "#f97373"
             }}
           >
             {slide.eyebrow}
@@ -146,7 +150,7 @@ export default function Slider({
               fontSize: { xs: "2rem", sm: "2.4rem", md: "3rem" },
               lineHeight: 1.15,
               mb: 1.2,
-              color: "#A93D87",
+              color: "#A93D87"
             }}
           >
             {slide.title}
@@ -157,7 +161,7 @@ export default function Slider({
               fontSize: { xs: "1.05rem", sm: "1.2rem", md: "1.35rem" },
               fontWeight: 500,
               mb: 1,
-              color: "whitesmoke",
+              color: "whitesmoke"
             }}
           >
             {slide.subtitle}
@@ -169,7 +173,7 @@ export default function Slider({
               lineHeight: 1.7,
               color: "#e5e7eb",
               maxWidth: 520,
-              mb: 2.2,
+              mb: 2.2
             }}
           >
             {slide.description}
@@ -177,7 +181,7 @@ export default function Slider({
 
           <Button
             variant="contained"
-            onClick={onPrimaryCta}
+            onClick={handlePrimaryCta}
             endIcon={<ChevronRightIcon />}
             sx={{
               bgcolor: "#007bff",
@@ -187,7 +191,7 @@ export default function Slider({
               px: 3,
               py: 1.2,
               borderRadius: "999px",
-              width: "fit-content",
+              width: "fit-content"
             }}
           >
             {slide.ctaLabel}
@@ -195,14 +199,14 @@ export default function Slider({
         </Box>
       </Box>
 
-      {/* Pagination bars (dans le container) */}
+      {/* Pagination bars */}
       <Box
         sx={{
           position: "absolute",
           left: 0,
           bottom: { xs: 16, md: 28 },
           width: "100%",
-          zIndex: 3,
+          zIndex: 3
         }}
       >
         <Box
@@ -212,7 +216,7 @@ export default function Slider({
             px: { xs: 2, sm: 3, md: 4 },
             display: "flex",
             gap: "0.6rem",
-            alignItems: "center",
+            alignItems: "center"
           }}
         >
           {slides.map((s, i) => (
@@ -228,27 +232,28 @@ export default function Slider({
                 cursor: "pointer",
                 overflow: "hidden",
                 padding: 0,
-                background: "rgba(255,255,255,0.25)",
+                background: "rgba(255,255,255,0.25)"
               }}
-              aria-label={`Aller au slide ${i + 1}`}
+              aria-label={t("slider.ariaGoTo", { index: i + 1 })}
             >
               <span
                 style={{
                   position: "absolute",
                   inset: 0,
                   width: i < activeIndex ? "100%" : "0%",
-                  background: "#ff4b4b",
+                  background: "#ff4b4b"
                 }}
               />
               {i === activeIndex && (
                 <span
+                  key={`${activeIndex}-${intervalMs}`}
                   style={{
                     position: "absolute",
                     inset: 0,
                     width: "0%",
                     background: "#ff4b4b",
                     animation: `sliderBar ${intervalMs}ms linear forwards`,
-                    transformOrigin: "left center",
+                    transformOrigin: "left center"
                   }}
                 />
               )}
@@ -270,7 +275,7 @@ export default function Slider({
           alignItems: "center",
           gap: "0.35rem",
           color: "#f9fafb",
-          pointerEvents: "none",
+          pointerEvents: "none"
         }}
       >
         <Box
@@ -281,25 +286,23 @@ export default function Slider({
             border: "2px solid #f9fafb",
             display: "flex",
             justifyContent: "center",
-            alignItems: "center",
+            alignItems: "center"
           }}
         >
-          <KeyboardDoubleArrowDownIcon
-            sx={{ animation: "scrollArrow 1.2s infinite" }}
-          />
+          <KeyboardDoubleArrowDownIcon sx={{ animation: "scrollArrow 1.2s infinite" }} />
         </Box>
+
         <Typography
           sx={{
             fontSize: "0.75rem",
             letterSpacing: "0.16em",
-            textTransform: "uppercase",
+            textTransform: "uppercase"
           }}
         >
-          Scroll
+          {t("slider.scroll")}
         </Typography>
       </Box>
 
-      {/* Keyframes */}
       <style>
         {`
           @keyframes sliderBar {

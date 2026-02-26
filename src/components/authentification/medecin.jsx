@@ -1,5 +1,5 @@
 //import React, { useState, useEffect } from "react";
-import { Box} from "@mui/material";
+import { Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 //import { useTranslation } from "react-i18next";
 
@@ -12,38 +12,14 @@ import Service1 from "../services/service1";
 import Presentation1 from "../mobiliis/presentation1";
 import Location from "../mobiliis/location";
 
-// ✅ Import du slider
+//  Import du slider
 import Slider from "../slider/Slider";
 
 const Medecin = () => {
- // const { t } = useTranslation();
+  // const { t } = useTranslation();
   const navigate = useNavigate();
 
   const handleContactClick = () => navigate("/contact");
-  //const handleTemoignageClick = () => navigate("/toutTemoignages");
-
-  // (Tu peux laisser, même si Slider a ses propres images)
- // const images = ["/images/bureau.jpeg", "/images/passport.jpg", "/images/catable.jpg"];
-  // const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  //const [fade, setFade] = useState(true);
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setFade(false);
-  //     setTimeout(() => {
-  //       setCurrentImageIndex((prev) => (prev + 1) % images.length);
-  //       setFade(true);
-  //     }, 300);
-  //   }, 4000);
-  //   return () => clearInterval(interval);
-  // }, [images.length]);
-
-  // ✅ 1 seul container “standard” réutilisé partout
-  // const pageContainerSx = {
-  //   maxWidth: "1290px",
-  //   mx: "auto",
-  //   px: { xs: 2, sm: 3, md: 4 },
-  // };
 
   return (
     <Box width="100%" bgcolor="white" sx={{ overflowX: "hidden" }}>

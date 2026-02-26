@@ -1,281 +1,428 @@
-import React, { useState, } from 'react';
-import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import './Header.css';
-import PersonIcon from '@mui/icons-material/Person';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
-import CallIcon from '@mui/icons-material/Call';
-import LanguageIcon from '@mui/icons-material/Language';
-import PlaceIcon from '@mui/icons-material/Place';
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
+import React, { useMemo, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 
+import CallIcon from "@mui/icons-material/Call";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import PlaceIcon from "@mui/icons-material/Place";
+import LanguageIcon from "@mui/icons-material/Language";
+import PersonIcon from "@mui/icons-material/Person";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 
-
+import "./Header.css";
 
 const Header = () => {
-  //const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const { i18n, t } = useTranslation();
+
+  // Desktop dropdown hover
+  const [openDD, setOpenDD] = useState(null); // "services" | "courses" | ...
+
+  // Mobile drawer
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSub, setActiveSub] = useState(null); // { key, label, items[] } | null
+
+  // Right icons
   const [showLangMenu, setShowLangMenu] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
-  const [showServicesMenu, setShowServicesMenu] = useState(false);
-  const [showMobiliisMenu, setShowMobiliisMenu] = useState(false);
-  const [showOffersMenu, setShowOffersMenu] = useState(false);
-  const [showDestinationMenu, setShowDestinationMenu] = useState(false);
-  const [showCoursMenu, setShowCoursMenu] = useState(false);
-  const { i18n, t } = useTranslation();
+
+  const currentLangLabel = useMemo(
+    () => (i18n.language?.startsWith("fr") ? "FRA" : "ANG"),
+    [i18n.language]
+  );
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
+    setShowLangMenu(false);
+
   };
 
-  // useEffect(() => {
-  //   const checkSession = async () => {
-  //     const response = await fetch('/api/check-session', {
-  //       method: 'GET',
-  //       credentials: 'include'
-  //     });
-  //     if (response.ok) {
-  //       setIsLoggedIn(true);
-  //     } else {
-  //       setIsLoggedIn(false);
-  //     }
-  //   };
-
-  //   checkSession();
-  // }, []);
-
-  // const handleLogout = async () => {
-  //   await fetch('/api/logout', {
-  //     method: 'POST',
-  //     credentials: 'include'
-  //   });
-  //   setIsLoggedIn(false);
-  //   console.log('Déconnexion réussie');
-  // };
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+  const closeMobileMenu = () => {
+    setMobileOpen(false);
+    setActiveSub(null);
   };
 
-  // gestion des sous-menus
-  const handleMouseEnter = () => {
-    setShowServicesMenu(true);
-  };
-  const handleMouseLeave = () => {
-    setShowServicesMenu(false);
+  const openSubMenu = (sub) => {
+    setActiveSub(sub);
   };
 
-  const handleMouseCours= () => {
-    setShowCoursMenu(true);
-  };
-  const handleMouseCoursLeave = () => {
-    setShowCoursMenu(false);
-  };
+  // ---------- Menu config (source unique) ----------
+  const menu = useMemo(() => {
+    return [
+      { key: "home", label: t("header.home"), to: "/" },
 
-  const handleMobiliisMouseEnter = () => {
-    setShowMobiliisMenu(true);
-  };
-  const handleMobiliisMouseLeave = () => {
-    setShowMobiliisMenu(false);
-  };
+      {
+        key: "services",
+        label: t("sous-menu.services"),
+        children: [
+          { label: t("sous-menu.servicesPrefinance"), to: "/financeEtudiant" },
+          { label: t("sous-menu.servicesImmigration"), to: "/services/immigration" },
+          { label: t("sous-menu.servicesCoaching"), to: "/coaching" },
+          { label: t("sous-menu.servicesAdmission"), to: "/admission" },
+          { label: t("sous-menu.servicesVisa"), to: "/services/formation" },
+          { label: t("sous-menu.servicesAvi"), to: "/avi" },
+          { label: t("sous-menu.servicesSupport"), to: "/services/avantages" },
+          { label: t("sous-menu.servicesHousing"), to: "/logement" },
+        ],
+      },
 
-  const handleOffersMouseEnter = () => {
-    setShowOffersMenu(true);
-  };
-  const handleOffersMouseLeave = () => {
-    setShowOffersMenu(false);
-  };
-  const handleDestinationMouseEnter = () => {
-    setShowDestinationMenu(true);
-  };
-  const handleDestinationMouseLeave = () => {
-    setShowDestinationMenu(false);
-  };
+      {
+        key: "courses",
+        label: t("sous-menu.courses"),
+        children: [
+           { label: t("sous-menu.french"), to: "/CoursFrançais" },
+          { label: t("sous-menu.english"), to: "/coursAnglais" },
+          { label: t("sous-menu.german"), to: "/CoursAllemand" },
+        ],
+      },
+
+      {
+        key: "mobiliis",
+        label: t("sous-menu.mobiliis"),
+        children: [
+          { label: t("sous-menu.mobiliisPresentation"), to: "/presentation" },
+          { label: t("sous-menu.mobiliisAdvantages"), to: "/mobiliis/avantages" },
+          { label: t("sous-menu.mobiliisPartners"), to: "/mobiliis/partenariats" },
+        ],
+      },
+
+      {
+        key: "offers",
+        label: t("sous-menu.offers"),
+        children: [
+          { label: t("sous-menu.offersJobs"), to: "/offreEmploi" },
+          { label: t("sous-menu.offersProcess"), to: "/offers/offer2" },
+          { label: t("sous-menu.offersTestimonials"), to: "/offers/offer3" },
+        ],
+      },
+
+      {
+        key: "destinations",
+        label: t("sous-menu.destinations"),
+        children: [
+          { label: "Canada", to: "/canada" },
+          { label: "France", to: "/france" },
+          { label: t("sous-menu.germany"), to: "/allemagne" },
+          { label: t("sous-menu.belgium"), to: "/belgique" },
+          { label: t("sous-menu.spain"), to: "/espagne" },
+        ],
+      },
+
+      { key: "contact", label: t("sous-menu.contact"), to: "/contact" },
+    ];
+  }, [t]);
+
+  // Helpers
+  const isDesktop = () => window.matchMedia("(min-width: 992px)").matches;
+
+  // ---------- RENDER ----------
   return (
+    <header>
 
-    <>
+      <div className="topbar d-none d-lg-block">
+        <Container className="topbar-inner">
+          <div className="topbar-left">
+            <CallIcon className="topbar-icon" />
+            <span className="topbar-text">{t("header.phone1")}</span>
+            <span className="topbar-text">{t("header.phone2")}</span>
+            <span className="topbar-text">{t("header.phone3")}</span>
+          </div>
 
-      {menuOpen && <div className="backdrop" onClick={toggleMenu}></div>}
-      <header className='head'>
-        <div className="header-infos">
-          <div className="tel">
-            <div className="phone-numbers">
-            <span> <CallIcon className="phone-icon" />  </span>
-              <span>{t('header.phone1')}</span>
-              <span>{t('header.phone2')}</span>
-              <span>{t('header.phone3')}</span>
-
+          <div className="topbar-right">
+            <div className="topbar-item">
+              <MailOutlineIcon className="topbar-icon" />
+              <span className="topbar-text">{t("header.email")}</span>
+            </div>
+            <div className="topbar-item">
+              <PlaceIcon className="topbar-icon" />
+              <span className="topbar-text">{t("header.position")}</span>
             </div>
           </div>
-          <div className="informat">
-            <div className="email" sytle={{ color: 'white' }}><p><MailOutlineIcon /> {t('header.email')}</p></div>
-            <div className="lieu"><p><PlaceIcon /> {t('header.position')}</p></div>
-          </div>
-        </div>
+        </Container>
+      </div>
 
-        <div className="header-main">
-          <div className="logo">
-            <img src="/images/Manitour.png" alt="Mobiliis Logo" className="logoImage" />
-            <h4 className="slogan">Mobiliis</h4>
-          </div>
+      {/* NAVBAR (desktop) + mobile header row */}
+      <Navbar expand="lg" bg="white" variant="light" className="mainnav" sticky="top">
+        <Container>
+          {/* Brand */}
+          <Navbar.Brand as={Link} to="/" className="brand brand-vertical" onClick={closeMobileMenu}>
+            <img src="/images/Manitour.png" alt="Mobiliis" className="brand-logo" />
+            <span className="brand-name">Mobiliis</span>
+          </Navbar.Brand>
 
-          <nav className={`nav ${menuOpen ? 'nav-open' : ''}`}>
-
-            <CloseIcon className="close-icon" onClick={toggleMenu} />
-
-            <ul className="nav-list">
-              <li className="navItem">
-                <Link to="/" className="navLink" >{t('header.home')}</Link>
-              </li>
-
-
-              <li
-                className="navItem"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                style={{ position: 'relative' }}
-              >
-                <Link to="#" className="navLink">
-                  {t('header.services')} <KeyboardArrowDownIcon />
-                </Link>
-                {showServicesMenu && (
-                  <ul className="subMenu">
-                     <li><Link to="financeEtudiant">Préfinancement Etudiant</Link></li>
-                    <li><Link to="/services/immigration">Accompagnement & Services d'immigration</Link></li>
-                    <li><Link to="coaching">Coaching & Orientation scolaire</Link></li>
-                    <li><Link to="/admission">Demande d'admission</Link></li>
-                    <li><Link to="/services/formation">Demande de Visa</Link></li>
-                    <li><Link to="avi"> AVI + Assurances voyage</Link></li>
-                    <li><Link to="/services/avantages">Prise en charge Etudiant</Link></li>
-                    <li><Link to="/logement">Recherche logement</Link></li>
-                  </ul>
-                )}
-              </li>
-              
-              <li
-                className="navItem"
-                onMouseEnter={handleMouseCours}
-                onMouseLeave={handleMouseCoursLeave}
-                style={{ position: 'relative' }}
-              >
-                <Link to="#" className="navLink">
-                  Cours Langues <KeyboardArrowDownIcon />
-                </Link>
-                {showCoursMenu && (
-                  <ul className="subMenu">
-                    <li><Link to="/coursAnglais">Cours d'anglais: IELTS, TOEFL</Link></li>
-                    <li><Link to="/CoursAllemand">Cours d'Allemand: DSH, TestDaf</Link></li>
-                    <li><Link to="/CoursFrançais">Tests de Langue: TCF, TEF, DALF, DELF, TEF Canada</Link></li>
-                    <li><Link to="/coursAnglais">Cours d'Espagnol</Link></li>
-                    
-                  </ul>
-                )}
-              </li>
-
-              <li
-                className="navItem"
-                onMouseEnter={handleMobiliisMouseEnter}
-                onMouseLeave={handleMobiliisMouseLeave}
-                style={{ position: 'relative' }}
-              >
-                <Link to="#" className="navLink">
-                  {t('header.mobiliis')} <KeyboardArrowDownIcon />
-                </Link>
-                {showMobiliisMenu && (
-                  <ul className="subMenu">
-                    <li><Link to="/presentation">Présentation</Link></li>
-                    <li><Link to="/mobiliis/avantages">Nos avantages employés</Link></li>
-                    <li><Link to="/mobiliis/partenariats">Nos partenariats</Link></li>
-                  </ul>
-                )}
-              </li>
-
-              <li
-                className="navItem"
-                onMouseEnter={handleOffersMouseEnter}
-                onMouseLeave={handleOffersMouseLeave}
-                style={{ position: 'relative' }}
-              >
-                <Link to="#" className="navLink">
-                  {t('header.offers')} <KeyboardArrowDownIcon />
-                </Link>
-                {showOffersMenu && (
-                  <ul className="subMenu">
-                    <li><Link to="/offreEmploi">Offres d'emploi</Link></li>
-                    <li><Link to="/offers/offer2">Processus recrutement</Link></li>
-                    <li><Link to="/offers/offer3">témoignages</Link></li>
-                  </ul>
-                )}
-              </li>
-
-              <li  className="navItem"
-                onMouseEnter={handleDestinationMouseEnter}
-                onMouseLeave={handleDestinationMouseLeave}
-                style={{ position: 'relative' }}>
-                <Link to="/medecin" className="navLink" >{t('header.destinations')}<KeyboardArrowDownIcon />
-                </Link>
-                {showDestinationMenu && (
-                  <ul className="subMenu">
-                    <li><Link to="/canada">Canada</Link></li>
-                    <li><Link to="/france">France</Link></li>
-                    <li><Link to="/allemagne">Allemagne</Link></li>
-                    <li><Link to="/belgique">Belgique</Link></li>
-                    <li><Link to="/espagne">ESpagne</Link></li>
-                  </ul>
-                )}
-              </li>
-              <li className="navItem">
-                <Link to="/contact" className="navLink" >Contact
-                </Link>
-              </li>
-            </ul>
-          </nav>
-          <div className="avatarContainer">
+          {/* Mobile right: icons + burger */}
+          <div className="mobile-actions d-lg-none">
             <div
-              className="langIconContainer"
-              onMouseEnter={() => setShowLangMenu(true)}
-              onMouseLeave={() => setShowLangMenu(false)}
+              className="icon-btn"
+              onClick={() => setShowLangMenu((v) => !v)}
+              aria-label="Langue"
+              role="button"
             >
-              <LanguageIcon style={{ width: "40px", height: "40px", marginRight: "10px", color: "#004080", cursor: "pointer" }} />
+              <LanguageIcon />
+              <span className="icon-dd-label">{currentLangLabel}</span>
 
               {showLangMenu && (
-                <div className="langMenu">
-                  <p onClick={() => changeLanguage('fr')}>FRA</p>
-                  <p onClick={() => changeLanguage('en')}>ANG</p>
+                <div className="mini-pop">
+                  <button type="button" onClick={() => changeLanguage("fr")}>FRA</button>
+                  <button type="button" onClick={() => changeLanguage("en")}>ANG</button>
                 </div>
               )}
             </div>
 
             <div
-              className="profileIconContainer"
-              onMouseEnter={() => setShowProfileMenu(true)}
-              onMouseLeave={() => setShowProfileMenu(false)}
+              className="icon-btn"
+              onClick={() => setShowProfileMenu((v) => !v)}
+              aria-label="Profil"
+              role="button"
             >
-              <PersonIcon style={{ width: "60px", height: "60px", marginRight: "10px", color: "#004080", cursor: "pointer" }} />
+              <PersonIcon style={{ fontSize: 34 }} />
 
               {showProfileMenu && (
-                <div className="dropdownMenu">
-                  <li><Link to="/inscription">s'inscrire</Link></li>
-                    <li><Link to="/connexion">Se connecter</Link></li>
-                    <li><Link to="/allemagne">Mon compte</Link></li>
+                <div className="mini-pop">
+                  <Link to="/inscription" onClick={closeMobileMenu}>s'inscrire</Link>
+                  <Link to="/connexion" onClick={closeMobileMenu}>Se connecter</Link>
+                  <Link to="/allemagne" onClick={closeMobileMenu}>Mon compte</Link>
                 </div>
               )}
             </div>
 
-            <div className="burger-container">
-              {menuOpen ? (
-                <CloseIcon className="burger-icon" onClick={toggleMenu} style={{ color: "#004080", fontSize: "35px" }} />
-              ) : (
-                <MenuIcon className="burger-icon" onClick={toggleMenu} style={{ color: "#004080" }} />
-              )}
-            </div>
-
+            <button
+              className="burger-btn"
+              type="button"
+              onClick={() => {
+                setMobileOpen(true);
+                setShowLangMenu(false);
+                setShowProfileMenu(false);
+              }}
+              aria-label="Ouvrir le menu"
+            >
+              <MenuIcon />
+            </button>
           </div>
+
+          {/* Desktop nav */}
+          <Navbar.Collapse id="main-navbar" className="mainnav-collapse d-none d-lg-flex">
+            <Nav className="mainnav-center mx-auto gap-lg-3">
+              {/* Home */}
+              <Nav.Link as={NavLink} to="/" end>
+                {t("header.home")}
+              </Nav.Link>
+
+              {/* SERVICES */}
+              <NavDropdown
+                title={t("sous-menu.services")}
+                id="services-dd"
+                show={openDD === "services"}
+                onMouseEnter={() => setOpenDD("services")}
+                onMouseLeave={() => setOpenDD(null)}
+              >
+                {menu.find((m) => m.key === "services")?.children?.map((it) => (
+                  <NavDropdown.Item as={Link} to={it.to} key={it.to}>
+                    {it.label}
+                  </NavDropdown.Item>
+                ))}
+              </NavDropdown>
+
+              {/* COURSES */}
+              <NavDropdown
+                title={t("sous-menu.courses")}
+                id="courses-dd"
+                show={openDD === "courses"}
+                onMouseEnter={() => setOpenDD("courses")}
+                onMouseLeave={() => setOpenDD(null)}
+              >
+                {menu.find((m) => m.key === "courses")?.children?.map((it) => (
+                  <NavDropdown.Item as={Link} to={it.to} key={it.to}>
+                    {it.label}
+                  </NavDropdown.Item>
+                ))}
+              </NavDropdown>
+
+              {/* MOBILIIS */}
+              <NavDropdown
+                title={t("sous-menu.mobiliis")}
+                id="mobiliis-dd"
+                show={openDD === "mobiliis"}
+                onMouseEnter={() => setOpenDD("mobiliis")}
+                onMouseLeave={() => setOpenDD(null)}
+              >
+                {menu.find((m) => m.key === "mobiliis")?.children?.map((it) => (
+                  <NavDropdown.Item as={Link} to={it.to} key={it.to}>
+                    {it.label}
+                  </NavDropdown.Item>
+                ))}
+              </NavDropdown>
+
+              {/* OFFERS */}
+              <NavDropdown
+                title={t("sous-menu.offers")}
+                id="offers-dd"
+                show={openDD === "offers"}
+                onMouseEnter={() => setOpenDD("offers")}
+                onMouseLeave={() => setOpenDD(null)}
+              >
+                {menu.find((m) => m.key === "offers")?.children?.map((it) => (
+                  <NavDropdown.Item as={Link} to={it.to} key={it.to}>
+                    {it.label}
+                  </NavDropdown.Item>
+                ))}
+              </NavDropdown>
+
+              {/* DEST */}
+              <NavDropdown
+                title={t("sous-menu.destinations")}
+                id="dest-dd"
+                show={openDD === "destinations"}
+                onMouseEnter={() => setOpenDD("destinations")}
+                onMouseLeave={() => setOpenDD(null)}
+              >
+                {menu.find((m) => m.key === "destinations")?.children?.map((it) => (
+                  <NavDropdown.Item as={Link} to={it.to} key={it.to}>
+                    {it.label}
+                  </NavDropdown.Item>
+                ))}
+              </NavDropdown>
+
+              {/* CONTACT */}
+              <Nav.Link as={NavLink} to="/contact">
+                {t("sous-menu.contact")}
+              </Nav.Link>
+            </Nav>
+
+            {/* Desktop right icons */}
+            <Nav className="mainnav-right ms-lg-3 align-items-lg-center gap-2">
+              <NavDropdown
+                align="end"
+                id="lang-dd"
+                className="dd-icon"
+                show={showLangMenu}
+                onMouseEnter={() => setShowLangMenu(true)}
+                onMouseLeave={() => setShowLangMenu(false)}
+                onToggle={(isOpen) => setShowLangMenu(isOpen)}
+                title={
+                  <span className="icon-dd" aria-label="Langue">
+                    <LanguageIcon />
+                    <span className="icon-dd-label">{currentLangLabel}</span>
+                  </span>
+                }
+              >
+                <NavDropdown.Item onClick={() => changeLanguage("fr")}>FRA</NavDropdown.Item>
+                <NavDropdown.Item onClick={() => changeLanguage("en")}>ANG</NavDropdown.Item>
+              </NavDropdown>
+
+              <NavDropdown
+                align="end"
+                id="profile-dd"
+                className="dd-icon"
+                show={showProfileMenu}
+                onMouseEnter={() => setShowProfileMenu(true)}
+                onMouseLeave={() => setShowProfileMenu(false)}
+                onToggle={(isOpen) => setShowProfileMenu(isOpen)}
+                title={
+                  <span className="icon-dd" aria-label="Profil">
+                    <PersonIcon style={{ fontSize: 40 }} />
+                  </span>
+                }
+              >
+                <NavDropdown.Item as={Link} to="/inscription">
+                  s'inscrire
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/connexion">
+                  Se connecter
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item as={Link} to="/allemagne">
+                  Mon compte
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+
+      {/* ===== Mobile Drawer + Backdrop ===== */}
+      <div className={`mobile-backdrop ${mobileOpen ? "is-open" : ""}`} onClick={closeMobileMenu} />
+
+      <aside className={`mobile-drawer ${mobileOpen ? "is-open" : ""}`} aria-hidden={!mobileOpen}>
+        {/* Drawer header row */}
+        <div className="drawer-top">
+          {activeSub ? (
+            <button
+              type="button"
+              className="drawer-icon-btn"
+              aria-label="Retour"
+              onClick={() => setActiveSub(null)}
+            >
+              <ArrowBackIosNewIcon />
+            </button>
+          ) : (
+            <span className="drawer-spacer" />
+          )}
+
+          <div className="drawer-title">
+            {activeSub ? activeSub.label : t("header.menu") || "Menu"}
+          </div>
+
+          <button
+            type="button"
+            className="drawer-icon-btn"
+            aria-label="Fermer"
+            onClick={closeMobileMenu}
+          >
+            <CloseIcon />
+          </button>
         </div>
-      </header>
-    </>
+
+        {/* Drawer content */}
+        <div className="drawer-content">
+          {!activeSub ? (
+            <ul className="drawer-list">
+              {menu.map((item) => {
+                const hasChildren = !!item.children?.length;
+
+                if (!hasChildren) {
+                  return (
+                    <li key={item.key} className="drawer-item">
+                      <Link
+                        to={item.to}
+                        className="drawer-link"
+                        onClick={closeMobileMenu}
+                      >
+                        {item.label}
+                      </Link>
+                    </li>
+                  );
+                }
+
+                return (
+                  <li key={item.key} className="drawer-item">
+                    <button
+                      type="button"
+                      className="drawer-link drawer-link-btn"
+                      onClick={() => openSubMenu({ key: item.key, label: item.label, items: item.children })}
+                    >
+                      {item.label}
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          ) : (
+            <ul className="drawer-list">
+              {activeSub.items.map((it) => (
+                <li key={it.to} className="drawer-item">
+                  <Link to={it.to} className="drawer-link" onClick={closeMobileMenu}>
+                    {it.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </aside>
+    </header>
   );
 };
 
