@@ -137,7 +137,7 @@
     "cta": "En savoir plus",
     "imageAlt": "Ville au Canada"
   },
-   
+
   "destinations": {
     "title": "Nos principales destinations",
     "subtitle": "Nous vous ouvrons un monde d'opportunités et d'expériences pour des destinations très attractives pour vos études, tourisme, résidence permanente !",
@@ -146,6 +146,127 @@
       { "name": "CANADA", "path": "/canada" },
       { "name": "FRANCE", "path": "/france" },
       { "name": "ALLEMAGNE", "path": "/allemagne" }
+    ]
+  },
+
+  "chatbot": {
+    "headerTitle": "Votre Assistant Mobiliis",
+    "steps": {
+      "hello": "Bonjour ! Que désirez-vous ?",
+      "menu": {
+        "travel": "Je souhaite voyager",
+        "language": "Faire des cours de langue",
+        "job": "Je recherche un emploi",
+        "service": "J'ai besoin d'un service",
+        "info": "Je veux des renseignements"
+      },
+      "formIntro": "Merci pour votre intérêt ! Veuillez remplir le formulaire pour qu’un conseiller vous recontacte.",
+
+      "destination": {
+        "ask": "Quelle est votre destination ?",
+        "france": "France",
+        "canada": "Canada",
+        "germany": "Allemagne",
+        "belgium": "Belgique"
+      },
+
+      "reason": {
+        "study": "Pour mes études",
+        "tourism": "Tourisme",
+        "business": "Voyage d'affaires",
+        "other": "Autres raisons",
+        "immigration": "Immigration Canada",
+        "pr": "Résidence permanente",
+
+        "france": { "ask": " raison de votre voyage " },
+        "canada": { "ask": " raison de votre voyage " },
+        "germany": { "ask": " raison de votre voyage" },
+        "belgium": { "ask": " raison de votre voyage" }
+      },
+
+      "language": {
+        "ask": "Quel cours de langue souhaitez-vous suivre ?",
+        "english": "Cours d'anglais",
+        "german": "Cours d'allemand",
+        "spanish": "Cours d'espagnol"
+      },
+
+      "service": {
+        "ask": "Quel type de service voulez-vous ?",
+        "housing": "Recherche logement",
+        "insurance": "Assurance voyage",
+        "bankGuarantee": "Caution bancaire",
+        "blockedAccount": "Compte bloqué"
+      },
+
+      "confirmation": "Parfait, on vous recontactera dans les brefs délais."
+    },
+
+    "form": {
+      "title": "Vos informations de contact",
+      "name": "Nom",
+      "phone": "Téléphone",
+      "email": "Email",
+      "message": "Message",
+      "send": "Envoyer"
+    }
+  },
+
+  "locationCarousel": {
+    "title": "Nos Dernières activités",
+    "subtitle": "Découvrir toutes les dernières actualités de Mobiliis ainsi que les communications internes de la structure.",
+    "discover": "Découvrir l'actualité →",
+    "allNews": "Toutes les actualités",
+    "slides": [
+      {
+        "title": "Tokyo",
+        "description": "Un mélange de technologie moderne et de culture traditionnelle."
+      },
+      {
+        "title": "Paris",
+        "description": "La Ville Lumière, connue pour son romantisme et ses monuments emblématiques."
+      },
+      {
+        "title": "Berlin",
+        "description": "Une histoire riche et une modernité vibrante en un seul endroit."
+      },
+      {
+        "title": "Sydney",
+        "description": "Des plages à couper le souffle et l'Opéra emblématique."
+      }
+    ]
+  },
+
+  "langue": {
+    "title": "Nos formations de Langues",
+    "description": "Découvrez des formations adaptées à vos besoins : que vous soyez débutant ou avancé, apprenez avec des experts natifs. Étudiez à votre rythme grâce à nos cours flexibles, accessibles en ligne ou en présentiel. Préparez vos certifications avec un accompagnement personnalisé et professionnalisant.",
+    "ctaAll": "Toutes les formations",
+    "ctaCard": "En savoir plus",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Anglais général et professionnel - Préparation aux TOEFL et IELTS",
+        "desc": "Cours particuliers en visio : professeurs natifs",
+        "location": "À distance · En entreprise"
+      },
+      {
+        "id": 2,
+        "title": "Français professionnel - Préparation aux TCF, TEF Canada",
+        "desc": "À partir de 10h en visioformation",
+        "location": "À distance · En entreprise"
+      },
+      {
+        "id": 3,
+        "title": "Allemand Général - Préparation aux DSH et TestDAF",
+        "desc": "Cours particuliers + e-learning + collectifs",
+        "location": "À distance · En entreprise"
+      },
+      {
+        "id": 4,
+        "title": "Formation personnalisée en Espagnol",
+        "desc": "Formation flexible avec des experts natifs",
+        "location": "À distance ou en présentiel"
+      }
     ]
   }
 }

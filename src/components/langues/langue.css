@@ -15,7 +15,7 @@
 .lg-title {
   width: 100%;
   font-size: 1.9rem;
-  font-weight: 900;
+  font-weight: bold;
   color: #C90076;
   margin: 0 0 10px 0;
   text-align: left;
@@ -23,8 +23,7 @@
 
 .lg-description {
   width: 100%;
-  font-size: 20px;
-  font-weight: 800;
+  font-size: 1.1rem;
   margin: 0 0 18px 0;
   line-height: 1.5;
   text-align: left;

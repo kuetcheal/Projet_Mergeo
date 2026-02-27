@@ -120,7 +120,7 @@
     "ariaGoTo": "Go to slide {{index}}"
   },
 
-   "presentation1": {
+  "presentation1": {
     "title": "Your trusted partner!",
     "p1": "By choosing to include Mobiliis in your travel project, you benefit from expert step-by-step support. Our tailored services are adjusted to your profile and your goals.",
     "p2BeforeBold": "Discover in more detail our distinctive approach and our vision for preparing your journey",
@@ -147,6 +147,126 @@
       { "name": "FRANCE", "path": "/france" },
       { "name": "GERMANY", "path": "/allemagne" }
     ]
-  }
+  },
 
+  "chatbot": {
+    "headerTitle": "Your Mobiliis Assistant",
+    "steps": {
+      "hello": "Hello! What would you like to do?",
+      "menu": {
+        "travel": "I want to travel",
+        "language": "Take language classes",
+        "job": "I'm looking for a job",
+        "service": "I need a service",
+        "info": "I want information"
+      },
+      "formIntro": "Thanks for your interest! Please fill out the form so an advisor can contact you.",
+
+      "destination": {
+        "ask": "What is your destination?",
+        "france": "France",
+        "canada": "Canada",
+        "germany": "Germany",
+        "belgium": "Belgium"
+      },
+
+      "reason": {
+        "study": "For my studies",
+        "tourism": "Tourism",
+        "business": "Business trip",
+        "other": "Other reasons",
+        "immigration": "Canada immigration",
+        "pr": "Permanent residency",
+
+        "france": { "ask": "What is the reason for your trip to France?" },
+        "canada": { "ask": "What is the reason for your trip to Canada?" },
+        "germany": { "ask": "What is the reason for your trip to Germany?" },
+        "belgium": { "ask": "What is the reason for your trip to Belgium?" }
+      },
+
+      "language": {
+        "ask": "Which language course would you like to take?",
+        "english": "English course",
+        "german": "German course",
+        "spanish": "Spanish course"
+      },
+
+      "service": {
+        "ask": "Which service do you need?",
+        "housing": "Housing search",
+        "insurance": "Travel insurance",
+        "bankGuarantee": "Bank guarantee",
+        "blockedAccount": "Blocked account"
+      },
+
+      "confirmation": "Perfect — we'll contact you shortly."
+    },
+
+    "form": {
+      "title": "Your contact details",
+      "name": "Name",
+      "phone": "Phone",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send"
+    }
+  },
+
+  "locationCarousel": {
+    "title": "Our Latest Activities",
+    "subtitle": "Discover all the latest Mobiliis news as well as internal communications from the organization.",
+    "discover": "Discover the news →",
+    "allNews": "All news",
+    "slides": [
+      {
+        "title": "Tokyo",
+        "description": "A mix of modern technology and traditional culture."
+      },
+      {
+        "title": "Paris",
+        "description": "The City of Light, known for its romance and iconic landmarks."
+      },
+      {
+        "title": "Berlin",
+        "description": "A rich history and vibrant modernity in one place."
+      },
+      {
+        "title": "Sydney",
+        "description": "Breathtaking beaches and the iconic Opera House."
+      }
+    ]
+  },
+
+  "langue": {
+    "title": "Our Language Courses",
+    "description": "Discover courses tailored to your needs: whether you're a beginner or advanced, learn with native experts. Study at your own pace with flexible training available online or on-site. Prepare for certifications with personalized and career-oriented support.",
+    "ctaAll": "All courses",
+    "ctaCard": "Learn more",
+    "cards": [
+      {
+        "id": 1,
+        "title": "General & Professional English - TOEFL and IELTS Preparation",
+        "desc": "Private online lessons with native teachers",
+        "location": "Online · On-site (company)"
+      },
+      {
+        "id": 2,
+        "title": "Professional French - TCF, TEF Canada Preparation",
+        "desc": "Starting from 10 hours of online training",
+        "location": "Online · On-site (company)"
+      },
+      {
+        "id": 3,
+        "title": "General German - DSH and TestDaF Preparation",
+        "desc": "Private lessons + e-learning + group sessions",
+        "location": "Online · On-site (company)"
+      },
+      {
+        "id": 4,
+        "title": "Personalized Spanish Training",
+        "desc": "Flexible training with native experts",
+        "location": "Online or in-person"
+      }
+    ]
+  }
 }
