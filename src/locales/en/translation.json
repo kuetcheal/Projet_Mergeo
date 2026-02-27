@@ -118,5 +118,35 @@
     ],
     "scroll": "Scroll",
     "ariaGoTo": "Go to slide {{index}}"
+  },
+
+   "presentation1": {
+    "title": "Your trusted partner!",
+    "p1": "By choosing to include Mobiliis in your travel project, you benefit from expert step-by-step support. Our tailored services are adjusted to your profile and your goals.",
+    "p2BeforeBold": "Discover in more detail our distinctive approach and our vision for preparing your journey",
+    "p2Bold": " to France, Belgium, and Canada, followed by your integration.",
+    "list": [
+      "Mobiliis for your studies",
+      "Mobiliis for your Canada immigration process",
+      "Mobiliis for your Canadian permanent residency",
+      "Mobiliis for housing search",
+      "Mobiliis for pre-financing your procedure",
+      "Mobiliis for tourists and other travelers",
+      "Mobiliis for internship and job search"
+    ],
+    "cta": "Learn more",
+    "imageAlt": "City in Canada"
+  },
+
+  "destinations": {
+    "title": "Our main destinations",
+    "subtitle": "We open a world of opportunities and experiences through highly attractive destinations for your studies, tourism, and permanent residency!",
+    "discover": "Discover",
+    "items": [
+      { "name": "CANADA", "path": "/canada" },
+      { "name": "FRANCE", "path": "/france" },
+      { "name": "GERMANY", "path": "/allemagne" }
+    ]
   }
+
 }

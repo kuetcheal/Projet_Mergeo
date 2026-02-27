@@ -118,5 +118,34 @@
     ],
     "scroll": "Scroll",
     "ariaGoTo": "Aller au slide {{index}}"
+  },
+
+  "presentation1": {
+    "title": "Votre partenaire fiable !",
+    "p1": "En choisissant d’intégrer Mobiliis dans votre projet de voyage, profitez d’un accompagnement expert étape par étape. Nos compétences sur mesure sont ajustées en fonction de votre profil et de votre projet.",
+    "p2BeforeBold": "Découvrez plus en détail notre approche distinctive et notre vision de la préparation de votre envol",
+    "p2Bold": " vers la France, la Belgique, le Canada, suivie de votre intégration.",
+    "list": [
+      "Mobiliis pour vos études",
+      "Mobiliis pour votre procédure d’immigration Canada",
+      "Mobiliis pour votre résidence permanente Canada",
+      "Mobiliis pour les recherches de logement",
+      "Mobiliis pour les préfinancements de votre procédure",
+      "Mobiliis pour les touristes et autres voyageurs",
+      "Mobiliis pour les recherches de stage et de job"
+    ],
+    "cta": "En savoir plus",
+    "imageAlt": "Ville au Canada"
+  },
+   
+  "destinations": {
+    "title": "Nos principales destinations",
+    "subtitle": "Nous vous ouvrons un monde d'opportunités et d'expériences pour des destinations très attractives pour vos études, tourisme, résidence permanente !",
+    "discover": "Découvrir",
+    "items": [
+      { "name": "CANADA", "path": "/canada" },
+      { "name": "FRANCE", "path": "/france" },
+      { "name": "ALLEMAGNE", "path": "/allemagne" }
+    ]
   }
 }

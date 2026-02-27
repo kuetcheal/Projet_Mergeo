@@ -100,3 +100,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 4. Métriques
 
 # les MSPR
+
+
+
+
+
+#### pour l'international
+ la bibliothèque i18next est utilisé ici pour la gestion de l'international à savoir le français ou l'anglais.

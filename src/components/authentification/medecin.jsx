@@ -5,14 +5,11 @@ import { useNavigate } from "react-router-dom";
 
 import Temoignage from "../temoignages/temoignage";
 import Choix from "../mesChoix/choix";
-// import Sponsor from "./sponsor";
 import Brochure1 from "./brochure1";
 import Langue from "../langues/langue";
 import Service1 from "../services/service1";
 import Presentation1 from "../mobiliis/presentation1";
 import Location from "../mobiliis/location";
-
-//  Import du slider
 import Slider from "../slider/Slider";
 
 const Medecin = () => {
