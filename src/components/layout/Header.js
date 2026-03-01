@@ -12,6 +12,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 
+
 import "./Header.css";
 
 const Header = () => {
@@ -114,10 +115,6 @@ const Header = () => {
     ];
   }, [t]);
 
-  // Helpers
-  const isDesktop = () => window.matchMedia("(min-width: 992px)").matches;
-
-  // ---------- RENDER ----------
   return (
     <header>
 

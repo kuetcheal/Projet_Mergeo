@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useCallback } from "react";
 import "./langue.css";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -14,17 +14,17 @@ const Langue = () => {
     return Array.isArray(items) ? items : [];
   }, [t]);
 
-  // Routes (logique métier)
-  const handleCanada = () => navigate("/coursCanada");
-  const handleAnglais = () => navigate("/coursAnglais");
-  const handleAllemand = () => navigate("/coursAllemand");
+  // Routes (logique métier) -> useCallback pour être stable
+  const handleCanada = useCallback(() => navigate("/coursCanada"), [navigate]);
+  const handleAnglais = useCallback(() => navigate("/coursAnglais"), [navigate]);
+  const handleAllemand = useCallback(() => navigate("/coursAllemand"), [navigate]);
 
   const formations = useMemo(() => {
     const assetsById = {
       1: { logo: "images/toeic.jpg", onClick: handleAnglais },
       2: { logo: "images/tcf.webp", onClick: handleCanada },
       3: { logo: "images/DELF-DALF.avif", onClick: handleAllemand },
-      4: { logo: "images/tcf.webp", onClick: null } 
+      4: { logo: "images/tcf.webp", onClick: null },
     };
 
     return cardsFromTaxo.map((c) => ({
@@ -34,9 +34,10 @@ const Langue = () => {
       location: c?.location ?? "",
       button: t("langue.ctaCard"),
       logo: assetsById[c?.id]?.logo ?? "images/tcf.webp",
-      onClick: assetsById[c?.id]?.onClick ?? null
+      onClick: assetsById[c?.id]?.onClick ?? null,
     }));
-  }, [cardsFromTaxo, t]);
+  }, [cardsFromTaxo, t, handleAnglais, handleCanada, handleAllemand]);
+
 
   return (
     <Container>
