@@ -5,6 +5,8 @@ import Button from '@mui/material/Button';
 import './brochure.css';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import { Typography } from '@mui/material';
+import { Container, Row, Col } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
 
 export default function BrochureForm() {
   const [formData, setFormData] = useState({
@@ -15,6 +17,7 @@ export default function BrochureForm() {
   });
 
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,17 +29,15 @@ export default function BrochureForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (!formData.nom || !formData.prenom || !formData.email || !formData.telephone) {
-      alert("Veuillez remplir tous les champs.");
+      alert(t("brochure.alerts.fillAll"));
       return;
     }
-  
+
     try {
-      // Envoie à la BDD
       await axios.post('/api/enregistrer', formData);
-  
-      // Téléchargement
+
       const link = document.createElement('a');
       link.href = "/documents/etude_cas.pdf";
       link.download = "Mobiliis_brochure.pdf";
@@ -44,73 +45,89 @@ export default function BrochureForm() {
     } catch (error) {
       console.error('Erreur lors de la soumission du formulaire :', error);
     } finally {
-      // Toujours rediriger
       navigate('/telechargeBrochure');
     }
   };
-  
 
   return (
-    <div className="brochure-container">
-      {/* Image à gauche */}
-      <div className="brochure-image-container">
-        <img src="/images/catable.jpg" alt="Brochure" className="brochure-image" />
-      </div>
+    <div className="brochure-bg">
+      <Container >
+        <Row className="align-items-center">
 
-      {/* Formulaire à droite */}
-      <div className="brochure-form-container">
-        <h2 className="brochure-form-title">Télécharger notre documentation</h2>
-        <form onSubmit={handleSubmit} className="brochure-form">
-          <input
-            type="text"
-            name="nom"
-            placeholder="Nom"
-            value={formData.nom}
-            onChange={handleChange}
-            required
-            className="brochure-input"
-          />
-          <input
-            type="text"
-            name="prenom"
-            placeholder="Prénom"
-            value={formData.prenom}
-            onChange={handleChange}
-            required
-            className="brochure-input"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="brochure-input"
-          />
-          <input
-            type="tel"
-            name="telephone"
-            placeholder="Téléphone"
-            value={formData.telephone}
-            onChange={handleChange}
-            required
-            className="brochure-input"
-          />
-          <div className="brochure-actions">
-            <Button type="submit" className="submit-button" variant="contained" color="primary">
-              <FileDownloadIcon /> Télécharger
-            </Button>
-          </div>
-        </form>
+          <Col md={6} lg={6} className="mb-4 mb-md-0">
+            <div className="brochure-image-container">
+              <img
+                src="/images/catable.jpg"
+                alt={t("brochure.imageAlt")}
+                className="brochure-image"
+              />
+            </div>
+          </Col>
 
-        <Typography variant="body2" color="textSecondary" mt={3}>
-          Les informations recueillies font l’objet d’un traitement informatique destiné aux opérations de transmission des informations
-          et documentations sollicitées. Les destinataires des données sont les chargés de la communication et du recrutement et le service commercial.
-          Vos données sont conservées dans des conditions propres à en assurer leur sécurité et
-          confidentialité pendant trois ans à compter de leur collecte ou de votre dernière correspondance avec nous.
-        </Typography>
-      </div>
+          <Col md={6} lg={6}>
+            <div className="brochure-form-container">
+              <h2 className="brochure-form-title">
+                {t("brochure.title")}
+              </h2>
+
+              <form onSubmit={handleSubmit} className="brochure-form">
+                <input
+                  type="text"
+                  name="nom"
+                  placeholder={t("brochure.placeholders.nom")}
+                  value={formData.nom}
+                  onChange={handleChange}
+                  required
+                  className="brochure-input"
+                />
+                <input
+                  type="text"
+                  name="prenom"
+                  placeholder={t("brochure.placeholders.prenom")}
+                  value={formData.prenom}
+                  onChange={handleChange}
+                  required
+                  className="brochure-input"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder={t("brochure.placeholders.email")}
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="brochure-input"
+                />
+                <input
+                  type="tel"
+                  name="telephone"
+                  placeholder={t("brochure.placeholders.telephone")}
+                  value={formData.telephone}
+                  onChange={handleChange}
+                  required
+                  className="brochure-input"
+                />
+
+                <div className="brochure-actions">
+                  <Button
+                    type="submit"
+                    className="submit-button"
+                    variant="contained"
+                    color="primary"
+                  >
+                    <FileDownloadIcon /> {t("brochure.buttons.download")}
+                  </Button>
+                </div>
+              </form>
+
+              <Typography variant="body2" color="textSecondary" mt={3}>
+                {t("brochure.rgpd")}
+              </Typography>
+            </div>
+          </Col>
+
+        </Row>
+      </Container>
     </div>
   );
 }

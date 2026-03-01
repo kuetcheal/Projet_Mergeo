@@ -268,5 +268,182 @@
         "location": "À distance ou en présentiel"
       }
     ]
+  },
+
+  "brochure": {
+    "title": "Télécharger notre documentation",
+    "placeholders": {
+      "nom": "Nom",
+      "prenom": "Prénom",
+      "email": "Email",
+      "telephone": "Téléphone"
+    },
+    "buttons": {
+      "download": "Télécharger"
+    },
+    "alerts": {
+      "fillAll": "Veuillez remplir tous les champs."
+    },
+    "imageAlt": "Brochure",
+    "rgpd": "Les informations recueillies font l’objet d’un traitement informatique destiné aux opérations de transmission des informations et documentations sollicitées. Les destinataires des données sont les chargés de la communication et du recrutement et le service commercial. Vos données sont conservées dans des conditions propres à en assurer leur sécurité et confidentialité pendant trois ans à compter de leur collecte ou de votre dernière correspondance avec nous."
+  },
+
+
+  "servicesSection": {
+    "title": "Nos Services particuliers",
+    "subtitle": "Nous proposons des services complets ou spécifiques pour votre procédure de voyage dans nos différentes destinations et pays de votre choix selon vos besoins.",
+    "allCta": "TOUS NOS SERVICES",
+    "items": [
+      {
+        "id": 1,
+        "title": "Préfinancement étudiant",
+        "description": "Votre court séjour dans l'espace Schengen peut s'étendre jusqu'à 90 jours. Mobiliis simplifie ce processus en trois points clés : évaluation de votre situation, gestion de votre visa, et préparation de vos justificatifs.",
+        "tag": "Préfinancement",
+        "buttonText": "En savoir plus"
+      },
+      {
+        "id": 3,
+        "title": "Trouver votre logement",
+        "description": "Mobiliis ouvre la voie aux étudiants internationaux pour étudier dans les grandes écoles, alliant bien plus qu'un simple programme. Nous vous guidons de A à Z, offrant une expérience unique qui marquera votre vie.",
+        "tag": "Logement",
+        "buttonText": "En savoir plus"
+      },
+      {
+        "id": 4,
+        "title": "AVI + Assurance Voyage",
+        "description": "Mobiliis vous accompagne pour sécuriser votre voyage : conseils, démarches et couverture adaptée à votre profil, pour partir sereinement.",
+        "tag": "Assurance",
+        "buttonText": "En savoir plus"
+      },
+      {
+        "id": 2,
+        "title": "Orientation scolaire + Admission",
+        "description": "Nous vous aidons à construire votre projet d’études : choix de parcours, constitution du dossier, accompagnement et suivi jusqu’à l’admission.",
+        "tag": "Orientation",
+        "buttonText": "En savoir plus"
+      },
+      {
+        "id": 5,
+        "title": "Préparation aux tests de langue",
+        "description": "Préparez vos examens (IELTS, TOEFL, TCF, TEF…) avec un accompagnement personnalisé et des ressources adaptées à votre niveau.",
+        "tag": "Langues",
+        "buttonText": "En savoir plus"
+      },
+      {
+        "id": 6,
+        "title": "Service supplémentaire",
+        "description": "Un service complémentaire selon vos besoins : conseils, démarches, suivi et assistance personnalisée.",
+        "tag": "Nouveau service",
+        "buttonText": "En savoir plus"
+      }
+    ]
+  },
+
+
+   "temoins": {
+    "sectionTitle1": "Témoignages d’étudiants accompagnés",
+    "sectionTitle2": "Témoignages d’autres personnes accompagnées",
+    "ctaRead": "LIRE SON TÉMOIGNAGE",
+    "students": [
+      {
+        "nom": "Alex KUETCHE",
+        "slug": "alex-kuetche",
+        "message": "La formation à l'ESCG Paris s’est donc avérée pertinente, puisque j’ai réalisé ma dernière année en alternance ainsi qu’un mémoire professionnel sur une problématique liée à mon entreprise d’accueil.",
+        "image": "/images/photo_Alex.jpeg"
+      },
+      {
+        "nom": "Hubert CASTELNAU",
+        "slug": "hubert-castelnau",
+        "message": "Grâce à l'ESCG Paris j’ai pu faire mon alternance au sein de mon entreprise. Le programme est adapté aux difficultés que je rencontre au quotidien et les professeurs sont d’une grande qualité d’écoute.",
+        "image": "/images/avion.jpg"
+      },
+      {
+        "nom": "Marie DUPONT",
+        "slug": "marie-dupont",
+        "message": "J'ai signé mon CDI quelques mois avant la fin de mon contrat de professionnalisation avec un statut cadre. Tout cela n’aurait pas été possible sans le soutien de mon tuteur et le corps professoral de l'ESCG Paris.",
+        "image": "/images/avion.jpg"
+      },
+      {
+        "nom": "Jean MARTIN",
+        "slug": "jean-martin",
+        "message": "L'ESCG Paris est selon moi une école qui sait accompagner ses élèves dans leur parcours et les aide à avancer. Elle m’a donné les outils nécessaires pour réussir et avec beaucoup d'efforts et de motivation j’y suis arrivé.",
+        "image": "/images/avion.jpg"
+      }
+    ],
+    "others": [
+      {
+        "nom": "Yannick NGUEKE",
+        "slug": "yannick-ngueke",
+        "message": "Mobiliis m’a accompagné dans mes démarches de voyage, avec des conseils clairs et un dossier bien préparé. J’ai été suivi du début à la fin.",
+        "image": "/images/avion.jpg"
+      },
+      {
+        "nom": "Alex KUETCHE",
+        "slug": "alex-kuetche-2",
+        "message": "Une équipe disponible, un suivi sérieux et une vraie aide sur les documents. J’ai gagné du temps et évité beaucoup d’erreurs.",
+        "image": "/images/avion.jpg"
+      },
+      {
+        "nom": "Frank ELOCK",
+        "slug": "frank-elock",
+        "message": "Je recommande Mobiliis pour son accompagnement et sa réactivité. Le dossier était complet et bien expliqué.",
+        "image": "/images/avion.jpg"
+      }
+    ]
+  },
+
+  "presentation": {
+    "heroTitle": "Présentation Mobiliis",
+
+    "section1Title": "Une préoccupation",
+    "founderName": "Mergelin TAKOUMBO",
+    "founderRole": "Fondateur de Mobiliis",
+    "anecdoteLabel": "Une anecdote :",
+    "anecdoteText": "Abusé par des personnes mal intentionnées lors de mes procédures de voyage.",
+    "desireLabel": "Une envie :",
+    "desireText": "Faciliter le processus de voyage pour toute personne désireuse.",
+    "destinationLabel": "Une destination :",
+    "destinationText": "France, pour du tourisme !",
+    "storyP1": "Mais le chemin fut long durant toute ma procédure. J’ai dû surmonter des obstacles administratifs, bloquer des fonds demandés par le consulat, trouver une invitation d'un proche résident en France ainsi qu'une garantie de logement. Ces démarches ont été stressantes avant mon départ de Yaoundé et à mon arrivée en France.",
+    "storyP2": "Cependant, cette expérience m’a fait réaliser que de nombreuses personnes désireuses de voyager rencontrent les mêmes difficultés.",
+
+    "section2Title": "Une envie de renouveau",
+    "renewText": "Créé en 2022, Mobiliis est un cabinet spécialisé dans le conseil en stratégie de formation et d’orientation de vos projets d’études et d'immigration en France, Canada et Belgique. Plaçant l’avenir de vos ambitions au cœur de sa mission. Notre cabinet s’est, depuis le début, engagé à satisfaire au mieux leurs inquiétudes, boostant de fait leur carrière afin de lui donner une dimension internationale. C’est pourquoi nous avons noué des partenariats solides avec les plus prestigieuses universités et grandes écoles du monde pour garantir un avenir sûr et des chances de succès réelles à nos étudiants.",
+    "videoTitle": "Vidéo de présentation",
+
+    "cultureTitle": "Notre culture organisationnelle",
+    "cultureText": "La culture organisationnelle de Mobiliis se résume en un ensemble de critères qui définissent notre fonctionnement, notre identité, notre esprit de travail et nous distinguent de nos concurrents. Elle repose sur plusieurs traits de caractère et des orientations partagées par l'ensemble de notre personnel. Il s’agit entre autres de valeurs communes, qui décrivent notre sens élevé du métier, nos rites et notre méthode de travail au quotidien. Ces vertus essentielles, sont adossées sur un professionnalisme et une culture du résultat qui nous permettent de jouir d'une croissance durable.",
+
+    "cards": {
+      "engagementTitle": "Notre Engagement",
+      "engagementP1": "Parce que le sujet de votre avenir exige que l'on vous mette sur un chemin éclairé sans ambiguïté, nous nous engageons à fournir des services de qualité qui répondent parfaitement à vos besoins, attentes et aspirations.",
+      "engagementP2": "Nous nous adaptons ainsi aux évolutions du métier en innovant par des pratiques et de nouvelles façons de faire axées sur les exigences des universités.",
+      "engagementP3": "Placer nos clients au cœur de nos préoccupations, nous donne conscience de notre engagement fort... en vue d'un bonheur partagé et des expériences multiples.",
+
+      "missionTitle": "Notre Mission !",
+      "missionP1": "Référence en matière d'orientation scolaire et professionnelle, Mobiliis a pour mission d'offrir des solutions efficaces toujours adaptées, visant à réaliser le rêve de tout un chacun.",
+      "missionP2": "Notre rôle majeur est de comprendre les défis actuels du monde des opportunités et d'aider chacun à exprimer son plein potentiel.",
+
+      "visionTitle": "Notre Vision !",
+      "visionP1": "Notre vision est de devenir un partenaire stratégique des élèves et étudiants dans leurs projets d'études, en leur fournissant des services à grande valeur ajoutée ainsi que des solutions alliant innovation et efficacité.",
+      "visionP2": "Cette vision peut donc se résumer à : contribuer efficacement à la formation et à la réussite des élèves et étudiants."
+    },
+
+    "statsTitle": "Mobiliis et ses statistiques",
+    "stats": {
+      "peopleValue": "+100",
+      "peopleLabel": "personnes accompagnées",
+      "successValue": "100%",
+      "successLabel": "de projets d'études et d'immigrations concrétisés",
+      "countriesValue": "4",
+      "countriesLabel": "pays où nous sommes présents",
+      "teamValue": "+15",
+      "teamLabel": "collaborateurs dans le monde"
+    },
+
+    "images": {
+      "heroAlt": "Québec",
+      "founderAlt": "Photo du fondateur"
+    }
   }
 }

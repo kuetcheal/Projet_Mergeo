@@ -268,5 +268,183 @@
         "location": "Online or in-person"
       }
     ]
+  },
+
+  "brochure": {
+    "title": "Download our documentation",
+    "placeholders": {
+      "nom": "Last name",
+      "prenom": "First name",
+      "email": "Email",
+      "telephone": "Phone"
+    },
+    "buttons": {
+      "download": "Download"
+    },
+    "alerts": {
+      "fillAll": "Please fill in all fields."
+    },
+    "imageAlt": "Brochure",
+    "rgpd": "The information collected is subject to computer processing for the purpose of sending the requested information and documentation. The recipients of the data are the communication and recruitment teams and the sales department. Your data is stored under conditions ensuring its security and confidentiality for three years from its collection or from your last contact with us."
+  },
+
+
+  "servicesSection": {
+    "title": "Our Services",
+    "subtitle": "We offer complete or specific services for your travel process to the destinations and countries of your choice, depending on your needs.",
+    "allCta": "ALL OUR SERVICES",
+    "items": [
+      {
+        "id": 1,
+        "title": "Student pre-financing",
+        "description": "Your short stay in the Schengen area can last up to 90 days. Mobiliis makes the process easier with three key steps: assessment, visa support, and document preparation.",
+        "tag": "Pre-financing",
+        "buttonText": "Learn more"
+      },
+      {
+        "id": 3,
+        "title": "Find your housing",
+        "description": "Mobiliis helps international students access top schools. We guide you from A to Z with a unique experience that can change your life.",
+        "tag": "Housing",
+        "buttonText": "Learn more"
+      },
+      {
+        "id": 4,
+        "title": "AVI + Travel Insurance",
+        "description": "We help you secure your journey with the right guidance and coverage tailored to your profile, so you can travel with peace of mind.",
+        "tag": "Insurance",
+        "buttonText": "Learn more"
+      },
+      {
+        "id": 2,
+        "title": "School guidance + Admission",
+        "description": "We help you build your study plan: program selection, application file, coaching, and follow-up until admission.",
+        "tag": "Guidance",
+        "buttonText": "Learn more"
+      },
+      {
+        "id": 5,
+        "title": "Language test preparation",
+        "description": "Get ready for your exams (IELTS, TOEFL, TCF, TEF…) with tailored coaching and resources adapted to your level.",
+        "tag": "Languages",
+        "buttonText": "Learn more"
+      },
+      {
+        "id": 6,
+        "title": "Extra service",
+        "description": "An additional service depending on your needs: advice, paperwork, follow-up and personalized assistance.",
+        "tag": "New service",
+        "buttonText": "Learn more"
+      }
+    ]
+  },
+
+
+   "temoins": {
+    "sectionTitle1": "Testimonials from supported students",
+    "sectionTitle2": "Testimonials from other supported people",
+    "ctaRead": "READ TESTIMONIAL",
+    "students": [
+      {
+        "nom": "Alex KUETCHE",
+        "slug": "alex-kuetche",
+        "message": "The program at ESCG Paris proved to be relevant, as I completed my final year in a work-study program and wrote a professional thesis on a real issue related to my host company.",
+        "image": "/images/photo_Alex.jpeg"
+      },
+      {
+        "nom": "Hubert CASTELNAU",
+        "slug": "hubert-castelnau",
+        "message": "Thanks to ESCG Paris, I was able to complete my apprenticeship within my company. The program matches the challenges I face daily and the teachers are excellent listeners.",
+        "image": "/images/avion.jpg"
+      },
+      {
+        "nom": "Marie DUPONT",
+        "slug": "marie-dupont",
+        "message": "I signed my permanent contract a few months before the end of my professional training program, with an executive status. None of this would have been possible without my mentor and the teaching staff at ESCG Paris.",
+        "image": "/images/avion.jpg"
+      },
+      {
+        "nom": "Jean MARTIN",
+        "slug": "jean-martin",
+        "message": "In my opinion, ESCG Paris is a school that knows how to support students in their journey and help them move forward. It gave me the tools I needed to succeed — with effort and motivation, I made it.",
+        "image": "/images/avion.jpg"
+      }
+    ],
+    "others": [
+      {
+        "nom": "Yannick NGUEKE",
+        "slug": "yannick-ngueke",
+        "message": "Mobiliis supported me throughout my travel process with clear advice and a well-prepared file. I was guided from start to finish.",
+        "image": "/images/avion.jpg"
+      },
+      {
+        "nom": "Alex KUETCHE",
+        "slug": "alex-kuetche-2",
+        "message": "A responsive team, serious follow-up and real help with documents. I saved time and avoided many mistakes.",
+        "image": "/images/avion.jpg"
+      },
+      {
+        "nom": "Frank ELOCK",
+        "slug": "frank-elock",
+        "message": "I recommend Mobiliis for their support and responsiveness. The file was complete and clearly explained.",
+        "image": "/images/avion.jpg"
+      }
+    ]
+  },
+
+
+  "presentation": {
+    "heroTitle": "Mobiliis Presentation",
+
+    "section1Title": "A concern",
+    "founderName": "Mergelin TAKOUMBO",
+    "founderRole": "Founder of Mobiliis",
+    "anecdoteLabel": "An anecdote:",
+    "anecdoteText": "Abused by ill-intentioned people during my travel procedures.",
+    "desireLabel": "A desire:",
+    "desireText": "Make the travel process easier for anyone who wants to travel.",
+    "destinationLabel": "A destination:",
+    "destinationText": "France, for tourism!",
+    "storyP1": "But the journey was long throughout my entire procedure. I had to overcome administrative obstacles, block funds requested by the consulate, find an invitation from a relative living in France, and secure housing proof. These steps were stressful before leaving Yaoundé and upon arriving in France.",
+    "storyP2": "However, this experience made me realize that many people who wish to travel face the same difficulties.",
+
+    "section2Title": "A desire for renewal",
+    "renewText": "Created in 2022, Mobiliis is a firm specialized in strategic guidance for training and orientation for your study and immigration projects in France, Canada, and Belgium. Placing your ambitions at the heart of its mission, our firm has been committed from the beginning to addressing concerns and boosting careers with an international dimension. That is why we have built strong partnerships with the most prestigious universities and schools worldwide to ensure a safe future and real chances of success for our students.",
+    "videoTitle": "Presentation video",
+
+    "cultureTitle": "Our organizational culture",
+    "cultureText": "Mobiliis’ organizational culture is a set of criteria that defines how we operate, our identity, our work mindset, and what sets us apart from competitors. It is based on shared values and orientations across our team: a strong sense of professionalism, daily rituals, methods of work, and a results-driven culture that supports sustainable growth.",
+
+    "cards": {
+      "engagementTitle": "Our Commitment",
+      "engagementP1": "Because your future deserves a clear and reliable path, we commit to providing high-quality services that perfectly match your needs, expectations, and aspirations.",
+      "engagementP2": "We adapt to the evolution of our field by innovating through practices aligned with university requirements.",
+      "engagementP3": "Placing our clients at the heart of our concerns strengthens our commitment… for shared happiness and multiple experiences.",
+
+      "missionTitle": "Our Mission!",
+      "missionP1": "As a reference in academic and professional orientation, Mobiliis’ mission is to provide effective and tailored solutions to help everyone achieve their dream.",
+      "missionP2": "Our key role is to understand current challenges in the world of opportunities and help each person express their full potential.",
+
+      "visionTitle": "Our Vision!",
+      "visionP1": "Our vision is to become a strategic partner for students in their study projects by providing high value-added services and solutions that combine innovation and efficiency.",
+      "visionP2": "In short: to contribute effectively to the training and success of students."
+    },
+
+    "statsTitle": "Mobiliis statistics",
+    "stats": {
+      "peopleValue": "+100",
+      "peopleLabel": "people supported",
+      "successValue": "100%",
+      "successLabel": "study & immigration projects achieved",
+      "countriesValue": "4",
+      "countriesLabel": "countries where we operate",
+      "teamValue": "+15",
+      "teamLabel": "collaborators worldwide"
+    },
+
+    "images": {
+      "heroAlt": "Quebec",
+      "founderAlt": "Founder photo"
+    }
   }
 }

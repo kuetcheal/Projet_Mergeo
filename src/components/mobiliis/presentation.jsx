@@ -1,202 +1,168 @@
-import React from 'react';
-import './presentation.css';
-import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
-import SchoolIcon from '@mui/icons-material/School';
-import PublicIcon from '@mui/icons-material/Public';
-import GroupsIcon from '@mui/icons-material/Groups';
-// import Location from './location';
-// import { Box } from '@mui/material';
-
+import React from "react";
+import "./presentation.css";
+import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
+import SchoolIcon from "@mui/icons-material/School";
+import PublicIcon from "@mui/icons-material/Public";
+import GroupsIcon from "@mui/icons-material/Groups";
+import { Container, Row, Col } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
 
 const Presentation = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="entre">
-
+      {/* HERO */}
       <div className="anglais-section">
-        {/* Image de fond */}
         <img
           src="/images/quebec.jpg"
-          alt="Background"
+          alt={t("presentation.images.heroAlt")}
           className="anglais-image"
         />
-
-        {/* Overlay sombre */}
         <div className="overlay"></div>
 
-        {/* Contenu texte centré */}
         <div className="breadcrumb-content">
-          <p className="breadcrumb-title">
-            Présentation Mobiliis
-          </p>
+          <p className="breadcrumb-title">{t("presentation.heroTitle")}</p>
           <div className="underline"></div>
-
-
         </div>
       </div>
-      <div className="presentation-container">
 
+      <Container className="presentation-container">
+        {/* SECTION 1 */}
+        <h1 className="presentation-title">{t("presentation.section1Title")}</h1>
 
-
-
-        <h1 className="presentation-title">Une préoccupation</h1>
         <div className="presentation-content">
           <div className="quote-icon">
             <span>&#x275D;</span>
           </div>
+
           <div className="story-card">
             <div className="story-image">
-              <img src='../images/photo_Alex.jpeg' alt="Mergelin TAKOUMBO" />
+              <img
+                src="/images/photo_Alex.jpeg"
+                alt={t("presentation.images.founderAlt")}
+              />
             </div>
+
             <div className="story-text">
-              <h2>Mergelin TAKOUMBO</h2>
-              <p>fondateur de Mobiliis</p>
-              <p><strong>une anecdote :</strong> Abuser par des personnes mal-intentionées lors de me procédures d evoyage.<br />
-                <strong>Une envie :</strong>faciliter le processus pour le projet de voyage à toute personne désireuse.<br />
-                <strong>Une destination :</strong> France, pour du tourisme!
-              </p>
+              <h2>{t("presentation.founderName")}</h2>
+              <p className="story-role">{t("presentation.founderRole")}</p>
+
               <p>
-                Mais le chemin fût long durant toute ma procédure. J’ai dû surmonter des obstacles administratifs, bloquer des fonds demandés par le consulat, touver une invitation d'un proche résident en france ainsi qu'une garantie de logement. Ces démarches ont été stressantes avant mon départ de Yaoundé et à mon arrivée en France.
-              </p>
-              <p>
-                Cependant, cette expérience m’a fait réaliser que de nombreuses personnes désireuses de voyager rencontrent les mêmes difficultés.
+                <strong>{t("presentation.anecdoteLabel")}</strong>{" "}
+                {t("presentation.anecdoteText")}
+                <br />
+                <strong>{t("presentation.desireLabel")}</strong>{" "}
+                {t("presentation.desireText")}
+                <br />
+                <strong>{t("presentation.destinationLabel")}</strong>{" "}
+                {t("presentation.destinationText")}
               </p>
 
+              <p>{t("presentation.storyP1")}</p>
+              <p>{t("presentation.storyP2")}</p>
             </div>
-          </div>
-        </div> <br /><br />
-        <h1 style={{ fontSize: "28px", fontWeight: "bold", color: "#0056b3" }}>
-          Un envi du renouveau
-        </h1>
-        <div className="presentation-story">
-
-          <div className="story-text">
-            <p style={{ color: 'black', fontSize: '21px', fontWeight: "bold" }}>Créé en 2022, Mobiliis est un cabinet spécialisé dans le conseil en
-              stratégie de formation et d’orientation de vos projets d’études et d'immigration en France, Canada et Belgique.
-              Plaçant l’avenir de vos ambitions au cœur de sa mission. Notre cabinet s’est, depuis le début,
-              engagé à satisfaire au mieux leurs inquiétudes, boostant de faite leur carrière de sorte à lui donner
-              une dimension internationale. C’est pourquoi nous avons noué des partenariats soudés avec les plus prestigieuses
-              universités et grandes écoles du monde pour garantir un avenir sûr et des chances de succès réelles à nos étudiants.</p>
-          </div>
-          <div className="story-video">
-            <iframe
-              width="500"
-              height="350"
-              borderRadius="5"
-              src="https://www.youtube.com/embed/LTAhX568Esk"
-              title="Bridge To Study Video"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
           </div>
         </div>
-        <br /><br />
-         
-        
 
-        <section style={{ textAlign: "center", margin: "20px 0" }}>
-          <h1 style={{ fontSize: "24px",  color: "#0056b3"}}>
-            Notre culture organisationnelle
-          </h1>
-          <p style={{ margin: "20px auto", maxWidth: "1200px", lineHeight: "1.5", fontSize: "18px", fontWeight: "bold" }}>
-            La culture organisationnelle de Mobiliis se résume en un ensemble de critères qui définissent notre fonctionnement, notre identité,
-            notre esprit de travail et nous distinguent de nos concurrents. Elle repose sur plusieurs traits de caractère
-            et des orientations partagées par l'ensemble de notre personnel. Il s’agit entre autres de valeurs communes,
-            qui décrivent notre sens élevé du métier, nos rites et notre méthode de travail au quotidien. Ces vertus essentielles,
-            sont adossées sur un professionnalisme et une culture du résultat qui nous permettent de jouir d'une croissance durable.
-          </p>
+        {/* SECTION 2 */}
+        <h1 className="presentation-subtitle">{t("presentation.section2Title")}</h1>
+
+        <Row className="presentation-story g-4 align-items-center">
+          <Col xs={12} lg={6}>
+            <div className="renew-text">
+              <p>{t("presentation.renewText")}</p>
+            </div>
+          </Col>
+
+          <Col xs={12} lg={6}>
+            <div className="story-video">
+              <iframe
+                width="100%"
+                height="350"
+                src="https://www.youtube.com/embed/LTAhX568Esk"
+                title={t("presentation.videoTitle")}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </Col>
+        </Row>
+
+        {/* CULTURE */}
+        <section className="culture-section">
+          <h1 className="culture-title">{t("presentation.cultureTitle")}</h1>
+          <p className="culture-text">{t("presentation.cultureText")}</p>
         </section>
 
+        {/* 3 CARDS */}
+        <Row className="values-row g-3">
+          <Col xs={12} md={4}>
+            <div className="value-card">
+              <h2>{t("presentation.cards.engagementTitle")}</h2>
+              <p>{t("presentation.cards.engagementP1")}</p>
+              <p>{t("presentation.cards.engagementP2")}</p>
+              <p>{t("presentation.cards.engagementP3")}</p>
+            </div>
+          </Col>
 
-        {/* Section à trois colonnes */}
-        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
-          {/* Engagement */}
-          <div
-            style={{
-              backgroundColor: "#0056b3",
-              color: "#fff",
-              padding: "20px",
-              margin: "10px",
-              flex: "1 1 30%",
-              minWidth: "250px",
-            }}
-          >
-            <h2 style={{ fontWeight: "bold", marginBottom: "10px" }}>Notre Engagement</h2>
-            <p style={{ lineHeight: "1.5" }}>
-              Parce que le sujet de votre avenir exige que l'on vous mette sur un chemin éclairé sans ambiguïté, nous nous engageons à fournir des services de qualité qui répondent parfaitement à vos besoins, attentes et aspirations.
-              Nous nous adaptons ainsi aux évolutions du métier en innovant par des pratiques et de nouvelles façons de faire axées sur les exigences des universités.
-            </p>
-            <p>
-              Placer nos clients au cœur de nos préoccupations, nous donne conscience de notre engagement fort... en vue d'un bonheur partagé et des expériences multiples.
-            </p>
-          </div>
+          <Col xs={12} md={4}>
+            <div className="value-card">
+              <h2>{t("presentation.cards.missionTitle")}</h2>
+              <p>{t("presentation.cards.missionP1")}</p>
+              <p>{t("presentation.cards.missionP2")}</p>
+            </div>
+          </Col>
 
-          {/* Mission */}
-          <div
-            style={{
-              backgroundColor: "#0056b3",
-              color: "#fff",
-              padding: "20px",
-              margin: "10px",
-              flex: "1 1 30%",
-              minWidth: "250px",
-            }}
-          >
-            <h2 style={{ fontWeight: "bold", marginBottom: "10px" }}>Notre Mission !</h2>
-            <p style={{ lineHeight: "1.5" }}>
-              Référence en matière d'orientation scolaire et professionnelle, Mobiliis a pour mission d'offrir des solutions efficaces toujours adaptées, visant à réaliser le rêve de tout un chacun.
-            </p>
-            <p>
-              Notre rôle majeur est de comprendre les défis actuels du monde des opportunités et d'aider chacun à exprimer son plein potentiel.
-            </p>
-          </div>
+          <Col xs={12} md={4}>
+            <div className="value-card">
+              <h2>{t("presentation.cards.visionTitle")}</h2>
+              <p>{t("presentation.cards.visionP1")}</p>
+              <p>{t("presentation.cards.visionP2")}</p>
+            </div>
+          </Col>
+        </Row>
 
-          {/* Vision */}
-          <div
-            style={{
-              backgroundColor: "#0056b3",
-              color: "#fff",
-              padding: "20px",
-              margin: "10px",
-              flex: "1 1 30%",
-              minWidth: "300px",
-            }}
-          >
-            <h2 style={{ fontWeight: "bold", marginBottom: "10px" }}>Notre Vision !</h2>
-            <p style={{ lineHeight: "1.5" }}>
-              Notre vision est de devenir un partenaire stratégique des élèves et étudiants dans leurs projets d'études, en leur fournissant des services à grande valeur ajoutée ainsi que des solutions alliant innovation et efficacité.
-            </p>
-            <p>
-              Cette vision peut donc se résumer à : contribuer efficacement à la formation et à la réussite des élèves et étudiants.
-            </p>
-          </div>
-        </div><br /><br />
+        {/* STATS */}
         <div className="statistics-section">
-          <h2>Mobiliis et ses statistiques</h2>
-          <div className="statistics-container">
-            <div className="stat-item">
-              <PeopleAltIcon className="stat-icon" />
-              <h3>+100</h3>
-              <h4>personnes accompagnés</h4>
-            </div>
-            <div className="stat-item">
-              <SchoolIcon className="stat-icon" />
-              <h3>100%</h3>
-              <h4>de projets d'études et d'immigrations concrétisés</h4>
-            </div>
-            <div className="stat-item">
-              <PublicIcon className="stat-icon" />
-              <h3>4</h3>
-              <h4>pays où nous sommes présents</h4>
-            </div>
-            <div className="stat-item">
-              <GroupsIcon className="stat-icon" />
-              <h3>+15</h3>
-              <h4>collaborateurs dans le monde</h4>
-            </div>
-          </div>
+          <h2>{t("presentation.statsTitle")}</h2>
+
+          <Row className="statistics-container g-3">
+            <Col xs={6} md={3}>
+              <div className="stat-item">
+                <PeopleAltIcon className="stat-icon" />
+                <h3>{t("presentation.stats.peopleValue")}</h3>
+                <h4>{t("presentation.stats.peopleLabel")}</h4>
+              </div>
+            </Col>
+
+            <Col xs={6} md={3}>
+              <div className="stat-item">
+                <SchoolIcon className="stat-icon" />
+                <h3>{t("presentation.stats.successValue")}</h3>
+                <h4>{t("presentation.stats.successLabel")}</h4>
+              </div>
+            </Col>
+
+            <Col xs={6} md={3}>
+              <div className="stat-item">
+                <PublicIcon className="stat-icon" />
+                <h3>{t("presentation.stats.countriesValue")}</h3>
+                <h4>{t("presentation.stats.countriesLabel")}</h4>
+              </div>
+            </Col>
+
+            <Col xs={6} md={3}>
+              <div className="stat-item">
+                <GroupsIcon className="stat-icon" />
+                <h3>{t("presentation.stats.teamValue")}</h3>
+                <h4>{t("presentation.stats.teamLabel")}</h4>
+              </div>
+            </Col>
+          </Row>
         </div>
-      </div>
+      </Container>
     </div>
   );
 };
