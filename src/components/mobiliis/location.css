@@ -12,24 +12,23 @@
   padding: 0 16px;
 }
 
-/* ✅ Titre aligné début */
+
 .location-title {
   color: #C90076;
-  font-weight: 900;
+  font-weight: bold;
   font-size: 30px;
   margin: 0;
   text-align: left;
 }
 
-/* ✅ Sous-titre aligné début */
+
 .location-subtitle {
-  font-size: 21px;
-  font-weight: 800;
+  font-size: 1.1rem;
   margin: 10px 0 18px 0;
   text-align: left;
 }
 
-/* ✅ Carousel horizontal */
+
 .location-scroll {
   display: flex;
   overflow-x: auto;
@@ -44,11 +43,11 @@
   cursor: grabbing;
 }
 
-/* ✅ card plus clean */
+
 .location-slide {
   scroll-snap-align: start;
   flex-shrink: 0;
-  width: 340px;      /* ✅ ajusté */
+  width: 340px;     
   flex: 0 0 340px;
 }
 

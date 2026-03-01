@@ -1,64 +1,50 @@
-import React from "react";
+import React, { useMemo } from "react";
 import "./langue.css";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { Container } from "react-bootstrap";
 
 const Langue = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
+  // Cards depuis les taxos
+  const cardsFromTaxo = useMemo(() => {
+    const items = t("langue.cards", { returnObjects: true });
+    return Array.isArray(items) ? items : [];
+  }, [t]);
+
+  // Routes (logique métier)
   const handleCanada = () => navigate("/coursCanada");
   const handleAnglais = () => navigate("/coursAnglais");
   const handleAllemand = () => navigate("/coursAllemand");
 
-  const formations = [
-    {
-      id: 1,
-      logo: "images/toeic.jpg",
-      title: "Anglais général et professionnel - Préparation aux TOEFL et IELTS",
-      description: "Cours particuliers en visio: professeurs natifs",
-      location: "À distance · En entreprise",
-      button: "À savoir plus",
-      onClick: handleAnglais,
-    },
-    {
-      id: 2,
-      logo: "images/tcf.webp",
-      title: "Français  professionnel - Préparation aux TCF, TEF Canada ",
-      description: "À partir de 10h en visioformation",
-      location: "À distance · En entreprise",
-      button: "À savoir plus",
-      onClick: handleCanada,
-    },
-    {
-      id: 3,
-      logo: "images/DELF-DALF.avif",
-      title: "Allemand Général - Préparation aux DSH et TestDAF",
-      description: "Cours particuliers + e-learning + collectifs",
-      location: "À distance · En entreprise",
-      button: "À savoir plus",
-      onClick: handleAllemand,
-    },
-    {
-      id: 4,
-      logo: "images/tcf.webp",
-      title: "Formation personnalisée en Espagnol",
-      description: "Formation flexible avec des experts natifs",
-      location: "À distance ou en présentiel",
-      button: "À savoir plus",
-      onClick: null,
-    },
-  ];
+  const formations = useMemo(() => {
+    const assetsById = {
+      1: { logo: "images/toeic.jpg", onClick: handleAnglais },
+      2: { logo: "images/tcf.webp", onClick: handleCanada },
+      3: { logo: "images/DELF-DALF.avif", onClick: handleAllemand },
+      4: { logo: "images/tcf.webp", onClick: null } 
+    };
+
+    return cardsFromTaxo.map((c) => ({
+      id: c?.id,
+      title: c?.title ?? "",
+      description: c?.desc ?? "",
+      location: c?.location ?? "",
+      button: t("langue.ctaCard"),
+      logo: assetsById[c?.id]?.logo ?? "images/tcf.webp",
+      onClick: assetsById[c?.id]?.onClick ?? null
+    }));
+  }, [cardsFromTaxo, t]);
 
   return (
+    <Container>
     <section className="lg-section">
       <div className="lg-container">
-        <h2 className="lg-title">Nos formations de Langues</h2>
+        <h2 className="lg-title">{t("langue.title")}</h2>
 
-        <p className="lg-description">
-          Découvrez des formations adaptées à vos besoins : que vous soyez débutant ou avancé,
-          apprenez avec des experts natifs. Étudiez à votre rythme grâce à nos cours flexibles,
-          accessibles en ligne ou en présentiel. Préparez vos certifications avec un accompagnement
-          personnalisé et professionnalisant.
-        </p>
+        <p className="lg-description">{t("langue.description")}</p>
 
         <div className="lg-scroll">
           {formations.map((formation) => (
@@ -90,10 +76,13 @@ const Langue = () => {
         </div>
 
         <div className="lg-bottom">
-          <button className="lg-discover">toutes les formations</button>
+          <button className="lg-discover">
+            {t("langue.ctaAll")}
+          </button>
         </div>
       </div>
     </section>
+    </Container>
   );
 };
 

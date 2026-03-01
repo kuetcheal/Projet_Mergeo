@@ -1,24 +1,16 @@
-/* ======================================================
-   SCROLL TO TOP – POSITION FIXE
-   ====================================================== */
-
 .scroll-to-top {
   position: fixed;
   bottom: 24px;
-  left: 24px;            /* ✅ BAS À GAUCHE */
-  z-index: 9999;         /* ✅ au-dessus de tout */
+  left: 24px;           
+  z-index: 100;         
 }
-
-/* ======================================================
-   BOUTON
-   ====================================================== */
 
 .scroll-button {
   width: 44px;
   height: 44px;
 
   background-color: #c90076;
-  border-radius: 50%;    /* ✅ rond (UX moderne) */
+  border-radius: 50%;    
 
   display: flex;
   justify-content: center;
@@ -41,18 +33,16 @@
   color: #ffffff;
 }
 
-/* ======================================================
-   MOBILE – PRIORITÉ VISIBILITÉ
-   ====================================================== */
+
 
 @media (max-width: 576px) {
   .scroll-to-top {
-    bottom: 80px;     /* ✅ au-dessus du footer/chat */
-    left: 16px;       /* ✅ marge mobile propre */
+    bottom: 80px;   
+    left: 16px;       
   }
 
   .scroll-button {
-    width: 48px;      /* ✅ taille doigt */
+    width: 48px;      
     height: 48px;
   }
 

@@ -1,112 +1,127 @@
-/* Container principal en flexbox */
-
+/* Background wrapper */
 .brochure-bg {
-  /* background-color: #f9f9f9 !important; */
-  /* border: 1px solid black; */
   padding: 20px 0;
 }
+
 
 .brochure-container {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
+
   max-width: 1400px;
   margin: 0 auto;
   padding: 20px;
-  }
-  
-  /* Image à gauche */
+
+  flex-wrap: nowrap; 
+}
+
+/* Image à gauche */
+.brochure-image-container {
+  flex: 1 1 520px;         
+  max-width: 600px;        
+  height: 500px;
+
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;         
+}
+
+.brochure-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+
+/* Formulaire à droite */
+.brochure-form-container {
+  flex: 1 1 520px;         
+  max-width: 600px;        
+  min-width: 320px;         
+}
+
+.brochure-form-title {
+  text-align: center;
+  font-size: 2.1rem;
+  margin-bottom: 20px;
+  color: #C90076;
+  font-weight: bold;
+}
+
+.brochure-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.brochure-input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+
+  width: 100%;            
+  height: 38px;
+  box-sizing: border-box;  
+}
+
+.brochure-input:focus {
+  outline: none;
+  border-color: #004080;
+}
+
+.brochure-actions {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 5px;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  background-color: #004080;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.submit-button:hover {
+  background-color: #C90076;
+}
+
+
+@media (max-width: 1100px) {
   .brochure-image-container {
-    flex: 1; /* Permet à l'image de prendre de l'espace */
-    width: 600px;
-    height: 500px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    height: 420px;
   }
-  
-  .brochure-image {
-    width: 100%; /* Image responsive */
-    border-radius: 8px;
-    object-fit: cover;
-    height: 500px;
-  }
-  
-  /* Formulaire à droite */
-  .brochure-form-container {
-    flex: 1; /* Permet au formulaire de prendre de l'espace */
-    max-width: 50%;
-  }
-  
+
   .brochure-form-title {
-    text-align: center;
-    font-size: 2.1rem;
-    margin-bottom: 20px;
-    color: #C90076;
-    font-weight: bold;
+    font-size: 1.8rem;
   }
-  
-  .brochure-form {
-    display: flex;
-    flex-direction: column;
-    gap: 25px; /* Espacement entre les champs */
-  }
-  
-  .brochure-input {
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: 90%;
-    height: 38px;
-  }
-  
-  .brochure-input:focus {
-    outline: none;
-    border-color: #004080;
-  }
-  
-  .brochure-actions {
-    text-align: start;
-    margin-top: 5px;
-    justify-content: start;
-  }
-  
-  .submit-button {
-    padding: 10px 20px;
-    background-color: #004080;
-    color: white;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .submit-button:hover {
-    background-color: #C90076;
-  }
-  
-  @media (max-width: 768px) {
+}
+
+/*  Mobile */
+@media (max-width: 768px) {
   .brochure-container {
     flex-direction: column;
     padding: 10px;
     gap: 15px;
+    flex-wrap: wrap;
   }
-
 
   .brochure-image-container {
     width: 100%;
     max-width: 100%;
-    height: 220px; 
+    height: 220px;
     box-shadow: none;
   }
 
   .brochure-image {
     height: 220px;
-    border-radius: 10px;
   }
 
- 
   .brochure-form-container {
     max-width: 100%;
     width: 100%;
@@ -130,11 +145,11 @@
   }
 
   textarea.brochure-input {
-    height: 140px; 
+    height: 140px;
   }
 
   .brochure-actions {
-    text-align: center;
+    justify-content: center;
   }
 
   .submit-button {

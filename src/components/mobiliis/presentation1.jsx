@@ -1,19 +1,24 @@
-import React from 'react';
-import {
-  Box, Grid, Typography, Button,
-  List, ListItem, ListItemIcon, ListItemText
-} from '@mui/material';
-import { useNavigate } from 'react-router-dom';
-import SendIcon from '@mui/icons-material/Send';
+import React, { useMemo } from "react";
+import { Box,  Grid, Typography, Button, List, ListItem, ListItemIcon, ListItemText, } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import SendIcon from "@mui/icons-material/Send";
+import { useTranslation } from "react-i18next";
+import { Container } from "react-bootstrap";
 
 const Presentation1 = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
-  const handlePresentationClick = () => navigate('/presentation');
+
+  const handlePresentationClick = () => navigate("/presentation");
+
+  const items = useMemo(() => {
+    const val = t("presentation1.list", { returnObjects: true });
+    return Array.isArray(val) ? val : [];
+  }, [t]);
 
   return (
-    // ✅ BG full width
+  
     <Box sx={{ width: "100%", bgcolor: "#f9f9f9", py: { xs: 4, md: 5 } }}>
-      {/* ✅ contenu dans un container interne (même largeur partout) */}
       <Box
         sx={{
           maxWidth: "1400px",
@@ -21,16 +26,17 @@ const Presentation1 = () => {
           px: { xs: 2, sm: 3, md: 4 },
         }}
       >
+          <Container>
         <Grid container spacing={4} alignItems="flex-start">
           <Grid item xs={12} md={6}>
             <Box
               component="img"
               src="/images/canada-ville.avif"
-              alt="Background"
+              alt={t("presentation1.imageAlt")}
               sx={{
                 borderRadius: "8px",
                 width: "100%",
-                height: { xs: 260, sm: 360, md: 600 }, // ✅ responsive
+                height: { xs: 260, sm: 360, md: 600 },
                 objectFit: "cover",
                 display: "block",
               }}
@@ -38,33 +44,28 @@ const Presentation1 = () => {
           </Grid>
 
           <Grid item xs={12} md={6}>
-            <Typography variant="h4" gutterBottom sx={{ fontWeight: "bold", color: "#D6007F" }}>
-              Votre partenaire fiable!
+            <Typography
+              variant="h4"
+              gutterBottom
+              sx={{ fontWeight: "bold", color: "#D6007F" }}
+            >
+              {t("presentation1.title")}
             </Typography>
 
             <Typography variant="body1" paragraph>
-              En choisissant d’intégrer Mobiliis dans votre projet de voyage, profitez d’un accompagnement expert étape par étape.
-              Nos compétences sur mesure sont ajustées en fonction de votre profil et de votre projet.
+              {t("presentation1.p1")}
             </Typography>
 
             <Typography variant="body1" paragraph>
-              Découvrez plus en détail notre approche distinctive et notre vision de la préparation de votre envol
-              <strong> vers la France, la Belgique, le Canada, suivie de votre intégration.</strong>
+              {t("presentation1.p2BeforeBold")}
+              <strong>{t("presentation1.p2Bold")}</strong>
             </Typography>
 
             <List sx={{ pl: 0 }}>
-              {[
-                'Mobiliis pour vos études',
-                'Mobiliis pour votre procédure immigration Canada',
-                'Mobiliis pour votre résidnece permanente Canada',
-                'Mobiliis pour les recherches de logement',
-                'Mobiliis pour les préfinancements de votre procédure',
-                'Mobiliis pour les touristes et autres voyageurs',
-                'Mobiliis pour les recherches de stage, de job',
-              ].map((text, index) => (
+              {items.map((text, index) => (
                 <ListItem key={index} sx={{ px: 0 }}>
                   <ListItemIcon sx={{ minWidth: 36 }}>
-                    <SendIcon sx={{ color: '#D6007F' }} />
+                    <SendIcon sx={{ color: "#D6007F" }} />
                   </ListItemIcon>
                   <ListItemText primary={text} />
                 </ListItem>
@@ -76,19 +77,21 @@ const Presentation1 = () => {
               variant="contained"
               size="large"
               sx={{
-                backgroundColor: '#0047AB',
-                color: '#fff',
-                fontWeight: 'bold',
+                backgroundColor: "#0047AB",
+                color: "#fff",
+                fontWeight: "bold",
                 mt: 2,
-                '&:hover': { backgroundColor: '#A93D87' }
+                "&:hover": { backgroundColor: "#A93D87" },
               }}
             >
-              En savoir plus
+              {t("presentation1.cta")}
             </Button>
           </Grid>
         </Grid>
+        </Container>
       </Box>
     </Box>
+   
   );
 };
 

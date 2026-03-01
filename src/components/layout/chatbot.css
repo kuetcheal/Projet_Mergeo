@@ -2,8 +2,8 @@
    WRAPPER (ton composant Chat)
    ========================= */
 .chatbot-box {
-  width: 340px;
-  max-width: 92vw;
+  width: 100%;
+  height: 100%;
   position: relative;
   z-index: 2000;
 }
@@ -20,7 +20,7 @@
 }
 
 /* =========================
-   REACT-SIMPLE-CHATBOT (classes internes)
+   REACT-SIMPLE-CHATBOT
    ========================= */
 
 /* Le cadre global */
@@ -28,14 +28,22 @@
   background: #f5f8fb !important;
   border-radius: 14px !important;
   overflow: hidden !important;
-  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15) !important;
+
+  /*  IMPORTANT : on évite la doublure en mobile/fullscreen */
+  box-shadow: none !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 /* Header */
 .rsc-header {
   background: #a93d87 !important;
   color: #fff !important;
-  padding-right: 46px !important; /* laisse la place à ta croix */
+  padding-right: 46px !important; /* place pour ta croix */
 }
 
 .rsc-header-title {
@@ -44,22 +52,25 @@
   font-size: 18px !important;
 }
 
-/* Zone des messages (fond) */
+/* Zone messages = doit grandir */
 .rsc-content {
   background: #f5f8fb !important;
+  flex: 1 !important;
+  overflow: auto !important;
 }
 
-/* Scrollbar (optionnel) */
-.rsc-content::-webkit-scrollbar {
-  width: 6px;
+/* Footer input (en bas) */
+.rsc-footer {
+  background: #fff !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
 }
-.rsc-content::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.15);
-  border-radius: 99px;
+
+.rsc-input {
+  font-size: 13px !important;
 }
 
 /* =========================
-   AVATARS : ronds + taille propre
+   AVATARS
    ========================= */
 .rsc-ts-bot .rsc-ts-avatar,
 .rsc-ts-user .rsc-ts-avatar,
@@ -73,19 +84,15 @@
 }
 
 /* =========================
-   BULLES : FIX DEFINITIF
-   On ne style PLUS .rsc-ts-bubble seul.
-   On style selon le parent BOT/USER.
+   BULLES
    ========================= */
-
-/* Reset léger (évite héritages chelous) */
 .rsc-ts-bubble,
 .rsc-ts-user-bubble {
   background: transparent !important;
   color: inherit !important;
 }
 
-/* BOT = question (violet) */
+/* BOT */
 .rsc-ts-bot .rsc-ts-bubble,
 .rsc-ts-bot .rsc-ts-user-bubble {
   background: #a93d87 !important;
@@ -98,7 +105,7 @@
   border: none !important;
 }
 
-/* USER = réponse (blanc) */
+/* USER */
 .rsc-ts-user .rsc-ts-bubble,
 .rsc-ts-user .rsc-ts-user-bubble {
   background: #ffffff !important;
@@ -111,28 +118,25 @@
   border: 1px solid rgba(0, 0, 0, 0.08) !important;
 }
 
-/* Espace entre messages */
 .rsc-ts {
   padding: 10px 10px 0 !important;
 }
 
 /* =========================
-   OPTIONS : boutons neutres (comme ton exemple)
+   OPTIONS
    ========================= */
-
 .rsc-os-options {
   display: flex !important;
   flex-wrap: wrap !important;
   gap: 10px !important;
-  justify-content: flex-start !important; /* rendu plus naturel */
+  justify-content: flex-start !important;
   padding: 4px 0 10px !important;
 }
 
-/* Bouton option */
 .rsc-os-option {
   background: #ffffff !important;
   color: #222 !important;
-  border: 1px solid rgba(0,0,0,0.20) !important;
+  border: 1px solid rgba(0, 0, 0, 0.20) !important;
   border-radius: 10px !important;
   padding: 10px 12px !important;
   min-width: 120px !important;
@@ -148,7 +152,6 @@
   cursor: pointer !important;
 }
 
-/* IMPORTANT : supprime tout fond/couleur interne */
 .rsc-os-option * {
   background: transparent !important;
   color: inherit !important;
@@ -156,46 +159,26 @@
   box-shadow: none !important;
 }
 
-/* Hover : léger */
 .rsc-os-option:hover {
   border-color: rgba(169, 61, 135, 0.55) !important;
   color: #a93d87 !important;
 }
 
-/* Active/selected (quand cliqué) */
 .rsc-os-option:active {
   transform: scale(0.98);
 }
 
 /* =========================
-   Footer input (en bas)
+   DESKTOP : on remet une ombre propre
    ========================= */
-.rsc-footer {
-  background: #fff !important;
-  border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
-}
-
-.rsc-input {
-  font-size: 13px !important;
-}
-
-/* =========================
-   MOBILE
-   ========================= */
-@media (max-width: 767px) {
-  .chatbot-box {
-    width: 320px;
-    max-width: 92vw;
-  }
-
-  .rsc-ts-bot .rsc-ts-bubble,
-  .rsc-ts-user .rsc-ts-bubble,
-  .rsc-ts-bot .rsc-ts-user-bubble,
-  .rsc-ts-user .rsc-ts-user-bubble {
-    max-width: 94% !important;
-  }
-
-  .rsc-os-option {
-    min-width: 135px !important;
+@media (min-width: 768px) {
+  .rsc-container {
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15) !important;
+    width: 360px !important;
+    height: 540px !important;
+    border-radius: 14px !important;
+    margin-left: auto !important;
+    margin-right: 18px !important;
+    margin-top: 18px !important;
   }
 }

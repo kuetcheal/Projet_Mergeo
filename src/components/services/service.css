@@ -24,15 +24,6 @@
   /* text-align: center; */
 }
 
-/* .service-title::before,
-.service-title::after {
-  content: "";
-  flex: 1;
-  height: 4px;
-  width: 50px !important;
-  background-color: #b73a93;
-  margin: 0 16px;
-} */
 
 /* ✅ CAROUSEL */
 .service-horizontal-scroll {
@@ -114,7 +105,7 @@
 
   /* ✅ limitation visuelle */
   display: -webkit-box;
-  -webkit-line-clamp: 4;      /* ✅ nombre de lignes (ajuste ici) */
+  -webkit-line-clamp: 4;      
   -webkit-box-orient: vertical;
   overflow: hidden;
 
@@ -125,7 +116,7 @@
 /* ✅ bouton aligné au début */
 .service-action {
   padding: 0 16px 16px;
-  text-align: left;           /* ✅ */
+  text-align: left;           
 }
 
 .service-btn {
@@ -201,7 +192,7 @@
 
   .service-desc {
     font-size: 12px !important;
-    -webkit-line-clamp: 3;          /* ✅ moins de lignes en mobile */
+    -webkit-line-clamp: 3;          
     min-height: calc(1.4em * 3);
     line-height: 1.4 !important;
   }

@@ -1,32 +1,30 @@
-/* =============================
-   WRAPPER + TITRES (alignés à gauche)
-============================= */
+
 
 .choix-wrapper {
   margin: 20px auto;
-  max-width: 1380px;
-  padding: 0 16px; /* ✅ évite débordement mobile */
+  max-width: 1350px;
+  padding: 0 16px; 
 }
 
 .choix-title-main {
-  text-align: left;          /* ✅ gauche */
+  text-align: left;         
   font-size: 2.1rem;
-  font-weight: 800;
+  font-weight: bold;
   color: #C90076;
   margin: 10px 0 12px;
 }
 
 .choix-subtitle {
-  text-align: left;          /* ✅ gauche */
-  font-size: 1.3rem;
-  font-weight: 600;
+  text-align: left;          
+  font-size: 1.1rem;
+
   color: #000;
   margin: 0 0 26px;
   max-width: 980px;
   line-height: 1.35;
 }
 
-/* ✅ Responsive titres */
+/*  Responsive titres */
 @media (max-width: 768px) {
   .choix-title-main {
     font-size: 1.6rem;
@@ -46,9 +44,7 @@
   }
 }
 
-/* =============================
-   GRILLE DES DESTINATIONS
-============================= */
+
 
 .choix-container-grid {
   display: grid;
@@ -72,9 +68,6 @@
   }
 }
 
-/* =============================
-   CARD DESTINATION (hover conservé)
-============================= */
 
 .dest-card {
   position: relative;
@@ -99,7 +92,7 @@
   display: block;
 }
 
-/* ✅ Réduction hauteur image en mobile */
+/*  Réduction hauteur image en mobile */
 @media (max-width: 600px) {
   .dest-image {
     height: 190px;
@@ -145,7 +138,7 @@
   cursor: pointer;
 }
 
-/* ✅ Hover : le texte disparaît et le bouton apparaît */
+/*  Hover : le texte disparaît et le bouton apparaît */
 .dest-card:hover .dest-name {
   opacity: 0;
 }
@@ -156,7 +149,7 @@
   transform: translateY(0);
 }
 
-/* ✅ Mobile : réduction du texte + bouton un peu plus bas */
+/*  Mobile : réduction du texte + bouton un peu plus bas */
 @media (max-width: 600px) {
   .dest-name {
     font-size: 1.2rem;
@@ -165,11 +158,11 @@
   .dest-btn {
     font-size: 0.85rem;
     padding: 9px 18px;
-    transform: translateY(18px); /* 👈 descend un peu le bouton */
+    transform: translateY(18px); /*  descend un peu le bouton */
   }
 
   /* au hover, on le remet bien en place */
   .dest-card:hover .dest-btn {
-    transform: translateY(8px); /* 👈 un peu plus bas que desktop */
+    transform: translateY(8px); /*  un peu plus bas que desktop */
   }
 }
