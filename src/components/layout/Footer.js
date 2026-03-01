@@ -10,6 +10,7 @@ import {
   TextField
 } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import { Container } from 'react-bootstrap';
 
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 //import InstagramIcon from '@mui/icons-material/Instagram';
@@ -23,6 +24,7 @@ export default function Footer() {
 
   return (
     <Box component="footer" sx={{ bgcolor: '#004080', color: 'white', py: 4 }}>
+      <Container>
       <Grid container spacing={4} justifyContent="center" sx={{ bgcolor: '#004080' }}>
         <Grid item xs={12} sm={3} sx={{ textAlign: { xs: 'center', sm: 'left' } }}>
           <Typography variant="h6" gutterBottom>{t('footer.followTitle')}</Typography>
@@ -102,6 +104,7 @@ export default function Footer() {
           {t('footer.updated')}
         </Typography>
       </Box>
+      </Container>
     </Box>
   );
 }

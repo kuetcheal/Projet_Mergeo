@@ -446,5 +446,21 @@
       "heroAlt": "Quebec",
       "founderAlt": "Founder photo"
     }
+  },
+
+
+  "brochure1": {
+    "title": "Please contact us!",
+    "cta": "Contact",
+    "alert": "Please fill in all fields.",
+    "error": "An error occurred, please try again.",
+    "imageAlt": "Brochure",
+    "fields": {
+      "nom": "Last name",
+      "prenom": "First name",
+      "email": "Email",
+      "telephone": "Phone",
+      "message": "Type your message"
+    }
   }
 }

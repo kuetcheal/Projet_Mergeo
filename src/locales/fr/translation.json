@@ -445,5 +445,20 @@
       "heroAlt": "Québec",
       "founderAlt": "Photo du fondateur"
     }
+  },
+
+  "brochure1": {
+    "title": "Veuillez nous contacter !",
+    "cta": "Contacter",
+    "alert": "Veuillez remplir tous les champs.",
+    "error": "Une erreur est survenue, veuillez réessayer.",
+    "imageAlt": "Brochure",
+    "fields": {
+      "nom": "Nom",
+      "prenom": "Prénom",
+      "email": "Email",
+      "telephone": "Téléphone",
+      "message": "Saisir votre message"
+    }
   }
 }
