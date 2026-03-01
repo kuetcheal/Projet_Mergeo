@@ -5,18 +5,19 @@
   align-items: center;
   margin-bottom: 20px;
 }
-.image2-cours{
-    border-radius: 8px;
-    margin-top: 40px;
-    height: 380px;
-    width: 530px;
+
+.image2-cours {
+  border-radius: 8px;
+  margin-top: 40px;
+  height: 380px;
+  width: 530px;
 }
 
-.image1-cours{
+.image1-cours {
   border-radius: 8px;
-    margin-top: 40px;
-    height: 380px;
-    width: 530px;
+  margin-top: 40px;
+  height: 380px;
+  width: 530px;
 }
 
 .allemand-DSH {
@@ -25,200 +26,279 @@
 
 /* Styles généraux */
 .temoignages-page {
-    font-family: Arial, sans-serif;
-    color: #333;
-  }
-  
-  /* Section d'arrière-plan avec l'image */
-  .anglais-section {
-    position: relative;
-    height: 450px;
-    overflow: hidden;
-  }
-  
-  .anglais-image {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    opacity: 0.8;
-  }
-  
-  /* Style pour le breadcrumb */
-  .breadcrumb {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 1rem;
-    color: white;
-    font-weight: bold;
-    z-index: 2;
-  }
-  
-  /* Section de contenu avec chevauchement */
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* ✅ HERO (corrigé selon tes classes JSX) */
+.fran-section {
+  position: relative;
+  height: 450px;
+  overflow: hidden;
+}
+
+.fran-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  opacity: 0.85;
+}
+
+/* overlay sur image */
+.overlayfran {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+/* zone texte + bouton dans le hero */
+.breadfrance {
+  position: absolute;
+  top: 30%;
+  left: 8%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* bouton */
+.green-button {
+  background: #1aa36f;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+}
+
+.green-button:hover {
+  opacity: 0.92;
+}
+
+/* Section de contenu avec chevauchement */
+.content-section {
+  max-width: 100%;
+  width: 90%;
+  margin: -120px auto 20px !important;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  position: relative;
+  z-index: 3;
+}
+
+/* (ton ancien .overlay : tu utilises overlayfrance dans JSX) */
+.overlayfrance {
+  margin-bottom: 20px;
+  color: #c90076;
+  text-align: center;
+}
+
+.overlayfrance h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Style de texte */
+.content-section p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.highlighted {
+  color: #c90076;
+  font-weight: bold;
+}
+
+
+.partners-carousel {
+  margin: 16px 0 24px;
+}
+
+/* Carte logo */
+.partner-card {
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+
+  /* ✅ centre le logo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* ✅ donne de l'air autour */
+  padding: 18px;
+
+  /* ✅ hauteur fixe raisonnable */
+  height: 140px;
+
+  overflow: hidden;
+}
+
+/* Logo (ne se coupe pas) */
+.partner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* ✅ IMPORTANT : pas de découpe */
+  display: block;
+
+  /* ✅ limite la taille si le logo est gigantesque */
+  max-height: 90px;
+  max-width: 240px;
+}
+
+
+
+.partners-carousel .swiper-pagination {
+  margin-top: 10px;
+  position: relative;
+}
+
+.partners-carousel .swiper-pagination-bullet {
+  width: 6px;        /* plus petit */
+  height: 6px;
+  background: #bbb;  /* gris clair */
+  opacity: 1;
+  margin: 0 4px !important;
+  transition: all 0.3s ease;
+}
+
+.partners-carousel .swiper-pagination-bullet-active {
+  background: #A93D87;   /* couleur de ton thème */
+  width: 8px;
+  height: 8px;
+}
+
+
+
+.logement {
+  display: flex;
+  flex-direction: row;
+}
+
+.logement img {
+  height: 90px;
+  width: 180px;
+  margin: 0 70px;
+}
+
+.logement2 img {
+  height: 90px;
+  width: 180px;
+  margin: 25px 50px;
+}
+
+.loca1,
+.loca2,
+.loca3 {
+  height: 80px !important;
+  width: 210px !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
   .content-section {
-    max-width: 100%;
-    width: 90%;
-    margin: -120px auto 20px !important;
+    width: 95%;
+    margin: -40px auto 20px;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    position: relative;
-    z-index: 1;
   }
-  
-  /* Superposition pour le titre */
-  .overlay {
-    margin-bottom: 20px;
-    color: #C90076;
+
+  .overlayfrance h1 {
+    font-size: 1.6rem;
+  }
+
+  .allemand-header {
+    flex-direction: column;
     text-align: center;
-  }
-  
-  .overlay h1 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin: 0;
-  }
-  
-  /* Style de texte */
-  .content-section p {
-    line-height: 1.6;
-    margin-bottom: 15px;
-  }
-  
-  .highlighted {
-    color: #C90076;
-    font-weight: bold;
-  }
-  
-  .logement{
-    display: flex;
-    flex-direction: row;
-    
-  }
-
-  .logement img{
-    height: 90px;
-    width: 180px;
-    margin: 0 70px;
-  }
-
-  .logement2 img{
-    height: 90px;
-    width: 180px;
-    margin: 25px 50px;
-  }
-
-  .loca1, .loca2, .loca3{
-    height: 80px !important;
-    width: 210px !important;
-  }
-
-  /* Responsive adjustments */
-  @media (max-width: 1024px) {
-    .content-section {
-      width: 95%;
-      margin: -40px auto 20px;
-      padding: 20px;
-    }
-  
-    .overlay h1 {
-      font-size: 1.6rem;
-    }
-
-    .allemand-header {
-      flex-direction: column; /* Passe les éléments en colonne */
-      text-align: center;
   }
 
   .image1-cours,
   .image2-cours {
-      width: 90%; /* Réduit la largeur des images */
-      height: auto;
-      margin-top: 20px; /* Ajoute un espacement */
+    width: 90%;
+    height: auto;
+    margin-top: 20px;
   }
 
   .allemand-DSH {
-      margin-bottom: 20px; /* Ajoute un espacement en bas */
-      text-align: center;
+    margin-bottom: 20px;
+    text-align: center;
   }
-  }
-  
-  @media (max-width: 768px) {
-    .breadcrumb {
-      font-size: 0.9rem;
-    }
-  
-    .content-section {
-      width: 95%;
-      margin: -30px auto 20px;
-      padding: 15px;
-    }
-  
-    .overlay h1 {
-      font-size: 1.4rem;
-    }
+}
 
-    .allemand-header {
-      flex-direction: column;
-      text-align: center;
+@media (max-width: 768px) {
+  .content-section {
+    width: 95%;
+    margin: -30px auto 20px;
+    padding: 15px;
+  }
+
+  .overlayfrance h1 {
+    font-size: 1.4rem;
+  }
+
+  .allemand-header {
+    flex-direction: column;
+    text-align: center;
   }
 
   .image1-cours,
   .image2-cours {
-      width: 100%;
-      height: auto;
+    width: 100%;
+    height: auto;
   }
 
   .allemand-DSH h1 {
-      font-size: 1.5rem; /* Réduit la taille du titre */
+    font-size: 1.5rem;
   }
 
   .allemand-DSH p {
-      font-size: 1rem; /* Réduit la taille du texte */
+    font-size: 1rem;
   }
-  }
-  
-  @media (max-width: 480px) {
-    .breadcrumb {
-      font-size: 0.8rem;
-    }
-  
-    .overlay h1 {
-      font-size: 1.2rem;
-    }
-  
-    .content-section {
-      width: 90%;
-      padding: 10px;
-      margin: -20px auto 10px;
-    }
+}
 
-    .allemand-header {
-      flex-direction: column;
-      text-align: center;
+@media (max-width: 480px) {
+  .overlayfrance h1 {
+    font-size: 1.2rem;
+  }
+
+  .content-section {
+    width: 90%;
+    padding: 10px;
+    margin: -20px auto 10px;
+  }
+
+  .allemand-header {
+    flex-direction: column;
+    text-align: center;
   }
 
   .image1-cours,
   .image2-cours {
-      width: 100%; /* Prend toute la largeur */
-      height: auto;
+    width: 100%;
+    height: auto;
   }
 
   .allemand-DSH h1 {
-      font-size: 1.3rem;
+    font-size: 1.3rem;
   }
 
   .allemand-DSH p {
-      font-size: 0.9rem;
+    font-size: 0.9rem;
   }
-  .breadcrumb P{
+
+  .breadfrance p {
     font-size: 26px !important;
-    position: center;
   }
-  .green-button{
-    position: center;
+
+  .green-button {
     margin-top: 25px;
   }
-  }
-  
+}
